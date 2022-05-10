@@ -1,0 +1,1232 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: 'museo_sans700';
+    src: url('../customfont/MuseoSans_700-webfont.eot');
+    src: url('../customfont/MuseoSans_700-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../customfont/MuseoSans_700-webfont.woff2') format('woff2'),
+         url('../customfont/MuseoSans_700-webfont.woff') format('woff'),
+         url('../customfont/MuseoSans_700-webfont.ttf') format('truetype'),
+         url('../customfont/MuseoSans_700-webfont.svg#museo_sans700') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+@font-face {
+ font-family: 'museo_sans500';
+    src: url('../customfont/MuseoSans_500-webfont.eot');
+    src: url('../customfont/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../customfont/MuseoSans_500-webfont.woff2') format('woff2'),
+         url('../customfont/MuseoSans_500-webfont.woff') format('woff'),
+         url('../customfont/MuseoSans_500-webfont.ttf') format('truetype'),
+         url('../customfont/MuseoSans_500-webfont.svg#museo_sans700') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+
+
+
+.blogarticleimage {position: relative}
+.blogarticleimage:after {    content: "";    display: block;    padding-bottom: 68%;}
+.blogarticleimage  > a {display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0}
+
+
+.indexvideoheader { height: 35vw; max-height: 500px; min-height: 256px;    display: flex; flex-direction: column; justify-content: flex-end; position: relative;  overflow: hidden; }
+.headeroverlay { top: 0;  left: 0; right: 0; bottom: 0;  height: 100%;  width: 100%; background-image: url(../images/header_overlay.png); background-repeat: no-repeat; background-position: bottom center; z-index: 2; background-size: cover; display: flex; align-items: flex-end}
+video {  object-fit: cover;   position: absolute;  top: 0;  left: 0; right: 0; bottom: 0;  height: 100%;  width: 100%; z-index: 1}
+.indexvideoheader h1 {  max-width: 1100px;
+    z-index: 5;
+    color: #fff;
+    text-align: left; margin: 0 auto 6.5%; font-size: 36px;}
+
+
+.btnoutline .fas {width: auto!important}
+.buysell_sideblock .btnoutline {font-size: 14px}
+.container-2even .container-ll {width: auto; flex: 1 0 48%; align-items: flex-start; align-self: flex-start}
+.rowcontainer .container-2even .container-ll >:nth-child(1) {flex: 0; width: auto; align-self: center}
+.fa-person-dress-simple {font-size: 40px}
+.vertical-2even {display: flex; justify-content: flex-start; align-items: flex-start; width: 50%; flex-flow: column}
+.vertical-2even >*{flex: 50%; align-self: stretch}
+.profileheader {display: flex; justify-content: flex-start; margin-bottom: 30px}
+.profileheader >*:nth-child(1) {width: 100%; max-width:150px; margin-right: 30px; padding-bottom: 20px }
+.profileheader >*:nth-child(1) picture {position: relative; background-color: #D8D8D8; display: flex; justify-content: center; align-items: center; border-radius: 10px; width: 100%; height: 150px}
+.profileheader >*:nth-child(1) picture .btnoutline { position: absolute; z-index: 2; bottom: 0px; left: 0px}
+.profileheader >*:nth-child(1) picture img{border-radius: 10px}
+
+.profileheader .circlepic, .profileheader .circlepic img {border-radius: 200px!important}
+.profileheader .fa-landmark {font-size: 60px; color: #fff}
+
+
+.profileheader h2, .profileheader h3 {display: flex;   align-items: center; justify-content: flex-start; margin-bottom: 5px}
+.profileheader h2 >*, .profileheader h3 >* {margin-left:5px}
+
+.profileheader a.btnoutline {font-size: 14px}
+
+.profileheadercontainer {display: flex; flex-flow: column nowrap; justify-content: space-between; align-self: stretch; width: 100%}
+.profilecontrols {text-align: right; font-size: 36px;}
+.profilecontrols a {margin-right: 10px; font-size: 36px; text-decoration: none}
+.profilecontrols a:last-child {margin-right: 0px; }
+.profilecontrols a {position: relative;}
+.profilecontrols a .atitle {display: none; opacity: 0; position: absolute;font-family: 'museo_sans500'; text-transform: none;  top: 70%;  left: 5%; background: #ffffff!important; border: 1px solid #88AACA; padding: 6px 10px; font-size: 14px;color: #000; width: 1000%; max-width: 240px;  z-index: 15;text-align: left}
+.profilecontrols a:hover .atitle {display: block; opacity: 1}
+
+.contentblocksmall:first-child {margin-top: 0px}
+.contentblocksmall {margin-top: 10px!important}
+.flexcontainer .contentblocksmall {margin: 0 0 10px 0; height: 100%;  align-self: stretch; display: flex; justify-content: flex-start; flex-flow: column nowrap}
+.flexcenter {display: block; text-align: center}
+.flexcenter .fa-heart {font-size: 36px; display: block; color: #C0212B; margin-bottom: 10px}
+.rowcontainer .contentblocksmall  p.forbtn {margin-top: auto}
+.buysell_sideblock .managecompanyimg {max-width: 75px; margin-right: 0!important}
+.rowcontainer .container-ll >:nth-child(1) {flex: 1; width: 100%;  max-width: 70px}
+.rowcontainer .container-ll >:last-child {flex: 3}
+.fa-question-circle { color: #87919E; font-size: 18px}
+.flexcontainer  {display: flex; flex-direction: column}
+.flexcontainer >* { align-self: stretch}
+
+
+
+.profilesocial {display: flex; justify-content: flex-start; align-items: center;}
+.profilesocial  a {font-size: 28px; text-decoration: none; margin-right: 15px}
+.profilesocial  a:last-child {margin-right: 0px}
+.smalltext {font-size: 12px}
+.searchengine-container { background-color: #fff; border: 1px solid #D1D1D1; padding: 30px 0px 0px; margin-top: -40px}
+.searchengine-container  section {display: flex; justify-content: flex-start; align-items: center; font-family: 'museo_sans700', sans-serif; color: #4F5D75; padding: 10px 20px}
+.searchengine-container  section:hover {background-color: #F2F4FC}
+.searchengine-container  section:last-child { margin-bottom: 0px}
+.searchengine-container  section .title {font-family: Verdana,Geneva,sans-serif; font-size: 12px; display: block; flex: 1 0 100%; line-height: 14px}
+.searchengine-container  section picture {margin-right: 20px;min-width: 50px; max-width: 50px; display: block}
+.searchengine-container  section picture img {display: block}
+.searchengine-container  section p {display: flex; flex-flow: row wrap;  justify-content: flex-start; align-items: center; font-family: 'museo_sans700', sans-serif; font-size: 18px; color: #4F5D75; }
+.searchengine-container .roundpic {border-radius: 10px!important}
+.searchengine-container .circlepic {border-radius: 200px} 
+.texticon {margin: 0 5px}
+
+
+/* Chat CSS */
+.searchform_messages {position: relative}
+.btnsearch {min-width: 48px; min-height: 48px; text-align: center; margin: 0; padding: 0; border: 0 none; cursor: pointer; background: none}
+.btnsearch .fa-search {font-size: 28px; color: #C0212B; line-height: 58px; text-align: center; display: block}
+.btnoverlapright { position: absolute; z-index: 2; top: 2px; right: 2px}
+.btnoverlapleft {position: absolute; z-index: 2; top: 2px; left: 2px}
+.searchform_messages  input[type=text] { padding-right: 60px; height: 60px}
+
+
+.searchform_insideconversation {position: absolute; top: 30px; right: 55px; background: white; width: 320px; box-shadow: 0px 4px 5px 0px rgba(135, 145, 158, 0.6); padding: 10px; z-index: 25; border-radius: 5px; height: 70px}
+.searchform_insideconversation input {margin: 0}
+.searchform_insideconversation  input[type=text] { padding-left: 60px}
+.searchform_insideconversation .btnsearch { top: 8px; left: 12px; z-index: 30}
+
+.sicswitcherch {display: none; opacity: 0}
+
+.sicswitcher {display: block; text-align: center; cursor: pointer; width: 36px; height: 36px; line-height: 36px; font-size: 28px; margin-left: 10px; display: flex; align-items: center; text-align: center; justify-content: center; margin: 0; padding: 0; color: #C0212B}
+
+.sicswitcherch + .sicswitcher .fa-search + .fa-times { display: none; opacity: 0}
+.sicswitcherch:checked + .sicswitcher .fa-search  { display: none; opacity: 0}
+.sicswitcherch:checked + .sicswitcher .fa-search + .fa-times { display: block; opacity: 1; font-size: 34px; color: #87919E; font-weight: bold!important}
+
+
+.sicswitcherch + .sicswitcher  + form.searchform_insideconversation {display: none; opacity: 0}
+.sicswitcherch:checked + .sicswitcher  + .searchform_insideconversation {display: block; opacity: 1; }
+
+.chatentermessage { padding: 25px 40px 15px 15px; text-align: right}
+.chatentermessage textarea { margin-bottom: 8px}
+.conversationpanel {max-width: 350px!important; width: 100%;  border: 0 none!important; margin-right: 0!important}
+.conversationpanel .btn {width: 100%!important}
+
+.chatbtn {display: inline-flex; background-color: #C0212B; padding: 5px 40px 5px 10px; border-radius: 10px; color: #fff; border:0 none; align-items: center; cursor: pointer; font-family: 'museo_sans700'; width: 100%; max-width: 130px;text-align: center}
+.chatbtn:hover {background-color: #000}
+.chatbtn .fa-plus { margin-right: 30px}
+
+
+.chatcontainer {background-color: #fff; padding: 15px; display: flex; flex-flow: column nowrap}
+.messages-senderinformationbox {display: flex; align-items: center; justify-content: flex-start; padding-bottom: 20px; border-bottom: 1px solid #D1D1D1; margin-bottom: 20px}
+.messages-senderinformationbox .memberpic    { margin-right: 20px; display: flex; align-items: center}
+.messages-senderinformationbox .memberpic    img { border-radius: 100px; max-width: 60px; }
+.messages-senderinformationbox-interractions {margin-left: auto; display: flex; align-items: center; position: relative}
+.messages-senderinformationbox-interractions .fa-exclamation-circle {width: 36px; height: 36px; line-height: 36px; font-size: 28px; margin-left: 15px; display: flex; align-items: center; text-align: center; justify-content: center;  padding: 0}
+.messages-senderinformationbox-interractions .fa-exclamation-circle, .messages-senderinformationbox-interractions a:hover  i {color: #87919E;text-decoration: none!important}
+
+.messages-senderinformationbox-interractions >*:first-child {margin-left: 0}
+.messages-senderinformationbox p { padding: 0}
+.outgoingmessage, .incomingmessage { display: flex; margin-bottom: 12px}
+.outgoingmessage {justify-content: flex-end; }
+.outgoingmessage picture img, .incomingmessage picture img{ border-radius: 100px}
+.outgoingmessage picture { max-width: 30px; min-width: 30px;  order: 2 }
+.incomingmessage picture { max-width: 40px; min-width: 40px }
+.outgoingmessage .message, .incomingmessage .message { padding: 10px 15px; border-radius: 10px; position: relative; margin: 0 10px; align-self: flex-start; font-size: 14px}
+.likedmessage {color: #2D3142; font-size: 20px; position: absolute; z-index: 2; bottom: -15px}
+.outgoingmessage .likedmessage { left: 15px}
+.incomingmessage .likedmessage { right: 15px}
+.likedmessage .fa-heart , .likedmessage a .fa-heart {color: #000;}
+.likedmessage .fa-heart:hover , .likedmessage a .fa-heart:hover {color: #87919E}
+
+.messageinterractions {max-width: 30px; text-align: center; margin-left: auto}
+.messageinterractions a {display: block; margin-bottom: 5px; color: #87919E; font-size: 20px;}
+.messageinterractions a:hover {color: #000; }
+.messages-timecode { width: 100%; text-align: left; padding: 0; margin: 0px 0 10px; position: relative; overflow: hidden}
+.messages-timecode:after {  content: "";  display: inline-block;  width: 100%;  margin: 0 -60% 0 1em;
+  vertical-align: middle;  border-bottom: 1px solid #D1D1D1}
+ 
+.outgoingmessage .message { background-color: #D6E6F5;  }
+.incomingmessage .message { background-color: #F5F5F5;  }
+
+.quotedmessageincoming { display: inline-flex; align-items: center; background-color: #F5F5F5; padding: 8px 10px 15px; border-radius: 10px; margin-bottom: -10px; margin-left: auto; margin-right: 50px}
+.quotedmessageincoming picture {display: flex; align-items: center}
+.quotedmessageincoming picture img {max-width: 30px; margin: 0 10px; border-radius: 100px}
+.quotedmessageincoming p { padding: 0; margin: 0; font-size: 14px}
+.messagesdropdownbox { max-width: 353px; background-color: #fff; padding: 20px 20px 5px 20px}
+.messagesdropdownbox-controls {text-align: right; font-size:24px; margin-bottom: 15px}
+.messagesdropdownbox-controls >*{font-size:34px; margin-right: 20px}
+.messagesdropdownbox-controls >*:last-child{ margin-right: 0px}
+.messagesdropdownbox .messageslist { margin:0; padding: 0; list-style-type: none}
+.messagesdropdownbox .messageslist li{ margin:0 -15px; padding: 15px; list-style-type: none; border-bottom: 1px solid #D1D1D1; display: flex; justify-content: flex-start; align-items: center;  text-align: left}
+.messagesdropdownbox .messageslist li:hover {background-color: #D6E6F5; }
+
+.messagesdropdownbox .messageslist li:last-child{ border: 0 none}
+.messagesdropdownbox .messageslist li p { padding: 2px 0; margin: 0; flex: 2}
+.messagesdropdownbox .memberpic img {border-radius: 100px; max-width: 50px; margin-right: 20px;} 
+.memberonline {width: 14px; height: 14px; display: block; border-radius: 100px; background: #C0212B}
+.memberoffline {width: 14px; height: 14px; display: block; border-radius: 100px; background: #979797}
+
+
+.partnersearch, .partnersearchv2 {margin: 0 auto 30px 0!important}
+body#blog #top_bar {background-color: #C0212B; color: #fff; display: block}
+body#blog #top_bar .wrapper {display: block}
+body#blog #top_bar  h2 {color: #fff; margin-bottom: 20px; display: inline-block; width: auto}
+body#blog #top_bar .searchform button {background-color: #000}
+.blog-topbar-firstline, .blog-topbar-lastline {display: flex; justify-content: space-between; width: 100%}
+.blog-topbar-firstline .logo { max-width: 125px; display: inline-block}
+.blog-topbar-firstline .langselect {margin: 0; }
+.blog-topbar-firstline .langselect ul {  background: #DE404A; padding-top: 70px; top: -15px;   }
+.blog-topbar-firstline .langselect ul li:hover {background: #C0212B;}
+body#blog #top_bar .wrapper  hr {background-color: #DE404A}
+.sharethis {align-self: flex-start}
+.sharethis p { margin: 0; padding: 2px 0}
+.sharethis_socialicons, .sharethis_socialicons a i {font-size: 42px}
+.sharethis_socialicons a:hover {color: #000}
+.blogarticle {margin-bottom: 40px}
+.blogarticle  picture img {display: block}
+.blogarticle .blogpostpicture { margin: 10px 0 0 0; display: block}
+
+body#formpage { display: flex;  align-items: center; align-content: center; justify-content: center;  margin: 0!important}
+a {  position: relative;}
+i[title]:hover:after {  content: attr(title);  position: absolute;font-family: 'museo_sans500'; text-transform: none;  top: 50%;  left: 5%; background: #fff; border: 1px solid #88AACA; padding: 6px; font-size: 14px;color: #000; }
+.listsection section { border-bottom: 1px solid #D1D1D1; padding-bottom: 15px; margin-bottom: 15px}
+.listsection section:last-child { margin-bottom: 30px}
+.listsection section .container-lr>*:nth-child(1) {display: flex; flex: 1; max-width: 70%}
+.listsection section .container-lr>*:nth-child(1) > img {flex: 0; align-self: center; max-width: 125px; margin-right: 4%}
+.listsection section .container-lr>*:nth-child(2) {text-align: center; min-width: 20%}
+.listsection section p {padding: 2px 0; margin: 0}
+
+.topmargin {margin-top: 20px}
+.valigncenter {margin: auto}
+.nowrap {display: flex!important; flex-flow: row nowrap;}
+.nowrap .bluelink {min-width: 100px; text-align: right; align-self: flex-start}
+.ongoingprojects { background-color: #E7EDF3; border-radius: 10px; padding: 20px; position: relative; z-index: 4;  margin-top: -110px; display: flex; flex-flow: row wrap; align-items: center}
+.ongoingprojects h1, .ongoingprojects h2, .ongoingprojects h3, .ongoingprojects h4 { margin: 0}
+.ongoingprojects >*{flex: 1 0 50%; min-width: 340px}
+.ongoingprojects .container-2even > * { margin-top: 0!important}
+.ongoingprojects .custom-select {margin: 0}
+.ongoingprojects .select-selected { margin: 0}
+.negativemargintop {margin-top: -20px!important; }
+.marginbottom {margin-bottom: 4%}
+.commonwealthblock{ margin: 0 -1% ; padding: 0; list-style-type: none; display: flex; align-items: flex-start; justify-content: flex-start; flex-flow: row nowrap;}
+.commonwealthblock section { margin: 1% 1% 2% 1%; padding: 0; list-style-type: none;  text-align: left; max-width: 353px; flex: 1 0 31%; background-color: #F5F5F5; padding: 0 15px 20px; border-radius: 10px;     min-width: 260px;}
+.commonwealthblock .title { font-family: 'museo_sans500'; font-size: 24px;}
+.commonwealthblock p { margin: 10px 0 0 0; padding: 0;}
+
+.cwbfixed{ margin: 0 -1% ; padding: 0; list-style-type: none; display: flex; align-items: flex-start; justify-content: flex-start; flex-flow: row wrap;}
+.cwbfixed section { margin: 1% 1% 2% 1%; padding: 0; list-style-type: none;  text-align: left; max-width: 48%; flex: 1 0 31%; background-color: #F5F5F5; padding: 0 15px 20px; border-radius: 10px;     min-width: 260px;}
+.cwbfixed section:nth-child(2) {      flex: 3 0 65%;    max-width: inherit; background-color: inherit}
+
+
+
+.commonwealthblock-fixed{ margin: 0 -1% ; padding: 0; list-style-type: none; display: flex; align-items: flex-start; justify-content: flex-start; flex-flow: row wrap;}
+.commonwealthblock-fixed section { margin: 1% 1% 2% 1%; padding: 0; list-style-type: none;  text-align: left; max-width: 353px; flex: 1 0 31%; background-color: #F5F5F5; padding: 0 15px 20px; border-radius: 10px;     min-width: 260px;}
+.commonwealthblock-fixed .title { font-family: 'museo_sans500'; font-size: 24px;}
+.commonwealthblock-fixed p { margin: 10px 0 0 0; padding: 0;}
+.commonwealthblockmainpic img {display: block; width: 100%; border-top-left-radius: 10px; border-top-right-radius: 10px}
+.commonwealthblockmainpic {display: block; margin: 0 -15px 15px -15px}
+.commonwealthblock-fixed section:nth-child(2) {      flex: 3 0 65%;    max-width: inherit; background-color: inherit}
+    
+
+.blueblockbgcircles h2 { margin-bottom: 10px}
+.calendarpictures { position: relative; min-width: 450px!important}
+.calendarpictures img {border-radius: 10px}
+.calendarpictures >*:nth-child(1) {position: absolute; z-index: 4;  left: 20px; bottom: -50px; max-width: 185px}
+
+.logoslist {padding: 0; margin: 0; list-style-type: none; display: flex; justify-content: space-between}
+.logoslist li {padding: 0; margin: 0; list-style-type: none;  margin-right: 20px; position: relative; flex: 1;}
+.logoslist li:last-child {margin-right: 0px }
+.logoslist li img {width: 100%; border-radius: 10px}
+
+
+.contactusform {max-width: 580px; width: 100%; margin-top: 20px}
+.smalllogoslist {padding: 0; margin: 0; list-style-type: none; display: flex; justify-content: space-between}
+.smalllogoslist li {padding: 0; margin: 0; list-style-type: none; max-width: 100px; margin-right: 20px; position: relative; flex: 1;}
+.smalllogoslist li:last-child {margin-right: 0px }
+.smalllogoslist li img {width: 100%; border-radius: 10px}
+.smalllogoslist li i {position: absolute;    z-index: 2;    bottom: -10px;    font-size: 24px;    border: 4px solid #fff;    border-radius: 100px;    width: 32px!important;    height: 32px!important;    display: flex;
+    align-content: center;    align-items: center;    justify-content: center;    background-color: #fff;}
+
+
+.smalllogoslist li i:nth-child(1) {right: -10px; z-index: 10}
+.smalllogoslist li i:nth-child(2) {right: 15px; z-index: 8}
+.smalllogoslist li i:nth-child(3) {right: 40px; z-index: 6}
+.smalllogoslist li i:nth-child(4) {right: 65px; z-index: 4}
+
+.icored {color: #C0212B}
+
+.loadbtn { margin: 20px auto; display: block;   max-width: 300px; text-align: center; padding: 10px 40px; border-radius: 10px;  font-size: 20px;}
+.loadbtn .fa-spinner, .loadbtn:hover .fa-spinner {color: #88AACA; margin-right: 10px!important }
+
+.recommendedbuyer {margin-bottom: 20px}
+.recommendedbuyer .managecompanydesc { margin-left: 5%}
+
+.buyingoffersblock {border: 1px solid #F5F5F5; padding: 30px 30px 10px 30px; margin-bottom: 20px }
+.leftbarfilter, .leftbarfilter + label  {display: none; opacity: 0;}
+
+.leftbarfilter, .leftbarfilterv2 + label {display: none; opacity: 0;}
+.leftbarfilter + label { padding: 12px; background-color: #88AACA; color: #fff; cursor: pointer; border-radius: 5px; font-size: 20px}
+.leftbarfilter + label .fa-chevron-down { font-weight: bold; font-size: 20px}
+.leftbarfilter:checked + label {background: #6E90AF}
+.leftbarfilter:checked + label .fa-chevron-down {transform: rotate(180deg); color: #C0212B; }
+
+.selectinputsection, .slidersection { margin-bottom: 25px; width: 100%}
+
+
+.container-leftsidebar > *:nth-child(1) section {width: 100%}
+.sidebarlabeltextbox {align-items: center;}
+.sidebarlabeltext {padding: 0; margin: 0; display: inline; font-family: 'museo_sans700';}
+.infoicon { position: relative; top: 2px}
+.customcheckbox .fa-question-circle , .customcheckbox a .fa-question-circle  {color: #87919E; margin-left: 5px; font-size: 22px}
+.customcheckbox .fa-check-circle  {font-size: 22px; color: #54765A; margin-right: 5px}
+.customcheckbox .fa-clipboard-check  {font-size: 22px; color: #C0212B; margin-right: 5px}
+
+.slider { position: relative; border-bottom: 3px solid #C0212B; margin-top: -3px;  padding: 5px 0; margin-bottom: 40px}
+.slider-control {position: absolute; z-index: 2; display: inline-block; text-align: center; top: 4px; font-family: 'museo_sans700';  cursor: pointer}
+.slider-control-slider {display: block; margin: 0 auto; width: 15px; height: 15px; border-radius: 200px; background: #C0212B; }
+ 
+.recommendedsellers h3  { margin-bottom: 0}
+.recommendedsellers .managecompanyimg { position: relative; max-width: 90px; width: 100%}
+.recommendedsellers .managecompanyimg img {  width: 100%}
+.recommendedsellers .managecompanyimg i {position:absolute; z-index: 2; bottom: -10px; font-size: 24px; border: 4px solid #F5F5F5; border-radius: 100px; width: 32px!important; height: 32px!important; display: flex; align-content: center; align-items: center; justify-content: center; background-color: #fff}
+.recommendedsellers .managecompanyimg .fa-venus { font-size: 20px; background-color: #88AACA}
+
+.recommendedsellers .managecompanyimg i:nth-child(1) {right: -10px; z-index: 10}
+.recommendedsellers .managecompanyimg i:nth-child(2) {right: 15px; z-index: 8}
+.recommendedsellers .managecompanyimg i:nth-child(3) {right: 40px; z-index: 6}
+.recommendedsellers .managecompanyimg i:nth-child(4) {right: 65px; z-index: 4}
+.bbll { padding: 0; margin: 0}
+.bbll > *:first-child {margin-right: 5%}
+.recommendedsellers .smallitemslist {margin: 25px 0 0 -5px; flex-flow: row nowrap; justify-content: space-between}
+.recommendedsellers .smallitemslist li {margin-left: 5px; min-width: auto}
+.recommendedsellers .smallitemslist li:last-child { margin-right: 0}
+.recommendedsellers .smallitemslist li img {max-width: 100px; border-radius: 10px; width: 100%}
+
+.searchsidebar {position: relative}
+.searchsidebar > input {  z-index: 1; position: relative; min-height: 50px; padding: 0px 10px 0px 50px!important} 
+.searchsidebar > button[type=submit] {   background: none;  border: 0 none; position: absolute; top: 0px; left: 0px; display: block; min-width: 50px; min-height: 50px;  cursor: pointer;  z-index: 5; background-color: inherit; font-size: 28px; color: #C0212B}
+
+
+.meetsellers {display: flex; justify-content: flex-start; align-items: flex-start; flex-flow: row nowrap}
+.meetsellers > *:nth-child(2) {min-width: 70px;}
+.meetsellers > *:nth-child(1) {overflow: hidden; width: 100%}
+.meetsellers >  * {align-self: stretch}
+
+.meetsellerslist .roundpic {display: block; margin: 0 auto 10px; max-width: 70px}
+.meetsellerslist { margin: 0; padding: 0 0 15px 0; overflow: auto; list-style-type: none; display: flex; width: 100%}
+.meetsellerslist li { margin: 0; padding: 0; list-style-type: none; margin-right: 20px; background-color: #fff; border-radius: 10px; padding: 15px; text-align: center; min-width: 170px; }
+.meetsellerslist li , .meetsellerslist li   * {color: #2D3142!important}
+.meetsellerslist li   * .fa-check-circle { color: #54765A!important}
+.meetsellerslist li  a   {color: #C0212B!important}
+
+.meetsellerslist li:nth-child(1) {width: 260px; min-width: 260px}
+.meetsellerslist-btnnext {background: #C0212B;    align-self: stretch;    display: flex;    justify-content: center;    align-content: center;    text-align: center;    border-radius: 5px;    height: 100%;    color: #fff;    width: 100%; }
+a.meetsellerslist-btnnext  i {align-self: center}
+a.meetsellerslist-btnnext:hover   i{text-decoration: none!important}
+a.meetsellerslist-btnnext:hover  {text-decoration: none!important}
+
+.meetsellerslist-companynamelink {font-size: 16px; text-decoration: underline}
+.container-lr {display: flex; justify-content: space-between; align-items: center;  flex: 1; max-width: 1100px; width: 100%; margin: 0 auto 15px}
+.container-lr h1, .container-lr h2, .container-lr h3, .container-lr h4, .container-lr h5 { margin: 0}
+.container-lr >*:first-child {max-width: 62%}
+
+.container-ll {display: flex; flex:1 0 100%; justify-content: flex-start; align-items: center; max-width: 1100px; width: 100%; margin: 0 auto; flex-flow: row wrap}
+.container-ll > *:first-child {margin-right: 5%}
+/* .container-ll >* {  flex: auto 0 300px} */
+
+
+
+.productgallery {display: flex; flex-flow: row nowrap; margin-bottom: 40px; margin-top: 20px}
+.productgallerythumbnails {max-width: 80px}
+.productgallerythumbnails div {position: relative; margin-bottom: 10px}
+.productgallerythumbnails div:last-child {margin-bottom: 0px}
+.productgallerythumbnails div  img {border-radius: 10px}
+.removephotogallerypicture {position: absolute; bottom: 15px; right: 5px; z-index: 5; width: 22px; height: 22px; background-color: white; border-radius: 200px;}
+.removephotogallerypicture i {  font-size: 24px;   width: 26px; height: 26px; position: absolute; z-index: 15; }
+.productgallerybigpreviewcontainer { margin: 0 50px; position: relative; align-self: flex-start;}
+
+.productgallerycontrolbtn-left {left: -35px}
+.productgallerycontrolbtn-right {right: -35px}
+.productgallerycontrolbtn-left, .productgallerycontrolbtn-right { position: absolute; z-index: 15; top: 47%; font-size: 30px; color: #000}
+
+
+.productgallerybigpreview  img{border-radius: 10px; display: block}
+.container-leftsidebar .customcheckbox, .customradio {margin-bottom: 10px}
+.loadmore {text-decoration: underline}
+.smallcontainer { padding: 15px}
+
+.buysell_sideblock { background-color: #fff; padding: 20px; margin-bottom: 20px; text-align: left}
+.buysell_sideblock:nth-child(1) { margin-top: -70px; padding-top: 70px}
+.buysell_sideblock:last-child {border-bottom-left-radius: 10px; border-bottom-right-radius: 10px}
+
+.buysell_sideblock .container {margin-top: 20px; width: 100%}
+.buysell_sideblock .container:first-child {margin-top: 0px; }
+
+.tagblue { padding: 2px 8px; background-color: #88AACA; border-radius: 5px; color: #fff; font-size: 12px; font-family: 'museo_sans700'; display: inline-flex; align-items: center; margin: 15px 0}
+.tagblue i { margin-left: -3px}
+.btnshare {background-color: #fff; border: 1px solid #C0212B; color: #C0212B; padding: 5px 10px; text-align: center; border-radius: 10px; font-weight: normal;}
+.btnshare:hover {color: #000; text-decoration: none}
+.btnshare .fas {display: block; font-size: 33px; margin: 0 auto}
+.rowcontainer { margin-bottom: 40px}
+.rowcontainer h1, .rowcontainer h2, .rowcontainer h3, .rowcontainer h4, .rowcontainer h5{ display: inline-block!important; width: auto; margin-bottom: 10px}
+
+.hintbox-blue {display: flex; flex: 1 0 100%; color: #4F5D75; background-color: #E7EDF3; border: 2px solid #88AACA; padding: 10px 20px; border-radius: 10px; margin-bottom:30px; justify-content: space-between; align-items: center; line-height: initial;}
+.hintclose { background-color: #fff; border-radius: 200px; font-size: 24px; }
+.listoflisting {align-items: center; margin-bottom: 10px; padding: 20px}
+.listoflisting .container {align-items: center; }
+.listoflisting .managecompanyimg {max-width: 100px}
+.listoflisting .managecompanydesc a {font-size: 24px}
+.listoflistingcontrols a {font-size: 48px;}
+.listoflistingcontrols a:first-child {margin-right: 20px}
+.whiteroundbluestroke {display: inline-block; padding: 5px 8px; background-color: #fff; border: 1px solid #88AACA ; border-radius: 10px}
+
+.actingastitle {margin: 0 auto 0 15px}
+.actingastitle b {font-size: 16px; display: block; line-height: 20px}
+.actingas  {background-color: #fff; padding: 20px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-top: -50px; padding-top: 50px; min-width: 340px!important}
+.actingas .container{border: 2px dashed #979797; align-items: center; padding: 10px;  border-radius: 10px}
+.buyerlocation .fas, .buyerlocation .fa-solid {width: 25px; }
+.actingas .container .fa-chevron-down {font-size: 24px; font-weight: bold}
+
+
+.bslinktitle  {display: flex; align-items: center; margin-bottom: 12px}
+.bslinktitle  + p  { padding-top: 0}
+
+.smallitemslist { padding: 0; margin: 0; list-style-type: none; display: flex; flex-flow: row wrap}
+.smallitemslist li{ padding: 0; margin: 0; list-style-type: none; min-width: 100px; margin-right: 2%}
+.smallitemslist li:last-child { margin-right: 0}
+
+.bslinktitle h1, .bslinktitle h2, .bslinktitle h3, .bslinktitle h4, .bslinktitle h5{ display: inline-block!important; width: auto; margin-bottom: 0}
+.bslinktitle >  a.btn {margin: 0 15px 0 0!important; padding: 16px 26px; align-self: stretch}
+.bslinktitle >  a.btn:hover {padding: 12px 22px}
+.bslinktitle .btnoutline { margin-left: 20px; font-size: 14px}
+
+.bslinktitle .btn {display: inline-flex; align-items: center; margin-right: 20px}
+
+
+ .bg {background-color: #2D3142}
+.textgrey {color: #87919E}
+.itctoolsblockicon { position: absolute; z-index: 1!important; bottom: 0; right: 0; font-size: 132px; color: #EFEFEF}
+
+.btn .fa-plus { margin-right: 20px; display: inline-block}
+.alignbottom {margin-top: auto}
+.fa-venus {display: inline-block; background-color: #88AACA; color: #fff; font-size: 16px;text-align: center; border-radius: 100px; width: 20px; height: 20px; line-height: 20px!important;  }
+.fa-check-circle { color: #54765A!important; font-size: 19px}
+.productslist { margin: 10px 0; padding: 0; list-style: none; display: flex; width: 100%; flex-flow: row wrap; justify-content: flex-start}
+.productslist  li {display: block; margin: 0; padding: 0; list-style-type: none; align-self: flex-start; text-align: left; margin: 1.5%; flex: 1 0 150px;   position: relative; max-width: 190px; }
+.productlastlink {align-self: stretch!important; display: flex!important; align-items: center;}
+.productlastlink  a {margin-bottom: 20px}
+.productimg { display: flex; align-items: center;margin-bottom: 10px;  border-radius: 10px; overflow: hidden; width: 100%; max-width: 220px;  position: relative; min-width: 130px }
+.productimg a {text-decoration: underline}
+.productimg:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;}
+.productimg img {display: block; align-items: center; border-radius: 10px; position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; width: 100%; }
+.productstatus { position: absolute; z-index: 2; top: 0; left: 0; display: inline-block; padding: 4px 8px; color: #fff; background-color: #88AACA; border-bottom-right-radius: 10px;}
+.pagination { display: flex; padding: 0; margin: 20px 0;  align-content: center; align-items: center; }
+.pagination a {display: inline-block; min-width: 40px; min-height: 40px; line-height: 40px;  text-decoration: underline; color: #2D3142; text-align: center; margin: 0 5px;}
+.pagination a:hover, .pagination a.active{background-color: #4F5D75; border-radius: 10px; color: #fff; text-decoration: none}
+.pagination a .fas {font-size: 30px; color: #C0212B; line-height: 40px; }
+.pagination a.prevpage:hover , .pagination a.nextpage:hover  {background-color: inherit; color: #2D3142}
+.pagination a.prevpage:hover .fas  , .pagination a.nextpage:hover .fas  { color: #2D3142}
+.managecompanyimg img { border-radius: 10px; display: block}
+.managecompanydesc {flex: 1; margin-left: 20px}
+
+.productslist  .fa-check-circle { position: relative; top: 2px; margin-left: 10px; display: inline-block}
+.narrowcontentblock { padding: 15px 20px}
+.narrowcontentblock  h4 {margin: 0}
+.narrowcontentblock  p {margin: 5px 0; padding: 0}
+
+.dragelement {border-left: 6px solid #C0212B; border-bottom: 4px solid #D1D1D1;  box-shadow: 0px 4px 5px 0px rgba(135, 145, 158, 1);}
+.whiteformtoptext { margin-bottom: 50px}
+.formtoptext { margin-bottom: 40px}
+#formpage-container {  max-width: 1100px;    flex: 1; text-align: left; padding: 40px 0}
+
+.formpage-content {background-color: #fff; padding: 50px 50px 80px 50px; box-sizing: border-box;  width: 100%; text-align: left; margin-right: 0!important; max-width: 650px }
+#formpage h1, #formpage h2, #formpage h3 {margin-bottom: 10px}
+#formpage h4 {margin-bottom: 30px}
+
+.formpage-content a {font-family: Verdana,Geneva,sans-serif; font-size: 16px; text-decoration: underline}
+
+.formpage-content form {text-align: left}
+.forgotpasswordlink { padding-top: 0; margin-top: -10px}
+.forgotpasswordlink a {color: #87919E}
+.formpage-content form a:hover {color: #C0212B}
+
+.formpage-content  .btn {display: inline-flex; border: 0 none; cursor: pointer;   margin: 20px auto; padding: 15px 40px;  font-family: 'museo_sans700', sans-serif; text-decoration: none; justify-content: center; width: auto}
+.formpage-content  .btn:hover {margin: 20px auto;   background: #88AACA}
+
+.formpage-content  button.btn {margin: 10px auto 60px; padding: 15px 40px; }
+.formpage-content button.btn:hover {margin: 10px auto 60px;}
+
+
+.sidebg {flex: 1; align-self: stretch; }
+
+
+.loginbgpicture1 {background-image: url(../images/bbh-singapore-IfyZ95NqcQo-unsplash.jpg); background-position: bottom right; background-repeat: no-repeat; background-size: cover;}
+.loginbgpicture2 {background-image: url(../images/bbh-singapore-IfyZ95NqcQo-unsplash2.jpg); background-position: bottom right; background-repeat: no-repeat; background-size: cover;}
+.loginbgpicture3{background-image: url(../images/bbh-singapore-IfyZ95NqcQo-unsplash3.jpg); background-position: bottom center; background-repeat: no-repeat; background-size: cover;}
+
+
+.titlewithlinecentered { width: 100%; text-align: center; margin-bottom: 20px; position: relative; overflow: hidden}
+.titlewithlinecentered:before, .titlewithlinecentered:after {  content: "";  display: inline-block;  width: 50%;  margin: 0 1em 0 -55%;
+  vertical-align: middle;  border-bottom: 1px solid #979797}
+.titlewithlinecentered:after {  margin: 0 -55% 0 1em;}
+.titlewithlinecentered span {  display: inline-block;  vertical-align: middle; max-width: 90%}
+
+
+ /* form styles */
+form .btn {display: block; width: 100%; margin: 20px 0}
+label {font-size: 16px; text-align: left; font-family: 'museo_sans700', sans-serif;  display: block; margin-bottom: 2px; }
+
+input[type=text],  input[type=password],   textarea { padding: 10px 15px; background-color: #ffffff; text-align: left; border: 1px solid #D1D1D1; border-radius: 10px; width: 100%; margin-bottom: 15px; box-sizing: border-box; font-size: 14px; color: #87919E }
+input[type=text]:focus,  input[type=password]:focus,   textarea:focus
+{border-color: #adc5e5; outline: 0; background-color: #f9f9f9}
+input[type=button], input[type=submit] {border: 0 none; cursor: pointer}
+
+input[type="radio"]{display: none; opacity: 0}
+input[type="radio"] + span { background: #ffffff; border: 2px solid #ffffff; outline: 2px solid  #C0212B; border-radius: 100px; width: 30px; height: 30px; display: inline-block; }
+input[type="radio"]:checked + span { background: #C0212B; border: 4px solid #ffffff; outline: 2px solid  #C0212B; border-radius: 100px;  }
+
+input[type="checkbox"]{display: none; opacity: 0}
+input[type="checkbox"] + .fa-check { background-color: #fff; color: #fff; font-size: 20px;   min-width: 30px; min-height: 30px; max-width: 30px; max-height: 30px; line-height: 28px!important; border: 2px solid #C0212B; text-align: center}
+input[type="checkbox"]:checked + .fa-check { color: #54765A}
+
+.customcheckbox, .customradio {display: flex; align-items: center; margin-bottom: 15px; flex-flow: row nowrap; }
+.customcheckbox, .customradio >* {flex: auto}
+
+.customradio  input[type="radio"] + span { margin-right: 15px}
+.customradio label { margin-right: 15px}
+.customcheckbox   .fa-check { margin-right: 15px}
+.customcheckbox label {margin: 0; line-height: 20px}
+.customradiorow {flex: 1 0 100%; align-items: center; display: flex; margin-bottom: 15px}
+
+.twobigradiobuttons label { font-size: 24px; font-family: 'museo_sans500', sans-serif; line-height: 24px }
+.twobigradiobuttons label .smalltext {font-size: 16px; font-weight: normal}
+.twobigradiobuttons input[type="radio"] + span {  max-width: 40px; max-height: 40px; margin-right: 25px; min-width: 40px; min-height: 40px }
+
+.formtitle {color: #88AACA; display: flex; align-items: center; justify-content: flex-start}
+.formtitle .fa-spinner { margin-right: 15px; font-size: 36px }
+.formtitle .fa-check { margin-right: 15px; font-size: 36px; color: #54765A }
+
+.loginlogos { display: flex; justify-content:space-evenly; margin: 30px 0; text-align: center}
+.loginlogos  a {display: block; text-align: center; padding: 7px; font-size: 12px; width: 100%; text-decoration: none!important} 
+.loginlogos a p { padding-bottom: 0; font-size: 12px}
+.loginlogos  a > *{display: block; margin: 0 auto; text-align: center; }
+.loginlogos i { font-size: 36px; text-align: center; }
+.loginlogos  a:hover {text-decoration: none!important; border: 2px solid #C0212B; border-radius: 10px; margin: -2px}
+
+.loginlogos   span{font:normal 16px/28px  Verdana,Geneva,sans-serif; text-decoration:none; letter-spacing: 0.02em; color: #2D3142; text-transform: none; display: block; text-align: center}
+.loginlogos .fa-facebook { color: #3678ea}
+.loginlogos .fa-linkedin { color: #2867b2}
+.loginlogos .fa-twitter { color: #1D9BF0}
+
+.tooltipQAbox { margin: 20px 0; border: 2px solid #C0212B; border-radius: 10px; padding: 20px; background-image: url(../images/tooltopboxbg.png); background-repeat: no-repeat; background-position: bottom right; }
+.tooltipQAbox h3 { margin-bottom: 0; font-size: 20px}
+
+.tooltipQAbox .customradio input[type="radio"] + span {width: 20px; height: 20px; max-width: 20px; max-height: 20px;  border: 2px solid #fff}
+.tooltiphover {border-bottom: 1px dashed #C0212B; position: relative ; cursor: help;}
+.tooltipbox {  max-width: 440px; position: absolute; right: -430px;
+display: none; opacity: 0; padding-left: 30px;
+top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);  z-index: 5 }
+.tooltipbox-content { background-color: #fff; padding: 20px; border: 1px solid #88AACA; display: block; position: relative}
+.tooltipbox-content:before {width: 0;   height: 0;   border-top: 10px solid transparent;  border-bottom: 10px solid transparent;   
+  border-right:10px solid #88AACA;   position: absolute;  content: "";  top: 48%;  left: -10px; }
+.tooltipbox-content b {font-size: 20px}
+.tooltipbox hr { margin: 15px 0}
+.tooltiphover:hover .tooltipbox { display: block; opacity: 1}
+
+
+label .fa-question-circle {color: #C0212B; font-size: 20px; margin-left: 5px}
+
+ 
+
+.select-selected {  padding: 10px 15px; background-color: #ffffff; text-align: left; border: 1px solid #D1D1D1; border-radius: 10px; width: 100%; margin-bottom: 15px; box-sizing: border-box; font-size: 14px; color: #87919E;  }
+/*the container must be positioned relative:*/
+.custom-select {  position: relative;  }
+.custom-select .fa-chevron-down { position: absolute;
+    font-size: 20px;
+    color: #C0212B;
+    top: 25%;
+    right: 20px;}
+/*hide original SELECT element:*/
+.custom-select select {  display: none; z-index: 155;position: relative; }
+.custom-select select  .fa-chevron-down {display: block; opacity: 1}
+
+
+/*style the items (options), including the selected item:*/
+.select-items div, .select-selected {   padding: 10px 15px;   cursor: pointer;  user-select: none; width: 100%;}
+
+/*style items (options):*/
+.select-items {  position: absolute;  background-color: #fff;   top: 100%; margin-top: -4px;   left: 0;  right: 0;  z-index: 99; border: 1px solid #D1D1D1;  }
+
+/*hide the items when the select box is closed:*/
+.select-hide {  display: none;}
+
+.select-items div:hover, .same-as-selected {  background-color: #f9f9f9}
+
+
+.steps_progress_bar { display: flex; justify-content: space-between; margin: 20px 0 10px 0}
+
+.step {text-align: center; display: inline-block; flex:1; font-size: 14px; position: relative; z-index: 4}
+.step .bullet {width: 24px; height: 24px; border-radius: 100px;   display: inline-block; margin: 0 auto; position: relative; z-index: 5}
+.step  p {display: block; font-size: 12px; padding: 0; margin: 0px 0 10px}
+
+.step:first-child:after {  position: absolute;  content: "";  top: 11px;  left: 34px;      border: 2px dashed  red;   width: 125%; z-index: 2  }
+.step:last-child:after {  position: absolute;  content: "";  top: 11px;  right: 34px;      border: 2px dashed  red;   width: 125%; z-index: 1  }
+ 
+.step:after {  position: absolute;  content: "";  top: 11px;      border: 2px dashed  black;   width: 100%; z-index: 2  }
+ 
+
+.nextstep  .bullet { background: #ffffff; border: 2px solid #ffffff; outline: 2px solid  #D1D1D1;  }
+.currentstep  .bullet { background: #C0212B; border: 2px solid #ffffff; outline: 2px solid  #C0212B;  }
+.completedstep .bullet { background: #C0212B; border: 2px solid #C0212B; outline: 2px solid  #C0212B;  }
+ 
+
+
+.steps_progress_bar  .step:nth-child(1) { text-align: left!important}
+.steps_progress_bar  .step:nth-child(1) > span  { margin: 0 }
+
+.steps_progress_bar  .step:last-child { text-align: right!important}
+.steps_progress_bar  .step:last-child  > span { margin: 0 }
+
+
+.formpictures {  text-align: left; margin-left: -6% }
+.formpictures img { border-radius: 20px; display: block}
+.formpictures img:nth-child(1) { max-width: 186px; position: relative; z-index: 1;}
+.formpictures img:nth-child(2) { max-width: 259px; position: relative; z-index: 2; top: -40px; left: 70px}
+.formpictures img:nth-child(3) { max-width: 134px; position: relative; z-index: 3; top: -120px; left: 30px}
+/* ---------- */
+ 
+/* header and header info panel */
+ 
+.indexheader { height: 35vw; max-height: 500px; min-height: 256px; background:   url(../images/header_image@2x.jpg) no-repeat center 75% ;   display: flex; flex-direction: column; justify-content: flex-end; position: relative;  background-size: cover; }
+
+
+
+
+/*.indexheader { max-height: 638px; height: 33vw;  display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; position: relative}
+.indexheader .imgcontainer { position: absolute; z-index: 0; top: -90px; bottom: 0; left: 0; right: 0; height: 1000px}  
+.indexheader .imgcontainer img {width: 100%}*/
+
+.indexheader  h1 {    color: #fff;  max-width: 1100px; margin: 0 auto 5%; text-align: left; display: block;padding: 0; line-height: 60px  }
+
+.innerheader  h1 {    color: #fff;  max-width: 1100px; margin: 0 auto; text-align: left; display: block;  padding: 0; width: 100%; margin-bottom: 10px; letter-spacing: 0.01em;}
+.innerheader  h1 b {font-size: 16px; font-weight: normal; display: block; line-height: 24px; letter-spacing: 0.01em;}
+.innerheader  {  min-height: 144px; display: flex; align-items: center; justify-content: flex-start; height: 25vw; max-height: 190px}
+ 
+#header_info_panel {background: rgb(65,79,104); background: linear-gradient(90deg, rgba(79,93,117,1) 50%, rgba(65,79,104,1) 50%); display: flex; color: #fff;   width: 100%}
+#header_info_panel h3 {color:#fff; line-height: inherit; margin-bottom: 10px}
+ 
+#header_info_panel .container-2even { max-width: 1100px; margin: 0 auto; }
+#header_info_panel .container-2even div, #header_info_panel .container-2even div p { color: #fff}
+.header_info_panel-left, .header_info_panel-right { width: 50%; }
+.header_info_panel-left {  background-color: #4f5d75; padding: 30px 40px 18px 0px; position: relative;}
+.header_info_panel-left:before {content: ''; background-image: url(../images/svg/bgdot.svg); width: 100%; height: 90%; position: absolute; left: -101%; opacity: 0.2; top: 12px;}
+.header_info_panel-right {background-color: #414f68; padding: 30px 0 18px 40px; position: relative}
+.header_info_panel-right:after {content: ''; background-image: url(../images/svg/bgdot.svg); width: 100%; height: 90%; position: absolute; right: -99%; opacity: 0.2; top: 12px}
+
+/* ---------- */
+
+
+
+/* testimonials */
+#testimonials_bar { background: #2D3142}
+#testimonials_bar .btn {margin: auto}
+#testimonials_bar .container-2col { padding: 10px 0;  margin: 0 auto; max-width: 1100px}
+#testimonials {  padding: 0; margin: 0; list-style-type: none; position: relative; flex: 3; display: flex;}
+ 
+#testimonials li {display: block;  margin: 0 14px 0 0; width: 78px;  padding: 0; list-style-type: none;   }
+#testimonials li:last-child {margin: 0}
+#testimonials li img { position: relative; border-radius: 100px; z-index: 3; cursor: pointer; display: block; }
+#testimonials li:hover img {border: 3px solid #C0212B; margin: -3px; box-sizing: content-box}
+#testimonials li p:after {content:'';position:absolute; bottom: -12px; left: 166px;   width: 0px; 
+  height: 0px; 
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 34px solid #C0212B;}
+
+#testimonials li p { padding: 25px; position: absolute; bottom: 110%; z-index: 2; margin: 0;    width: 100%; max-width: 376px; text-align: left; display: none; opacity: 0; font-size: 14px; background-color: #fff; border-radius: 25px; }
+#testimonials li p span {position: relative; z-index: 2; }
+#testimonials li p:before {content:'';position:absolute;z-index: 0;top:-10px;left:-20px;width:115px;height:100px;background:url(../images/svg/quotes.svg) no-repeat center center}
+
+
+#testimonials li:hover p {opacity: 1; display: block;   }
+/* 
+#testimonials li:nth-child(1) p {left:-19.6%;}
+#testimonials li:nth-child(2) p {left:-7.5%;}
+#testimonials li:nth-child(3) p {left:4.5%;}
+#testimonials li:nth-child(4) p {left:16.8%;}
+#testimonials li:nth-child(5) p {left:29%;}
+#testimonials li:nth-child(6) p {left:41%;}
+#testimonials li:nth-child(7) p {left:53%;}
+#testimonials li:nth-child(8) p {left:65.2%;}
+*/
+#testimonials li:nth-child(1) p {left:-150px;}
+#testimonials li:nth-child(2) p {left:-57px;}
+#testimonials li:nth-child(3) p {left:34px;}
+#testimonials li:nth-child(4) p {left:127px;}
+#testimonials li:nth-child(5) p {left:220px;}
+#testimonials li:nth-child(6) p {left:312px;}
+#testimonials li:nth-child(7) p {left:403px;}
+#testimonials li:nth-child(8) p {left:495px;}
+/* ---------- */
+
+.indexfeaturecard { padding: 20px}
+.indexfeaturecard:hover { background: #fff; border-radius: 10px}
+.indexfeaturecard a:hover {color: #C0212B; text-decoration: none}
+.indexfeaturecard p { margin: 15px 0; padding: 0; text-align: left;  }
+.indexfeaturecard .bigicon {margin-bottom: 25px; background-position: left center; margin-right: 0} 
+.infolink i {font-size: 18px; margin-left: 3px; position: relative; top: 1px}
+.infolink:hover i { color: #88AACA; margin-left: 5px}
+
+
+.container-3col article { padding: 15px;    } 
+.bgwhite .container-3col article:hover { background-color: #F5F5F5; border-radius: 10px}
+.container-3col article:hover {background-color: #FFF; border-radius: 10px}
+article .link { display: inline-block}
+article .link:hover{ color: #C0212B; text-decoration: none}
+article .link i {  margin-left: 4px; position: relative; top: 1px}
+article .link:hover i {  margin-left: 6px; color: #88AACA}
+ .articleimg {display: block; width: 100%}
+.articletitle { display: inline-block; margin-bottom: 5px}
+
+/* global meetup block with registration */
+#global_meetup * { color: #fff;  }
+#global_meetup h3 { font-size: 64px; line-height: 68px; margin: 0}
+#global_meetup { max-height: 320px; height: 14vw; min-height: 254px; background-size: 110%; background: url(../images/globalmeetup@2x.jpg) no-repeat center 90% ; background-size: cover; display: flex; align-items: center}
+  
+.global_date { text-align: right; font-size: 24px; padding: 0;  line-height: 34px; font-family: 'museo_sans700', sans-serif; align-self: center}
+.global_date b {display: block; font-weight: normal}
+
+.indexregfree { margin: -40px 0}
+
+#btncalendar { background: #414f68; color: #fff;   text-align: left; }
+#btncalendar:hover  { background: #c0212b; }
+
+#btncalendar a{ max-width: 1100px; margin: 0 auto; display: flex; padding: 10px 0px; color: #fff; align-items: center; }
+#btncalendar span {top: 0}
+#btncalendar  i:first-child {  margin: -2px 10px 0 0; font-size: 20px}
+#btncalendar  i:last-child {  margin: 0px 0px 0 10px; text-decoration: none}
+#btncalendar a:hover {   text-decoration: none}
+#btncalendar a:hover i:last-child {  margin-left: 12px}
+/* ---------- */
+ 
+
+/* social media block  */
+.socialmedia {
+    background-color:#F5F5F5;  max-width: 1100px; padding: 0px 40px ; margin: -20px auto 10px ; text-align: left; display: flex;   justify-content: flex-start; align-items: center; position: relative;   min-height: 144px; z-index: 1; border-radius: 10px; }
+.socialmedia * {z-index: 5; position: relative}
+.socialmedia:after { content: ''; position: absolute; z-index: 0; background:  url(../images/bg-socialmedia@2x.png) no-repeat center center; width: 100%; top: -22px; left: 0; right: 0; bottom: -22px; background-size: 1100px; }
+.socialmediainfotext h3 {line-height: inherit; margin: 0}
+.socialmediainfotext p { margin: 0; padding: 0}
+.socialmedia .socialmediaicons {margin-left: 40px}
+.socialmediaicons { display: block; min-width: 55% }
+.socialmediaicons span  {  display: block}
+.socialmediaicons  a {display: inline-block!important; margin: 8px}
+.socialmediaicons  a > * {  display:block;   font-size: 56px}
+
+/* ---------- */
+ 
+
+/* find opportunity block nad brought by */
+#findopportunity {  background: url(../images/findopportunity@2x.jpg) no-repeat 10% 32%;  background-size: cover}
+#findopportunity * { color: #fff}
+#findopportunity h3 { font-size: 64px; line-height: 68px; margin: 0}
+#findopportunity {display: flex; justify-content: space-around; align-items: center; max-height: 320px; height: 14vw; min-height: 254px; background-size: 110%}
+.oppdate, .global_date { margin: 0!important}
+.bbyc { padding: 15px 30px!important}
+.oppdate, .bby {min-width: inherit!important; flex:initial!important}
+.oppdate  p  {text-align: right!important}
+.oppdate .btn { max-width: inherit}
+ 
+.bby p { padding: 0!important; margin: 0!important; text-align: left; font-size: 12px}
+.bby div {display: flex; align-items: center; }
+ 
+.broughtbyarea { padding: 10px 15px; background: #fff; border: 1px solid #C0212B; border-radius: 12px; color: #2d3142; display: inline-block; font-size: 16px; line-height: 18px; text-align: center; }
+.broughtbyarea:hover { background: #88AACA; color: #fff} 
+
+.xsymb {font-size: 24px; font-weight: 600;  color: #2D3142; margin: 0 10px 0 15px}
+/* ---------- */
+
+
+/* map block */
+.mapbox { position: relative; display: block; width: 100%    }
+.mapbox:after {    content: "";    display: block;    padding-bottom: 57%}
+
+
+.worldmap { background: url(../images/svg/worldmap.svg) no-repeat center center;      position: absolute;    z-index: 1;
+    top: 0;    left: 0;    right: 0;    bottom: 0; background-size: cover}
+.worldmap .h1 { position: absolute; z-index: 4; left: 12%; top: 37%; }
+.worldmap .h2 { position: absolute; z-index: 4; left: 30%; top: 63%; }
+.worldmap .h3 { position: absolute; z-index: 4; left: 45%; top: 34%; }
+.worldmap .h4 { position: absolute; z-index: 4; left: 45%; top: 49%; }
+.worldmap .h5{ position: absolute; z-index: 4; left: 70%; top: 46%; }
+.worldmap .h6 { position: absolute; z-index: 4; left: 85%; top: 27%; }
+.worldmap .h7 { position: absolute; z-index: 4; left: 80.5%; top: 61%; }
+.maphomeicon i { font-size:30px; color: #C0212B; cursor: pointer}
+
+.mapboxindex { max-width: 738px; max-height: 650px;  position: absolute; margin-left: auto; top: -40px; right: 0; z-index: 2!important;   } 
+.mapboxhubspage {max-width: 1100px; margin: -5% auto}
+
+ #mapinfo  > * { font-family: 'Mulish', sans-serif; font-size: 18px}
+.mapcontainer { max-width: 1100px;  margin: -40px auto; padding: 40px 0; padding-bottom: 0; margin-bottom: 40px; position: relative; text-align: left; display: flex; flex-flow: column  nowrap; align-items: flex-start;  }
+.mapcontainer * { color: #fff; z-index: 5}
+.mapcontainer a.btn {margin: 10px 0; }
+ 
+.mapcontainer h3 {order: 0; font-size: 28px; line-height: 36px}
+.mapintotext {order: 1}
+.mapcontainer .btn {order: 2; }
+.mapboxindex {order: 3; } 
+#mapinfo {order: 4}
+.mapunder {order: 5}
+#map * {max-width: 100%}
+
+ 
+.mapcontainer   h3, .mapcontainer .mapintotext, .mapcontainer .btn {flex-basis: 35%; margin-right: auto; width:35%; align-self:flex-start}
+.mapcontainer .addonbtn  {order: 6}
+.mapcontainer .addonbtn {display:none; opacity: 0 }
+
+.mapintotext { margin: 20px 0}
+#mapinfo {   text-align: left;  margin: 15px 0; width: 40%;  display: flex; margin-left: auto; z-index: 10; position: relative; top: -80px}
+#mapinfo div { padding: 0 30px 0 20px; display: block; border-left: 2px solid #fff; text-align: left; font-weight: bold;  margin-bottom: 10px; margin-right: 20px} 
+#mapinfo div h2 {font-size: 50px; margin-bottom: 0}
+
+.mapunder { display: flex; color: #fff; position: relative; bottom: 40px; z-index: 2; width: 100%; margin-bottom: -130px  }
+.mapunder:before {    content: ''; left: 0;    background: #5D6F8D;      position: absolute;     width: 60%;    z-index: 1;    margin-left: -55%;    display: flex;	height: 100%; }
+.mapunder:after {    content: '';  right: 0;   background: #2D3142;      position: absolute;     width: 60%;    z-index: 1;    margin-right: -55%;    display: flex;	height: 100%; }	
+
+
+.mapbl {width:65%; text-align: left; background: #5d6f8d; color:#fff;   padding: 10px;   display: flex; position: relative}
+.mapbl:after {    content: '';  right: -6%; top: 0;  background-image: url(../images/svg/triangle.svg); background-repeat: no-repeat; background-position: center center;  position: absolute;     width: 7%;    z-index: 1;    height: 100%; background-size: cover }	
+.mapbr {width:35%; text-align: left; background: #2d3142 ; color:#fff; padding: 10px 10px 10px 70px; position: relative; z-index: 0}
+/* ---------- */
+ 
+ 
+#maparea-test { width: 738px; height: 434px;  position: relative;  z-index: 0; display: flex; margin: auto}
+.maplocation {	width: 19px;	height: 19px;	background-color: #C0212B;	border-radius: 100px;	position: absolute;  cursor: pointer; }
+.maplocation p   { display: none; opacity: 0; text-align: left; border-radius: 10px;  margin: 0; padding: 20px; background: #fff url(../images/Triangle.png) no-repeat 19px 115%; width: 320px;  position: absolute; z-index: 15; left: -30px; top: -170px } 
+.maplocation p  .biglink {font-size: 24px; line-height: 30px;}
+.maplocation p a {display: block}
+
+
+#maparea-test .l1:hover p,
+#maparea-test .l2:hover p,
+#maparea-test .l3:hover p,
+#maparea-test .l4:hover p,
+#maparea-test .l5:hover p,
+#maparea-test .l6:hover p,
+#maparea-test .l7:hover p,
+#maparea-test .l8:hover p,
+#maparea-test .l9:hover p,
+#maparea-test .l10:hover p,
+#maparea-test .l11:hover p,
+#maparea-test .l12:hover p
+{ display: block; opacity:1; } 
+
+#maparea-test .l1 p,
+#maparea-test .l2 p,
+#maparea-test .l3 p,
+#maparea-test .l4 p,
+#maparea-test .l5 p,
+#maparea-test .l6 p,
+#maparea-test .l7 p,
+#maparea-test .l8 p,
+#maparea-test .l9 p,
+#maparea-test .l10 p,
+#maparea-test .l11 p,
+#maparea-test .l12 p
+{ display: none; opacity:0;}
+
+#maparea-test .l9 p,
+#maparea-test .l10 p,
+#maparea-test .l11 p,
+#maparea-test .l12 p {  left: -300px; background-position: 289px 120%} 
+ 
+
+/* block pledge and partners */
+.partnerscontainer {  background-color: white; padding: 20px 0}
+.partnerlogos {  display: flex; flex-flow: row wrap; align-content: center; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0px auto; width: 100%}  
+.pledgetxt { width: 62%}
+.partnerlogos * { align-self: center; margin: 10px}
+.founderscontainer { background: white; border-radius: 10px; margin: 20px 0; padding: 20px 40px;}
+
+.partnerlogoimgs { justify-content: space-between; display: flex; flex-flow: row wrap; align-items: center}
+.partnerlogoimgs span {display: inline-block; margin: 10px; text-align: center}
+.partnerlogoimgs span img {display: block; margin: 0 auto}
+
+.partnerlogoimgs span  {font-size: 12px; text-align: center; line-height: 14px}
+.partnerlogoimgs span b {display: inline-block; margin-top: 5px}
+/* ---------- */
+
+
+/* footer links */
+ 
+#footer_links .container-4col >:first-child p { padding: 0; margin-bottom: 20px; }
+#footer_links { background: #2d3142; color: #fff; padding: 20px 0;   }
+#footer_links    * {color: #fff}
+#footer_links .socialmediaicons {margin: 5px -5px;}
+#footer_links .socialmediaicons a > * { font-size: 42px } 
+#footer_links .socialmediaicons a:hover> * {color: #88AACA}
+
+#footer_links strong { color: #87919E; text-decoration: none; margin-bottom: 10px; font-size: 18px; line-height: 24px; font-family:'Nunito Sans', sans-serif; font-weight: 600; display: block}
+#footer_links  a { color: #fff; text-decoration: none; display: block; line-height: 38px; font-weight: 400; }
+#footer_links a:hover {color:#88AACA}
+#footer_links ul.col4 li:hover { background: none; }
+#footer_links ul.col4 li p {margin: 0; padding: 0;  }
+ /* ---------- */
+
+
+/* footer */
+footer:after {content: ''; background:#fff url(../images/svg/bgdot.svg) repeat-x top center; height: 25px; width: 100%;  position: absolute; display: block}
+footer { background: #4f5d75;  }
+.footerbuttons {width: 100%; max-width: 340px; text-align: center; display: flex; justify-content: space-between}
+.footerbuttons a {font-size: 18px;}
+footer > .wrapper {font-size: 12px; color: #fff; padding: 20px 30px; text-align: left;   display: flex; justify-content: space-between; align-items: center; flex-flow: row wrap; max-width: 1120px; margin: 0 auto; box-sizing: content-box}
+ 
+footer > .wrapper p {font-size: 12px; color: #fff; padding: 0}
+
+.footerbuttons .btn {font-size: 14px; line-height: inherit; margin: 0 5px!important; padding: 3px 20px 6px 20px; max-height: 40px; border-radius:10px; min-width: inherit; max-width: 48%; width: auto; flex: 1; display: inline-flex; justify-content: center; align-items: center}
+.footerbuttons .btn .fal { position: relative; top: 2px; margin-right: 10px; margin-left: -5px}
+.footerbuttons .btn:hover {border:0 none; background: #88AACA;}
+footer > .dotbg {background-color: #fff;}
+/* ---------- */
+
+
+/* dashboard */
+.addcompanybtn { display: flex; justify-content: center; align-items: center; background-color: #F5F5F5; border: 2px dotted #D1D1D1; padding: 15px 10px; text-align: center; border-radius: 10px; width: 100%}
+.addcompanybtn:hover  {text-decoration: none!important}
+.addcompanybtn .fa-plus-circle { margin-right: 20px; font-size: 24px;text-decoration: none}
+.hubimg {margin-right: 15px}
+.hubimg img {border-radius: 100px; max-width: 70px; }
+.textbox { background: white; padding: 20px; margin: 10px 0; border: 1px solid #979797}
+.insidedarkbgtitle {border-bottom: 1px solid #414F68; padding-bottom: 5px}
+ 
+ .learnbg {background: url(../images/svg/bigicon-learn.svg) no-repeat top right}
+.buyandsellbg {background: url(../images/svg/bigicon-sellandbuy.svg) no-repeat top right}
+.hubtag {display: inline-block; padding:10px 8px; text-align: center; color: #000; border: 1px solid #2D3142; border-radius: 5px; font-weight: normal; margin-right: 4px; margin-bottom: 10px; font-size: 14px; line-height: 14px}
+a.hubtag {font-size: 14px}
+a.hubtag:hover {background-color: #D1D1D1; text-decoration: none; color: #000}
+.hubtag .fal, .hubtag .fas {font-size: 14px; line-height: 14px}
+
+.hub_red {border-color: #C0212B; color: #C0212B;  font-weight: bold}
+.hub_green { background-color: #ABC5B0; border-color:#94A597; font-weight: bold}
+.hub_green:hover {background-color:#B9DABF!important}
+.hub_red:hover {background-color: #FFEAEB!important; color:#fff}
+
+.imgr { margin-left: 5px; margin-right: 0!important; top:3px!important}
+.iconimg { display: block}
+.moveblockicon { width: 20px; height: 22px;   cursor:all-scroll; position: absolute; top: 12px; right: 10px; z-index: 5; color: #D1D1D1; font-size: 26px}
+.moveblockicon i:first-child {margin-right: 1px}
+ 
+.opportunities_list { padding: 0; margin: -20px -30px -40px; list-style-type: none; display: flex; flex-flow: row wrap; }
+.opportunities_list li { padding: 15px 20px; margin: 0; list-style-type: none; border-top: 1px solid #D1D1D1; display: block; border-right: 1px solid #D1D1D1;  flex: 1 0 32%;  min-width: 260px; box-sizing: border-box} 
+.opportunities_list li p { padding: 0 0 15px 0}
+.opportunities_list li:last-child {border-right: 0 none; padding: 20px 30px 20px 20px }
+.opportunities_list li:first-child { padding-left: 30px}
+.opportunities_list li a {letter-spacing: -0.01em}
+ 
+.upcomingevents  {margin: 20px -30px 20px; padding: 0;   list-style-type: none; display: flex; flex-flow: row wrap;  }
+.upcomingevents li {flex-basis: 100%; border-bottom: 1px solid #D1D1D1;  padding: 5px 30px 5px; margin-bottom: 5px }
+.upcomingevents li p { padding: 0 0 15px 0}
+ 
+.upcomingevents li:last-child {margin-bottom: 0px; border:0}
+
+.container-ll-bottomlinks {}
+.container-lr-bottomlinks { display: flex; justify-content: space-between}
+
+.buysellcard { margin: 0}
+ 
+.buysellcard h3 {display: flex; justify-content: flex-start; align-content: flex-start; align-items: center}
+.buysellcard h3 .fal, .buysellcard h3 .fas, .buysellcard h3 .far { display: inline-block; margin-right: 10px}
+
+.count { color: #87919E; font-weight: bold; padding: 0; margin: 12px 0 18px 0;}
+.count  .fal, .count  .fas, .count  .far { font-size: 18px; margin-right: 10px; display: inline-block}
+.textdesc {max-width: 50%}
+ 
+.networkpics {position: absolute;  top: -5px; right: 10px}
+.networkpics img {  border-radius: 100px; margin-right: -25px; z-index: 5; }
+.networkpics img:last-child { margin: 0}
+.networkpics img:hover {z-index: 15}
+
+.networkpics img, .userbar img {max-width: 75px; width: 100%}
+
+.userbar { display: flex; justify-content: flex-end; background-color: #2D3142; position: relative;   align-items: center; margin: -20px -20px 10px -20px; padding: 0 30px;  height: 60px; text-align: right}
+.userbar img {border-radius: 100px; position: absolute; z-index: 2;left: 30px; margin: 20px 0; max-width: 75px; width: 100%}
+.userbar:after {width: 34%; max-width: 160px; background-color: #C0212B; border-radius: 100px; border-top-left-radius: 0; border-bottom-left-radius: 0; height: 100%; content: ''; left: 0px; top: 0; bottom: 0; position: absolute; z-index: 0!important}
+.userbar * {z-index: 1; color: #fff}
+
+
+.buttonsarea {display: flex;   width: 100%; margin-top: 25px  }
+.buttonsarea .btn { margin: 0;  min-width: 30%; margin-left: 4%}
+.buttonsarea .btn:first-child { margin-left: 0%}
+
+.goal {border-top:  1px solid #D1D1D1; border-bottom: 1px solid #D1D1D1; padding: 10px 0; margin: 10px 0; color: #87919E; font-weight: bold}
+.hubblock { display: flex; flex-flow: column nowrap; justify-content: flex-start;}
+.map-zambia {background-position: -80px -20px; background-repeat: no-repeat; background-image: url(../images/svg/zambia.svg);   }
+.hubblock .btn {margin-top: auto}
+.hubpic {border-radius: 100px; max-width: 80px}
+.hubtitle {display: flex; align-items: center;}
+.hubtitle img {border-radius: 100px; max-width: 50px; position: relative; top: -2px}
+.searchform_full, .subscribe_form {margin: 15px auto 0; position: relative; max-height: 65px; width: 100%}
+
+.subscribe_form input { color: #87919E; font-size: 18px; padding: 10px 20px; margin: 0; background-color: #fff; border: 1px solid #D1D1D1; text-align: left; width: 100%; box-sizing: border-box; z-index: 1; position: relative; min-height: 60px}
+
+.searchform_full input {  z-index: 1; position: relative; min-height: 70px; padding: 10px 20px 10px 50px} 
+.searchform_full button[type=submit] {   background: none;  border: 0 none; position: absolute; top: 0px; left: 0px; display: block; min-width: 60px; min-height: 70px;  cursor: pointer;  z-index: 5; background-color: inherit; font-size: 26px; color: #C0212B}
+
+
+.subscribe_form button[type=submit] {   background-repeat: no-repeat; background-position: center center; background-size: 30px;  border: 0 none; position: absolute; top: 0px; right: 0px; display: block; min-width: 58px; min-height: 58px;  cursor: pointer; text-indent: -9999em; z-index: 5; background-color: inherit}
+ 
+
+.alignbottom { margin-top: auto!important; margin-bottom: 15px}
+hr {display: block; height: 1px; background: #D8D8D8; border: 0 none; flex-basis: 100%}
+.linktitle,  .linktitlegrey { margin: -40px -30px 20px -30px; padding: 20px 30px; flex: 1} 
+ .contentblock .dark_title_bar{ margin: -40px -30px 30px -30px; padding: 20px 15px; flex: 1} 
+i.fa-grip-lines-vertical {color: #4F5D75; font-size: 30px; margin-right: 10px; display: inline-block}
+
+.dark_title_bar { background-color: #2D3142; padding: 15px; color: #fff;  text-align: left; display: flex; justify-content: space-between; align-content: flex-start; align-items: center; height: 65px}
+.dark_title_bar h2, .dark_title_bar h3 {display: flex;   align-items: center; margin-bottom: 0}
+.dark_title_bar h2 img, .dark_title_bar h3 img {top: 0}
+
+.dark_title_bar * {color: #fff}
+.earlyresponse { margin-top: 25px}
+.linktitle {  display: flex; justify-content: flex-start; align-items: center; position: relative;      }
+ 
+.linktitle h2 { margin-right: 30px; margin-bottom: 0; display: inline-block; width: auto; flex-basis: auto}
+.linktitlegrey { background-color: #efefef!important;  }
+.linktitle div { margin-right: auto}
+
+
+.linktitle p { padding: 0; margin: 8px 0}
+.progressbar { background-color: #C0212B; padding: 3px 10px; position: relative; color: #fff; text-align: right; border-radius: 5px; display: block; margin-top: -10px; margin-bottom: 10px}
+.progressbar a {color: #fff; margin-right: 10px; z-index: 5; position: relative}
+.progressbar b { position: absolute; background-color: #2D3142; color: #FFF; font-weight: bold; top: 0; left: 0; bottom: 0; text-align: left; display: flex; align-items: center; align-content: center; justify-content: flex-start; border-radius: 5px; z-index: 1; padding-left: 10px}
+.progressbar .fal { display:  inline-block; margin-left: 5px}
+.progressbar a:hover .fal  { margin-right: -2px; margin-left: 7px}
+ 
+.title_bar-controllinks .fal { margin: 0 5px; font-size: 30px}
+
+.tabscontainer .btn { margin: 0}
+ 
+.tabswrapper { position: relative; z-index: 15; top: -85px; text-align: right}
+.tab{  cursor: pointer;  padding:0px 20px;  margin:0px 2px;  background:#4F5D75; color: #fff;  display:inline-block; font-size: 20px; line-height: 55px;  border-radius:10px 10px 0px 0px; }
+.tabscontainer{  margin:  -65px -30px 0 -30px; padding: 0 30px}
+.tabcontainer .opportunities_list { margin: -20px -30px 0!important }
+.tabcontainer p { padding: 0 0 15px 0}
+.tabcontainer .upcomingevents { margin-top: 0px }
+.tabcontainer .opportunities_list li { padding: 5px 0}
+.tabcontainer .opportunities_list li:first-child {border-top: 0}
+.tabcontainer .btn { margin-top: 15px}
+.tabcontainer {  display:none;}
+.radiotab{  display:none;}
+
+#first-tab:checked ~ .tabscontainer #first-tabcontainer,
+#second-tab:checked ~ .tabscontainer #second-tabcontainer,
+#third-tab:checked ~ .tabscontainer #third-tabcontainer,
+#fourth-tab:checked ~ .tabscontainer #fourth-tabcontainer,
+#fifth-tab:checked ~ .tabscontainer #fifth-tabcontainer,
+#sixth-tab:checked ~ .tabscontainer #sixth-tabcontainer
+{display:block}
+
+#first-tab:checked ~ .tabswrapper #first-tab-title,
+#second-tab:checked ~ .tabswrapper #second-tab-title,
+#third-tab:checked ~ .tabswrapper #third-tab-title,
+#fourth-tab:checked ~ .tabswrapper #fourth-tab-title,
+#fifth-tab:checked ~ .tabswrapper #fifth-tab-title,
+#sixth-tab:checked ~ .tabswrapper #sixth-tab-title
+{background:#fff;  color:#000; }
+ 
+.container-ll-bottomlinks a { margin-right: 60px; display: inline-block; min-width: 35%}
+.hubslist { padding: 0; margin: 0; list-style-type: 0; display:flex; margin-top: 15px }
+.hubslist li { padding: 5px; margin: 3px; list-style-type: none; border: 1px solid #C0212B; border-radius: 10px;  text-align: center; flex: 1 0 20%; font-size: 14px; line-height: 16px}
+.hubslist li p { margin: 0; padding: 0;  margin-top: 10px;text-align: center; }
+ 
+
+.subscribe_form button[type=submit] { background-color: #C0212B; border-top-right-radius: 7px; border-bottom-right-radius: 7px; top: 1px; right: 1px; bottom: 1px; }
+.subscribe_form button[type=submit]:after {content: "";    border-left: 2px solid white;    border-bottom: 2px solid white;    width: 10px; height: 10px;    position: absolute; right: 27px; bottom: 22px;  transform: rotate(-135deg); }
+.subscribe_form button:hover[type=submit]:after {right: 24px; opacity: 0.5}
+
+
+.bgwhite .bgsubscribe { margin: -20px 0 -70px 0;}
+.bgsubscribe {background-image: url(../images/bgsocial.png); background-repeat:  no-repeat; background-position:  right 20px ; margin: -20px 0px -50px 0px; padding:0 0px 80px 0; display: flex; justify-content: flex-start; align-items: flex-end; flex-flow: row wrap}
+.bgsubscribe div:first-child {   box-sizing: border-box; margin-right: 8%; flex: 1 0 400px; max-width: 45%  }
+.subscribesocial {width: 45%; margin: 0;   margin-bottom: -12px ; display: flex; flex-flow: column nowrap; align-self: stretch}
+.subscribesocial  .socialmediaicons { margin-left: -8px; margin-top: 4px} 
+.subscribe { margin: 30px auto}
+
+.narrowblueblock { background-color: #414F68; padding: 20px 0; color: #fff}
+.narrowdarkblueblock { background-color: #2D3142; padding: 20px 0; color: #fff}
+.textwhite {color: #fff}
+.comingnext {color: #fff; margin: 0px auto; max-width: 1100px; text-align: left; display: flex; justify-content: space-between; align-items: center; }
+.comingnext >* {color: #fff}
+.comingnext p {  padding: 0;} 
+.comingnext a { color: #88AACA; text-decoration: underline; display: inline-block; margin-right: 5px; }
+.comingnext a:hover {color: #fff; text-decoration: none}
+.titlewithline {    text-align: left;    display: flex;    align-items: center;    justify-content: space-between;    margin: 10px 0 10px;    flex-basis: 100%;}
+.titleline { display: inline-block; height: 1px;  background-color: #D1D1D1; margin-left: 30px;    flex: 1}
+ 
+.cardswrapper {     margin: 0px -10px 20px; display:flex; flex-flow:row wrap; justify-content: flex-start;  flex-basis: 100%;    }
+.cardcontainer { margin: 10px; flex: 1 0 31%;  border-bottom: 4px solid #D1D1D1; align-self: stretch;  min-height: 268px;  display: flex; flex-flow: column wrap;  background-size: cover; background-position: center center;
+    background-repeat: no-repeat; max-width: 450px}
+.card-content {  position: relative; text-align: left;  height: 100%; flex: 1; padding: 15px; display: flex; flex-flow: column wrap}
+.cardcontainer .icoleft { margin-right: 8px}
+.cardcontainer .icoright { margin-left: 8px}
+
+.cardtopimage { background: white; border-top-left-radius: 10px; padding: 10px; max-width: 35%; position: absolute; right: 0; bottom: 0}
+.cardtopimage img {width: 100%; display: block}
+ 
+.card-tag, a.card-tag   { display: flex;    background-color: #2D3142;    padding: 2px 12px 2px 6px;    color: #fff;    border-radius: 6px;    font-size: 16px;
+     align-self: flex-start; font-family: 'Mulish', sans-serif; align-items: center}
+.card-tag a {color: #fff;     font-size: 16px; font-weight: normal; display: flex; align-items: center}
+ 
+.card-tag img { position: relative; margin-right: 10px; top: 2px}
+ .card-desc {   margin: 20px 0; padding: 0;   color: #fff; display: block;    font-size: 24px; line-height: 32px; font-family: 'museo_sans500', sans-serif; }
+.card-desc b {font-weight: 500; font-size: 20px; line-height: 24px; display: block; margin-top: 5px}
+.card-bottom_info {padding: 12px 15px;    background-color: #2D3142;    display: flex;    justify-content: space-between;    align-items: center;
+    color: #fff; margin-top: auto; text-align: left; margin-bottom: 0}
+.card-bottom_info span  {display: flex; align-items: center;  }
+.card-bottom_info  img { position: relative; top: 2px; margin: 0 8px}
+.card-bottom_info {font-size: 18px}
+.fa-play-circle {color: #fff; font-size: 80px; text-decoration: none}
+.card-content a:hover, a.card-content:hover  {text-decoration: none}
+
+.learnactivity-title { display: flex; align-items: center; justify-content: flex-start; color: #fff; max-width: 1100px; margin: 0px auto;   background-image: url(../images/bg-learnactivity_title.png); background-repeat: no-repeat; background-position: right top; padding: 20px 0}
+.learnactivity-title form {margin: 0 0 0 auto}
+
+.learnactivity-title h2 {  display: flex; align-items: center; justify-content: flex-start; margin: 0px auto 0 0;  color: #fff; text-align: left}
+.learnactivity-title h2 img {border-radius: 100px; margin-right: 25px; max-width: 60px}
+.learnactivity-title form {max-width: 450px}
+
+.helpquestion { border-top: 1px solid #D1D1D1; margin: 30px auto 0!important; padding: 20px 0 0; text-align: left; max-width: 1100px; width: 100%}
+.innerheaderunderline { max-width: 1100px; padding: 10px 0px; display: flex; justify-content: space-around; margin: -30px auto; text-align: left; color: #fff}
+.innerheaderunderline p:nth-child(1) { flex: 3}
+.innerheaderunderline p:nth-child(2) { flex: 1}
+.innerheaderunderline > * {color: #fff}
+
+.congrats { background-color: #2D3142; border-radius: 10px; padding: 20px; display: flex; align-items: center; justify-content: flex-start; margin: 20px 0}
+.congrats .fa-trophy-alt { margin-right: 20px; font-size: 50px }
+.congrats h3 {display:block; margin-bottom: 0}
+.congrats h3 b {display:block; font-size: 16px}
+.fa-icons {margin-right: 10px; font-size: 28px}
+
+
+.yourinterests { background-color: #414F68; border-radius: 10px; padding: 20px;   margin-top: 20px}
+.yourinterests-title {   display: flex; align-items: center; justify-content: space-between;  margin-bottom: 20px}
+.yourinterests-title .bluelink {min-width: 80px; text-align: right}
+.yourinterests-title img { top: 0}
+.yourinterests-title h3 {display: flex; align-items: center; margin-bottom: 0}
+.yourinterests-desc { margin: 10px 0; padding: 10px 0; border: 1px solid #87919E; border-left: 0; border-right: 0;  display: block}
+
+.quickphotogallery { margin: 20px auto 0; max-width: 1100px; margin-bottom: 30px; display: flex; justify-content: space-between; flex-basis: 100%}
+.quickphotogallery img {  border-radius: 10px;  width: 100%; max-width: 24%  } 
+
+.memberthumbs { margin: -10px auto;   display: flex; align-items: center; max-width: 1100px; color: #fff }
+.memberthumbs p { margin-left: 20px; flex: 1; width: 100%; display: flex; flex-flow: row wrap; justify-content: space-between; text-align: left; color: #fff}
+.memberthumbs p .linkblue {  min-width: 30%; text-align: right}
+.memberthumbs img { margin: 5px; border-radius: 100px; display: block; max-width: 50px}
+a.bluelink {color:#88AACA}
+a.bluelink:hover {color:#fff}
+a.bluelink i { color:#88AACA}
+ a.bluelink:hover i {color:#fff}
+
+.memberofblock { background-color: #fff; padding: 50px 20px; margin: -70px 0;  text-align: center!important; min-width: 320px; align-self: stretch}
+.memberofblock .memberthumbs { margin:10px 0px 0 0; padding: 0; justify-content: center; align-items: flex-end}
+.memberofblock .memberthumbs img {width:100%; max-width: 90px; position: relative; border: 4px solid #fff}
+.memberofblock .memberthumbs img:nth-child(2) { left: -45px; z-index: 2; margin-right: -45px}
+.memberthumbslinks a  { display: block; margin-left: -30px; margin-bottom: 5px; text-decoration: underline}
+.blocklogos {text-align: center; }
+.blocklogos img { margin: 10px;  }
+
+.hubpartnerblock {  width: 100%; margin: 15px -1.5% 0 -1.5%; display: flex; justify-content: flex-start}
+.hubpartnerblock .item {   display: inline-block; background: white; border-radius: 10px; padding: 20px; text-align: center; flex: 1 0 30%; margin: 0 1.5%; max-width: 33%; }
+.hubpartnerblock .item img {width:100%; max-width: 170px}
+.hubpartnerblock p { padding: 0; margin: 5px 0; text-align: center}
+.hubhostlogos {  text-align: right}
+.hubhostlogos img { margin: 10px 0}
+/* dashboard */ 
+
+.form-filter {position: relative; z-index: 0; max-width: 520px; margin-bottom: 20px}
+.input_filter { background-color: white; border: 1px solid #979797; height: 62px; padding: 0 15px;  text-align: left; color: #2D3142; font-size: 16px;  width: 100%; margin: 0}
+.input_btn { position: relative; padding: 0; margin: 0; text-indent: -9999em; background-color: #C0212B; width: 62px; height: 62px; border: 0 none;  cursor: pointer; }
+
+.input_btn:after {
+    content: "";    border-left: 2px solid white;    border-bottom: 2px solid white;    width: 15px;    height: 15px;    position: absolute;    right: 27px;    bottom: 23px;    transform: rotate(-135deg); }
+.input_btn:hover:after { right: 25px} 
+.form-filter .input_btn { position: absolute; z-index: 2; top: 0; right: 0}
+.storypictures {  display: flex; flex-flow: row wrap; margin: auto  }
+.storypictures img {width: 45%; display: block;  margin: 2%; border-radius: 10px; flex: auto!important}
+
+
+ 
+.goalitem { display: flex;   align-items: center; justify-content: flex-start;   }
+
+.goalitem p { margin: 2px 0 0 0; padding: 0}
+.goalitem .bigicon { min-width: 100px; min-height: 100px;  background-size: 90px;  margin-right: 20px; background-position: left center }
+
+.innermapcontainer { max-width: 1100px;    height: 58vw ; max-height: 636px; display: flex; margin: -6% auto -4%; position: relative; z-index: 1}
+
+.hovermapbox { background-color: white; border-radius: 10px; padding: 20px;  display: inline-block; z-index: 15; position: relative}
+.hovermapbox  .btn{color: #fff!important}
+.hovermapbox-hubcontainer  * {color: #2D3142!important}
+.hovermapbox-hubcontainer  * a, .hovermapbox-hubcontainer  * a i{color:#C0212B!important}
+.hovermapbox-hubcontainer p.textgrey {color: #87919E!important}
+
+.hovermapbox-evencontainer { display: flex; justify-content: space-between;align-items: flex-start;  text-align: left; max-width: 580px}
+.hovermapbox-evencontainer > * {flex:1 0 47%;}
+.hovermapbox .memberpics { margin: 2px -5px;   padding: 0; display: flex}
+.hovermapbox .memberpics img {max-width: 40px; margin: 5px; border-radius: 100px; }
+
+.hovermapbox-hubcontainer { display: flex; justify-content: space-between;align-items: flex-start;  text-align: left; max-width: 620px}
+.hovermapbox-hubcontainer > * {flex:2; display: flex; flex-flow: column nowrap}
+.hovermapbox-hubcontainer > *:first-child {flex:1; margin-right: 30px}
+.hovermapbox-hubcontainer > *:nth-child(2) {flex:2; }
+.hovermapbox-hubcontainer h3 { margin-bottom: 10px}
+
+.hovermapbox-bottom-ll { display: flex; justify-content: flex-start;align-items: flex-start;  text-align: left}
+.hovermapbox-bottom-ll >:first-child {flex:0 0 33%; max-width: 33%}
+.hovermapbox-bottom-ll >:second-child {flex:1 0 63%; }
+.hovermapbox  p { padding: 7px 0 0 0} 
+.roundpic {border-radius: 200px!important}
+.hovermapbox .btn { padding: 5px 10px; border-radius: 10px}
+.hovermapbox .btn:hover { padding: 1px 6px; border-radius: 10px}
+.links-lr {display: flex; justify-content: space-between; align-content: center; align-items: center}
+.hovermapbox .links-lr { margin-top: 10px}
+.hovermapbox .links-lr .btn{   align-self: center; min-width: 31%; width: auto; display: inline-block}
+ 
+.countrycountbox ul {margin: 15px 0; padding: 0; list-style-type: none}
+.countrycountbox ul li {margin: 8px 0; padding: 0; list-style-type: none; display: flex; align-items: center; justify-content: space-between; font-size: 14px; line-height: 20px; flex-flow: row nowrap} 
+.countrycountbox ul li p {font-size: 14px; line-height: 20px; padding: 0; flex: 3; margin-right: 10px}
+.countryicons { min-width: 50px; flex: 1}
+.countryicons a {display: inline-block; width: 20px; text-align: center}
+.countryicons >* { margin-left: 5px;   }
+.countryicons >:first-child{margin-left: 0px}
+
+.bigicontextblock {flex:2; align-self: center}
+.nomargin { margin: 0!important}
+.whyjoinblock { background-color: #FFF; padding: 10px 20px 10px 40px; border-radius: 10px; position: relative; margin-left: 25px; margin-bottom: 20px}
+.circlenumber { background-color: #4F5D75; border-radius: 100px; color: #fff; font-size: 24px;  width: 50px; height: 50px; display: inline-block; line-height: 50px; text-align: center; position: absolute; top: 0px; left: -25px}
+
+.hubscounting {font-size: 50px; color: #C0212B; font-weight: normal; letter-spacing: -0.04em; line-height: normal;}
+

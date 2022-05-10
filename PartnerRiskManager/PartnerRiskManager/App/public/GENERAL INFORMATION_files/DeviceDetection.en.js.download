@@ -1,0 +1,447 @@
+﻿/* OutSystems UI Web Device Detection                                  
+
+  $0 - Variable Declaration                                            
+  $1 - Device Detection Object declaration
+  
+    Public Functions
+    $1.1 - setValues - sets all initial values
+    $1.2 - setOpSystem - sets operating system
+    $1.3 - getOpSystem - returns operating system
+    $1.4 - setBroswer - sets browser
+    $1.5 - getBroswer - returns browser
+    $1.6 - setDevice - sets device
+    $1.7 - getDevice - returns device
+    $1.8 - hasSpecialVersion - sets classes if iphonex
+    $1.9 - setOrientation - sets device orientation
+    $1.10 - getOrientation - returns device orientation
+    $1.11 - setCookie - sets cookie
+    $1.12 - getCookie - gets cookie
+    $1.13 - clearCookie - clears cookie
+    $1.14 - resetOpSystem - resets operating system class on body
+    $1.15 - resetBrowser - resets browser class on body
+    $1.16 - resetDevice - resets device class on body
+    $1.17 - resetOrientation - resets orientation class on body
+    $1.18 - getWidth - returns initial witdh
+    $1.19 - getHeight - returns initial height
+    $1.20 - getDeviceWidth - returns device witdh
+    $1.21 - getDeviceHeight - returns device height
+    
+    Private Functions - auxiliary 
+    $1.22 - resizeend - triggered when resize event ends
+    $1.23 - setEventValues - called by resize and orientation events to reset/set values
+    $1.24 - setListeners - sets resize and orientation events
+    $1.25 - getCookiePolicy - gets the current cookie policy
+
+  $2 - Start 
+*/
+
+var deviceDetection = function() {
+    
+    /* $0 - Variable Declaration */
+    var deviceDetect;
+    var userValues;
+    var device;
+    var os;
+    var browser;
+    var orientation;
+    var height;
+    var width;
+    var isPreviewInDevices;
+    
+    // Chech if is Preview In Devices
+    if(window.top.document.querySelector(".marvel-device") !== null) {
+        isPreviewInDevices = true;
+    }
+        
+    /* $1 - Device Detection Object declaration */
+    deviceDetectionObj = function() { 
+        /* $0 - Variable Declaration */
+        var body;
+        
+        var rtime;
+        var timeout = false;
+        var delta = 200
+    
+        /* $1.1 - setValues - sets all initial values */
+        this.setValues = function() {
+            
+            body = document.body;            
+            
+            this.setOpSystem();
+            this.setDevice();
+            this.setBrowser();
+            this.setOrientation();
+            
+            setListeners();
+        }
+        
+        /* $1.2 - setOpSystem - sets operating system */
+        this.setOpSystem = function() {
+            var nav = navigator.userAgent;
+        
+            switch(true) {
+                case (/Windows/gi.test(nav)):
+                    body.classList.add("windows");
+                    os = "windows";
+                    break;
+                case (/IPAD/gi.test(nav) || /IPHONE/gi.test(nav) || /IPOD/gi.test(nav)):
+                    body.classList.add("ios");
+                    os = "ios";
+                    break;
+                case (/Android/gi.test(nav)):
+                    body.classList.add("android");
+                    os = "android";
+                    break;
+                case (/MAC/gi.test(nav) && /OS/gi.test(nav)):
+                    body.classList.add("osx");
+                    os = "osx";
+                    break;
+                case (/Ubunto/gi.test(nav)):
+                    body.classList.add("ubunto");
+                    os = "ubunto";
+                    break;
+                case (/Linux/gi.test(nav)):
+                    body.classList.add("linux");
+                    os = "linux";
+                    break;
+            }
+            
+            this.setCookie('DEVICE_OS', os);
+        }
+        
+        /* $1.3 - getOpSystem - returns operating system */
+        this.getOpSystem = function() {
+            return os;
+        }
+        
+        /* $1.4 - setBroswer - sets browser */
+        this.setBrowser = function() {
+            var nav = navigator.userAgent;
+            
+            switch(true) {
+                case (nav.indexOf("Trident/7.0") > -1):
+                        body.classList.add("ie11");
+                        browser = "ie11";
+                        break;
+                    case (nav.indexOf("MSIE 10") > -1):
+                        body.classList.add("ie10");
+                        browser = "ie10";
+                        break;
+                    case (/Firefox/gi.test(nav)):
+                        body.classList.add("firefox");
+                        browser = "firefox";
+                        break;
+                    case (/Chrome/gi.test(nav) && !/Edge/gi.test(nav)):
+                        body.classList.add("chrome");
+                        browser = "chrome";
+                        break;
+                    case (/Safari/gi.test(nav) && !/Edge/gi.test(nav)):
+                        body.classList.add("safari");
+                        browser = "safari";
+                        break;
+                    case (/Opera/gi.test(nav)):
+                        body.classList.add("opera");
+                        browser = "opera";
+                        break;
+                    case (/Edge/gi.test(nav)):
+                        body.classList.add("edge");
+                        browser = "edge";
+                        break;   
+            }
+
+            this.setCookie('DEVICE_BROWSER', browser);
+        }
+
+        /* $1.5 - getBroswer - returns browser */
+        this.getBrowser = function() {
+            return browser;
+        }
+
+        /* $1.6 - setDevice - sets device */
+        this.setDevice = function() {
+            var nav = navigator.userAgent;
+            var windowWidth = this.getDeviceWidth();
+            var windowHeight = this.getDeviceHeight();
+            var isLandscape = body.classList.contains("landscape");
+            
+            /* checks if the value is set by the user, if it is then it stays.
+               if not then it sets the defaults */
+            var phoneMax = userValues.phone ? userValues.phone : 420;
+            var tabletMax = userValues.tablet ? userValues.tablet : 1024;
+            var desktopSmallMax = userValues.desktopSmall ? userValues.desktopSmall : 1366;
+            var desktopMax = userValues.desktop ? userValues.desktop : 1600;
+            var desktopBigMax = userValues.desktopBig ? userValues.desktopBig : 1920;
+            
+            switch(true) {
+                case (windowWidth < phoneMax || 
+                (!isLandscape && windowHeight < phoneMax) || /IPHONE/gi.test(nav)):
+                    body.classList.add("phone");
+                    device = "phone";
+                    break;
+                case ((windowWidth >= phoneMax && windowWidth <= tabletMax) || 
+                (windowHeight >= phoneMax && windowHeight <= tabletMax && isLandscape)):
+                    body.classList.add("tablet");
+                    device = "tablet";
+                    break;
+                case (windowWidth > tabletMax && windowWidth < desktopSmallMax ||
+                (windowHeight > tabletMax && windowHeight < desktopSmallMax && isLandscape)):  
+                    body.classList.add("desktop");
+                    body.classList.add("desktop-small");
+                    device = "desktop-small";
+                    break;
+                case (windowWidth >= desktopSmallMax && windowWidth < desktopMax || 
+                (windowHeight >= desktopSmallMax && windowHeight < desktopMax && isLandscape)):
+                    device = "desktop";
+                    body.classList.add("desktop");
+                    break;
+                case (windowWidth >= desktopMax && windowWidth < desktopBigMax || 
+                (windowHeight >= desktopMax && windowHeight < desktopBigMax && isLandscape)):
+                    body.classList.add("desktop");
+                    body.classList.add("desktop-big");
+                    device =  "desktop-big";
+                    break;
+                case (windowWidth >= desktopBigMax || 
+                (windowHeight >= desktopBigMax  && !isLandscape)):
+                    body.classList.add("desktop");
+                    body.classList.add("desktop-hd");
+                    device = "desktop-hd";
+                    break;
+            }
+            
+            this.setCookie('DEVICES_TYPE', device);
+        }
+        
+        /* $1.7 - getDevice - returns device */
+        this.getDevice = function() {
+            return device;   
+        }
+        
+        /* $1.8 - hasSpecialVersion - sets classes if iphonex */
+        this.hasSpecialVersion = function() {
+            var ratio = window.devicePixelRatio || 1;
+            var width = window.screen.width * ratio;
+            var height = window.screen.height * ratio;
+            var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            
+            if(width === 1125 && height === 2436 && body.classList.contains('phone') && iOS) {
+                body.classList.add("iphonex");
+            }   
+            
+            os = os + "iphonex";
+        }
+        
+        /* $1.9 - setOrientation - sets device orientation */
+        this.setOrientation = function() {
+            var width = this.getDeviceWidth();
+            var height = this.getDeviceHeight();
+            
+            if(!body.classList.contains("desktop")) {
+                if(width > height) {
+                    body.classList.add("landscape");
+                    orientation = "landscape";
+                } else {
+                    body.classList.add("portrait");
+                    orientation = "portrait";
+                }
+            }
+            
+            this.setCookie('DEVICE_ORIENTATION', orientation);
+        }
+    
+        /* $1.10 - getOrientation - returns device orientation */
+        this.getOrientation = function() {
+            return orientation;
+        }
+        
+        /* $1.11 - setCookie - sets cookie */
+        this.setCookie = function(name, value) {
+            var days = 360;
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            
+            var expires = "; expires=" + date.toGMTString();
+            document.cookie = name + "=" + value + expires + "; path=/; " + getCookiePolicy();
+        }
+        
+        /* $1.12 - getCookie - gets cookie  */
+        this.getCookie = function(name) {
+            var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+            return v ? v[2] : null;
+        }
+        
+        /* $1.13 - clearCookie - clears cookie */
+        this.clearCookie = function(name) {
+            var date = new Date("1970-01-01");
+            var expires = "; expires=" + date.toGMTString();
+            var value = "";
+            
+            document.cookie = name + "=" + value + expires + "; path=/; " + getCookiePolicy();
+        }   
+    
+        /* $1.14 - resetOpSystem - resets operating system class on body */
+        this.resetOpSystem = function() {
+            body.classList.remove("windows");
+            body.classList.remove("ios");
+            body.classList.remove("android");
+            body.classList.remove("osx");
+            body.classList.remove("ubunto");
+            body.classList.remove("linux");
+            body.classList.remove("iphonex");
+            
+            os = "";
+        }
+          
+        /* $1.15 - resetBrowser - resets browser class on body */
+        this.resetBrowser = function() {
+            body.classList.remove("ie11");
+            body.classList.remove("ie10");
+            body.classList.remove("firefox");
+            body.classList.remove("chrome");
+            body.classList.remove("safari");
+            body.classList.remove("opera");
+            body.classList.remove("edge");
+            
+            browser = "";
+        }
+        
+        /* $1.16 - resetDevice - resets device class on body */
+        this.resetDevice = function() {
+            body.classList.remove("phone");
+            body.classList.remove("tablet");
+            body.classList.remove("desktop");
+            body.classList.remove("desktop-small");
+            body.classList.remove("desktop-big");
+            body.classList.remove("desktop-hd");
+            
+            device = "";
+        }
+        
+        /* $1.17 - resetOrientation - resets orientation class on body */
+        this.resetOrientation = function() {
+            body.classList.remove("portrait");
+            body.classList.remove("landscape");
+            
+            orientation = "";
+        }
+        
+        /* $1.18 - getWidth - returns width */
+        this.getWidth = function() {
+            return width;   
+        }
+        
+        /* $1.19 - getHeight - returns height */
+        this.getHeight = function() {
+            return height;   
+        }
+               
+        /* $1.20 - getDeviceWidth - returns device width */
+        this.getDeviceWidth = function() {
+            width = window.innerWidth || document.documentElement.clientWidth;
+            return width;
+        }   
+        
+        /* $1.21 - getDeviceHeight - returns device height */
+        this.getDeviceHeight = function() {
+            height = window.innerHeight || document.documentElement.clientHeight;
+            return height;
+        }
+        
+        /* $1.22 - resizeend - triggered when resize event ends */
+        function resizeend() {
+            if (new Date() - rtime < delta) {
+                setTimeout(resizeend, delta);
+            } else {
+                timeout = false;
+                
+                setEventValues();
+            
+                body.classList.remove("resizing");
+            } 
+        }
+        
+        /* $1.23 - setEventValues - called by resize and orientation events to reset/set values */
+        function setEventValues() {
+            /* removing classes from body */
+            deviceDetect.resetOrientation();
+            deviceDetect.resetDevice();
+            deviceDetect.resetBrowser();
+        
+            /* adding new classes to body */
+            deviceDetect.setBrowser();
+            deviceDetect.setDevice();
+            deviceDetect.hasSpecialVersion();
+            deviceDetect.setOrientation();   
+        }
+        
+        /* $1.24 - setListeners - sets resize and orientation events */
+        function setListeners() {       
+            window.addEventListener("resize", function() {
+                if(deviceDetect.getHeight() === deviceDetect.getDeviceHeight() ||
+                   deviceDetect.getWidth() !== deviceDetect.getDeviceWidth()) {
+                    body.classList.add("resizing");
+                    
+                    rtime = new Date();
+                    if (timeout === false) {
+                        timeout = true;
+                        setTimeout(resizeend, delta);
+                    }
+                }
+                
+            }, false);        
+
+            window.addEventListener('orientationchange', function() {
+                setEventValues();                
+            });   
+        }
+        
+        //Fetches the cookie policy set on screen
+        function getCookiePolicy(){
+            var cookiePolicy = "";
+            var htmlPolicy = document.body.getAttribute("data-os-cookie-policy");
+            if(htmlPolicy){
+                if (htmlPolicy.search(/SameSite/i) > -1){
+                    var pattern = new RegExp(/SameSite=([^&;]+)/i);
+                    var result = pattern.exec(htmlPolicy);
+                    cookiePolicy = cookiePolicy + result[0] + ";"; 
+                }
+                if (htmlPolicy.search(/Secure/i) > -1){
+                    cookiePolicy = cookiePolicy + "Secure"; 
+                }
+            }
+            return cookiePolicy;
+        }
+    }
+    
+    /* $2 - Start */
+    function start() {
+        deviceDetect = new deviceDetectionObj;
+            
+        /* detects if it's inside an iframe or in the preview in devices.
+        If it isn't (it's a pop up), then it doesn't go through the device detection*/ 
+        if(window.self === window.top || isPreviewInDevices) {
+            deviceDetect.setValues();
+        } else { // it's a pop up, adds the classes of the parent window instead
+            var cookieOS = deviceDetect.getCookie('DEVICE_OS');
+            var cookieBrowser = deviceDetect.getCookie('DEVICE_BROWSER');
+            var cookieDevicesType = deviceDetect.getCookie('DEVICES_TYPE');
+            
+            document.body.classList.add(cookieOS);
+            document.body.classList.add(cookieBrowser);
+            document.body.classList.add(cookieDevicesType);
+        }
+    }
+    
+    return {
+        init: function(phone, tablet, desktopSmall, desktop, desktopBig) {
+            userValues = {
+                phone: phone,
+                tablet: tablet,
+                desktopSmall: desktopSmall,
+                desktop: desktop,
+                desktopBig: desktopBig
+            }
+            
+            start(userValues);
+        }
+    }
+}

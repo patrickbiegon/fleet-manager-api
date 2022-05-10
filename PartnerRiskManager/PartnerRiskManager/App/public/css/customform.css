@@ -1,0 +1,200 @@
+@charset "utf-8";
+/* CSS Document */
+
+.formpage-content .btn:last-child , .formpage-content .btn:last-child:hover { margin: 20px 0 -20px 0}
+
+/* form css reset */
+/** * Remove the inner border and padding in Firefox. */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/** * Restore the focus styles unset by the previous rule. */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/** * Add the correct vertical alignment in Chrome, Firefox, and Opera. */
+
+progress {
+  vertical-align: baseline;
+}
+
+/** * Remove the default vertical scrollbar in IE 10+. */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/** * Correct the cursor style of increment and decrement buttons in Chrome. */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/** * Remove the inner padding in Chrome and Safari on macOS. */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive   ========================================================================== */
+
+/* * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/* * Add the correct display in all browsers. */
+
+summary {
+  display: list-item;
+}
+
+/* Misc   ========================================================================== */
+
+/** * Add the correct display in IE 10+. */
+
+template {
+  display: none;
+}
+
+/** * Add the correct display in IE 10. */
+
+[hidden] {
+  display: none;
+}
+
+/* form styling */
+input, button, optgroup,select,textarea
+{margin: 0; padding: 0; border: 0 none; background-color: inherit}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+
+
+
+
+label {font-size: 16px; text-align: left; font-family: 'museo_sans700', sans-serif;  display: block; margin-bottom: 5px; }
+
+input,
+ textarea,select { display: inline-block; padding: 10px 15px; background-color: #ffffff; text-align: left; border: 1px solid #D1D1D1; border-radius: 10px; width: 100%; margin-bottom: 15px; box-sizing: border-box; font-size: 14px; color: #87919E }
+input[type=checkbox],input[type=radio] {width: auto}
+
+input:focus,   textarea:focus, select:focus
+{border-color: #adc5e5; outline: 0; background-color: #f9f9f9}
+
+input[type=color] {padding: 0; border-radius: 5px; width: 100%; max-width: 100px}
+
+input[type=file]  {font-family: 'museo_sans700', sans-serif; color: #000; text-decoration: none; font-size: 14px; line-height: 30px; background-color: #fff; text-align: center!important; border-radius: 10px; display: inline-block; width: auto; padding: 5px; min-width: 180px; width: 100%;  box-sizing: border-box; cursor: pointer; margin-bottom: 10px;}
+
+input[type=submit],
+input[type=button],input[type=reset], button {font-family: 'museo_sans700', sans-serif; color: #fff; text-decoration: none; font-size: 18px; line-height: 30px; background-color: #C0212B; text-align: center!important; border-radius: 10px; display: inline-block; width: auto; padding: 14px 24px; min-width: 180px;  box-sizing: border-box; cursor: pointer; margin-bottom: 10px;}
+
+input[type=submit]:hover ,
+input[type=button]:hover ,
+input[type=reset]:hover ,
+button:hover {  background-color: #8f181f; border: 4px solid #88AACA; padding: 10px 20px;   }
+
+.twobigradiobuttons label {
+    font-size: 24px;
+    font-family: 'museo_sans500', sans-serif;
+    line-height: 24px;
+}
+.customcheckbox p , .customradio p {padding: 0; margin: 0}
+.smalltext {font-size: 12px;}
+.customcheckbox b.smalltext, .customradio b.smalltext { display: block; line-height: 14px}
+
+.customcheckbox, .customradio {display: flex; align-items: center;  flex-flow: row nowrap;  }
+.customcheckbox, .customradio >* {flex: auto}
+.customradiorow > span  {margin-right: 15px}
+.customcheckbox + label, .customradio + label {margin-bottom: 0}
+.customradio input[type="radio"]{display: none; opacity: 0}
+.customradio input[type="radio"] + span { background: #ffffff; border: 2px solid #ffffff; outline: 2px solid  #C0212B; border-radius: 100px; width: 30px; height: 30px; display: inline-block; }
+.customradio input[type="radio"]:checked + span { background: #C0212B; border: 3px solid #ffffff; outline: 2px solid  #C0212B; width: 28px; height: 28px;   }
+
+.customcheckbox input[type="checkbox"]{display: none; opacity: 0}
+.customcheckbox input[type="checkbox"] + .fa-check { background-color: #fff; color: #fff; font-size: 20px;   min-width: 30px; min-height: 30px; max-width: 30px; max-height: 30px; line-height: 28px!important; border: 2px solid #C0212B; text-align: center}
+.customcheckbox input[type="checkbox"]:checked + .fa-check { color: #54765A}
+
+.customradio  input[type="radio"] + span { margin-right: 15px}
+.customradio label { margin-right: 15px; display: flex; align-items: center;}
+.customradio label   input + span { cursor: pointer}
+.customcheckbox   .fa-check { margin-right: 15px}
+.customcheckbox label {margin: 0; line-height: 20px; display: flex; align-items: center; }
+.customcheckbox label   input + .fa-check { cursor: pointer}
+.customradiorow {flex: 1 0 100%; align-items: center; display: flex; margin-bottom: 15px}
+.customradiorow > * {display: flex; align-items: center;}
+
+.select-selected {  padding: 10px 15px; background-color: #ffffff; text-align: left; border: 1px solid #D1D1D1; border-radius: 10px; width: 100%; margin-bottom: 15px; box-sizing: border-box; font-size: 14px; color: #87919E;  }
+/*the container must be positioned relative:*/
+.custom-select {  position: relative;  }
+.custom-select .fa-chevron-down { position: absolute;    font-size: 20px;    color: #C0212B;    top: 25%;    right: 20px;}
+/*hide original SELECT element:*/
+.custom-select select {  display: none; z-index: 155;position: relative; }
+.custom-select select  .fa-chevron-down {display: block; opacity: 1}
+
+/*style the items (options), including the selected item:*/
+.select-items div, .select-selected {   padding: 10px 15px;   cursor: pointer;  user-select: none; width: 100%;}
+
+/*style items (options):*/
+.select-items {  position: absolute;  background-color: #fff;   top: 100%; margin-top: -4px;   left: 0;  right: 0;  z-index: 99; border: 1px solid #D1D1D1;  }
+
+/*hide the items when the select box is closed:*/
+.select-hide {  display: none;}
+
+.select-items div:hover, .same-as-selected {  background-color: #f9f9f9}

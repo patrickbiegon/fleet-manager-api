@@ -1,0 +1,735 @@
+@charset "utf-8";
+/* CSS Document */
+@media screen and (max-width:1400px) {
+    
+    #testimonials li:nth-child(1) p {left:1%;}
+    #testimonials li:nth-child(1) p:after { left: 2%;  }
+    
+      #testimonials li:nth-child(2) p {left:3%;}
+    #testimonials li:nth-child(2) p:after { left: 22.8%;  }
+    
+}
+    
+    
+
+    
+
+
+ 
+@media screen and (max-width:1100px) {
+    
+    #testimonials_bar .container-2col {display: block; padding: 20px;text-align: center}
+    #testimonials {display: inline-flex;  margin: 0 auto}
+    #testimonials_bar .btn {margin: 25px auto 0; display: block; max-width: 320px}
+ 
+    #testimonials li:nth-child(7) p {left:44%;}
+    #testimonials li:nth-child(7) p:after { left: 66.3%;  }
+    
+      #testimonials li:nth-child(8) p {left:49%;}
+    #testimonials li:nth-child(8) p:after { left: 81.2%;  }
+
+    
+     .maphomeicon i { font-size:26px; }
+    .bgwhite .bgsubscribe { margin-bottom: -60px}
+    .formpage-content button.btn {margin: 30px auto}
+    .memberofblock {  margin: -60px 0; padding: 40px 20px; min-width: 300px!important }
+.countrycountbox ul li { flex-flow: row wrap} 
+
+        .partnerlogoimgs span {width: 22%; }
+    
+    .bigicon { margin-right: 4%}
+       .indexheader {min-height: 356px}
+     .indexheader h1, .innerheader h1 { padding: 30px; }
+    .header_info_panel-left {  background-color: #4f5d75; padding: 30px 40px 30px 30px }
+.header_info_panel-right {background-color: #414f68; padding: 30px 30px 30px 40px }
+
+    #btncalendar a { padding: 10px 30px}
+        .socialmedia { margin: -30px  30px 10px  }
+    #findopportunity {  background-position: 35% 30%  ; background-size:170%}
+        #global_meetup {  background-position: 45% 70% ; background-size:240%}
+    .mapboxindex {     position:inherit;     }
+	.mapcontainer { padding: 50px 30px 0 30px ;  margin: -40px auto; flex-flow: row wrap; align-items: center}
+    .mapcontainer h3, .mapcontainer .mapintotext  {flex-basis: 100%;  width:100%; align-self:flex-start}
+ 
+	#mapinfo {    margin: 15px 0;  display: flex; margin-right: auto;  flex: 1;top: 0}
+	#mapinfo div h2 {font-size: 40px; line-height: 42px}
+	.mapcontainer .btn {  align-self: center; flex-basis: 45%}
+		
+	 .mapunder { margin: 0 0px 0px;   bottom: 0px; width: 100%}
+	.mapbl  {padding: 10px; width: 80%}
+	.mapbr  {padding: 10px; width: 20%; text-align: left; text-indent: 80px} 
+	
+	
+	.mapcontainer h3 {order: 0}
+ .mapintotext {order: 1}
+ #mapinfo {order: 2}
+ .mapunder {order: 7}
+ .mapcontainer .btn {order: 4; z-index: 5}
+ .mapboxindex {order: 6; margin: -40px auto 40px; top: 0px} 
+ .addonbtn  {order: 5}
+    #footer_links { padding: 0;}
+     #footer_links .container-4col > *{ margin-top: 0; margin-bottom: 40px; flex: 1 0 auto; max-width: 33%}
+    #footer_links .container-4col >:first-child {  flex-basis:100%; border-bottom: 1px solid #414f68; display: flex; justify-content: flex-start; align-items: center; margin-bottom: 20px; padding-bottom: 20px; margin-top: 10px; max-width: 100% }
+    #footer_links .container-4col >:first-child p { margin: 0}
+    
+	#footer_links  .socialmediaicons { margin: 0 0 0 30px}
+	#footer_links  .socialmediaicons a { background-position: center center; width: 36px; height: 36px; margin: 0 10px} 
+     
+   
+    footer > .wrapper p { flex: 1 0 100%; order: 3; box-sizing: border-box; margin-top: 10px}
+    
+    .innerheaderunderline { padding: 10px 30px; margin: -30px auto}
+ 
+ 
+    .earlyresponse {width: 100%!important;}
+    
+    .container-2even  .earlyresponse:nth-child(2)  { margin-top: 30px}
+     .networkpics { top: 15px; right: 15px; z-index: 5!important}
+    .bgdarker p { max-width: 70%}
+    .networkpics img  {   margin-right: -15px; max-width: 55px}
+
+	.bgsubscribe {  background-position: 550px  70px ; margin: -20px -20px -60px 0px; } 
+    .hubblock {align-self: auto!important}
+    .comingnext  {padding: 10px 30px; margin: -15px auto}
+    .comingnext .linkblue {display: block} 
+ 
+    .memberthumbs p {display: block;}
+    .memberthumbs p .linkblue {text-align: left; display: block; margin-top: 0px}
+    .cardimglink { height: 208px}
+    .tabswrapper {     right: -15px;} .tab {font-size: 16px; }
+    .learnactivity-title { padding: 20px}
+    .innerheader { background-position:  35% center; }
+
+	 #seachinput + label  + .searchformcontainer {  left: -235px; top: 44px;  background-color: #2d3142 ; padding: 15px}
+        .linktitle {flex-wrap:wrap}
+    .memberthumbs { padding: 0 20px}
+    .header_info_panel-left:before,
+.header_info_panel-right:after {display: none; opacity: 0}
+html {height:auto}
+    body#formpage {  height: auto} 
+.indexvideoheader h1  { padding-left: 30px}
+
+}
+
+
+@media screen and (max-width:920px) { 
+ .goalitem {flex-flow:row wrap}
+    .goalitem .bigicon { margin-bottom: 15px}
+    .tooltipQAbox {background-size: 30%}
+   .cwbfixed section:nth-child(2) {flex: 1 0 100%; order: 0; }
+    .cwbfixed section:nth-child(1) {order: 1}
+    form .container-2even > * {width: 100%!important}
+
+    .formpictures {display: none; opacity: 0}
+    .meetcommunity > * {max-width: 22%; flex: 1 0 25%; align-items: flex-start; margin-top: 0!important}
+}
+ 
+
+
+@media screen and (max-width:860px) { 
+    
+    .indexvideoheader h1  {font-size: 30px; padding-left: 30px}
+    .smalllogoslist {    flex-flow: row wrap;}
+    .smalllogoslist li {
+    min-width: 20%;
+        margin: 1%;}
+        
+        
+    body#blog #top_bar #mobilenavswitcher:checked + label {background-color: #DE404A}
+    .blog-topbar-firstline .logo {max-width: 150px}
+    .conversationpanel {max-width: 100%!important; padding: 0!important;}
+    .conversationpanel .messagesdropdownbox  {max-width: 100%; width: 100%}
+   body#blog #top_bar .wrapper {display: flex; align-items: flex-start; justify-content: space-between}
+    .blog-topbar-firstline, .blog-topbar-lastline {width: inherit}
+     body#blog #seachinput + label:hover,  body#blog #mobilenavswitcher + label:hover {background-color: #DE404A}
+    body#blog ul#top_menu, body#blog #seachinput:checked + label + .searchformcontainer {background-color: #DE404A}
+   
+    
+    
+    .leftbarfilter {display: none; opacity: 0}
+.leftbarfilter + label {display: inline-block; padding: 12px; background-color: #88AACA; color: #fff; cursor: pointer; border-radius: 5px; opacity: 1; margin: -5px 0 25px 0}
+.leftbarfilter:checked + label {background: #6E90AF}
+ .leftbarfilter:checked + label .fa-chevron-down {transform: rotate(180deg); color: #C0212B}
+
+.leftbarfilter + label + .container-leftsidebar > div:first-child {display: none; opacity: 0;}
+
+.leftbarfilter:checked + label + .container-leftsidebar > div:first-child {opacity: 1; display: flex; flex: 1 0 100%; flex-flow: row wrap; max-width: 100%; margin: 0 0 20px 0; border: 0 none; padding: 0; justify-content: space-between;}
+
+    /* filter v2 */
+    .partnersearchv2 {width: 80%}
+     .leftbarfilterv2 {display: none; opacity: 0}
+    .leftbarfilterv2 +label .fa-times {display: none; opacity: 0}
+.leftbarfilterv2 + label {padding: 12px; width: 18%;
+    background-color: #88AACA;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 1;
+    margin: 0 0 -60px 0;
+    position: relative;
+    float: right;
+    top: -90px;
+    height: 60px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;}
+.leftbarfilterv2:checked + label {background: #6E90AF}
+ .leftbarfilterv2:checked + label .fa-chevron-down {transform: rotate(180deg); color: #C0212B}
+ .leftbarfilterv2:checked  + label  .fa-times {position: absolute;
+    z-index: 300;    top: 60px;    right: 20px;    font-size: 50px;    color: #C0212B; opacity: 1; display: block}
+.leftbarfilterv2 + label + .container-leftsidebar > div:first-child {display: none; opacity: 0;}
+   
+    
+    
+.leftbarfilterv2:checked + label + .container-leftsidebar > div:first-child {opacity: 1;
+    display: flex;    flex: 1 0 100%;    flex-flow: row wrap;    max-width: 100%;    margin: 0 0 20px 0;
+    border: 0 none;    padding: 80px 30px 40px 30px;
+    justify-content: space-between;    background: white;    position: absolute;
+    z-index: 100;    box-sizing: content-box;    top: 70px;    left: 0px;    right: 0px;}
+    
+    .leftbarfilterv2:checked + label + .container-leftsidebar > div:first-child:before    {content: '';
+    position: absolute;
+    background: rgba(255,255,255,0.7);
+    top: -100%;
+        bottom: -1000%;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    left: 0;
+    overflow: hidden;}
+        .leftbarfilterv2:checked + label + .container-leftsidebar > div:first-child:after
+    {content: '';
+    position: absolute;
+    background: rgba(255,255,255,0.7);
+        bottom: -100%;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    left: 0;
+    overflow: hidden;}
+    
+.recommendedsellers .smallitemslist li {max-width: 30%}
+.recommendedsellers .smallitemslist li img {max-width: 100%; }
+
+.container-leftsidebar > *:nth-child(1) section {width: 46%}
+
+
+.container-leftsidebar {display: flex; flex: 1 0 100%; flex-flow: row wrap}
+    
+    .selectinputsection {display: flex; justify-content: space-between}
+     .selectinputsection  .custom-select {width: 48%; margin: auto}
+    .slider-control {font-size: 18px}
+    .slider-control-slider {width: 24px; height: 24px}
+
+    .actingas { margin: -20px 0 20px 0; padding: 20px; border-radius: 10px}
+    .bdsidebar_buyerinfo {display: flex; justify-content: space-around; margin-top: 20px}
+    .buysell_sideblock { flex: 1; width: 50%}
+    .profilessidebar {}
+      .profilessidebar  .buysell_sideblock { flex: 1; width: 100%}
+    .profilessidebar .buysell_sideblock:nth-child(1),    .profilessidebar .buysell_sideblock:last-child{ background-color: #fff; margin: 0 0 20px 0; padding: 20px ; border-radius: 5px}
+    
+    .rowcontainer .container-2even .container-ll {margin-top: 0px!important}
+    .contentblocksmall {padding: 15px}
+.buysell_sideblock:nth-child(1) { margin-top: 0px; padding-top: 20px; margin-left: -40px; margin-right: 30px;  padding-left: 50px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;}
+.buysell_sideblock:last-child {background-color: inherit;}
+    
+    
+    .bgwhite .bgsubscribe {margin: -20px -30px -40px 0; padding: 0 0 30px 0}
+    .memberofblock {text-align: center!important; margin: 10px 0; padding: 20px }
+    .formpage-content {max-width: 100%; padding: 30px}
+    #loginpage-content { padding: 30px}
+    .loginlogos  a {padding: 0; font-size: 11px}
+    .loginlogos  a:hover {margin: 0; border: 0}
+.tooltipbox-content:before {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #88AACA;
+    top: -20px;    left: 48%;}
+    .tooltipbox {    max-width: 440px;    position: absolute;
+    right: -50%;    display: none;    opacity: 0;    padding-left: 0;        padding-top: 30px;
+    top: 5px;    -ms-transform: translateY(0%);    transform: translateY(0%);    z-index: 5;        left: -10%;}
+    
+    
+    form .btn {width: 100%; max-width: 100%!important}
+    .customform { max-width: 95%}
+
+    .hidebtn {display: none; opacity: 0}
+    .opportunities_list li:last-child { padding-left: 30px}
+ 
+    .hovermapbox {display: none; opacity: 0}
+     .countrycountbox { margin-top: 0px!important}
+    .bigicon { margin-right: 5%}
+    .links-lr {display: block;}
+    .links-lr .btn { margin: 8px 0 0 0;}
+    .links-lr  .btn:first-child { margin-top: 0px;}
+    body { margin-top: 84px}
+    .buttonsarea { margin-top: 10px}
+        .innerheaderunderline { padding: 10px 30px; margin: -20px auto}
+    .bgcircles { margin: -35px -30px; padding: 35px 30px; background-size: 48%; background-position: 500px bottom}
+ .goalitem {flex-flow:row nowrap} 
+
+    .indexheader  h1 {font-size: 34px; line-height: 46px; margin: 0; padding: 20px;  }
+      
+	#header_info_panel {background: none; display: block; }
+	#header_info_panel h3 {color:#fff; line-height: inherit}
+    #header_info_panel .container-2even { padding: 0}
+.header_info_panel-left {padding: 30px 20px; margin: 0px!important; text-align: center}
+.header_info_panel-right {padding: 30px 20px; margin: 0px!important; text-align: center  }
+    
+    	
+    .biglink {font-size: 30px; line-height: 36px; }
+	.biglinkar > i {display:inline-block; top: 2px}
+    .infolink { display: none; opacity: 0} 
+ .indexregfree {display: flex!important}
+    .indexregfree >*:first-child { max-width: 60%}
+	.global_date {text-align: left; font-size: 20px}
+    #global_meetup h3 {font-size: 44px; line-height: 50px; }
+	.global_date b {display:  inline-block; margin-left: 15px}
+    .socialmediaicons a { margin: 4px}
+    .container-3col article {display: flex;flex-flow: row wrap;justify-content: space-between;align-items: center;padding: 0;margin: 20px 0!important;}
+    .container-3col article:first-child { margin: 0!important}
+
+    .oppdate p {text-align: right!important; padding: 0}
+    .bby { margin-bottom: 10PX}
+     .articleimg {max-width: 46%;  }
+    .articledescription {max-width: 50%;  margin-top: -20px}
+       .articletitle {flex-basis: 100%; }
+    .socialmedia { padding: 0 30px}
+.socialmedia:after  {    background: url(../images/bg-socialmedia-700@2x.png) no-repeat right center; background-size: 668px }  
+	#findopportunity .container-2col  {display: flex}
+    #findopportunity  .container-2col >:nth-child(1) {width: 55%}
+    #findopportunity h3 { font-size: 44px; line-height: 50px;  flex: 1}
+    .oppdate {width:auto!important; flex: 0}
+	 #mapinfo div h2 {width: auto; display: inline-block; }
+	.mapcontainer {padding: 20px; padding-top:40px; justify-content: space-between; margin: -20px 0 -40px 0}
+	#mapinfo {flex-basis: 100%; justify-content: flex-start; display: flex}
+    #mapinfo div:first-child {width: 50%; }
+    #mapinfo div {display: flex; align-items: center;}
+    #mapinfo h2 { margin-right: 15px}
+	.mapunder {bottom:0px}
+    .mapbl:after {right: -11%; width: 12%}
+    .mapbl {width: 80%}
+    .mapbr {width: 20%}
+	.mapcontainer .addonbtn {display: block; opacity: 1; order: 5}
+	.mapcontainer a.btn, .mapcontainer .addonbtn { flex-basis: 47.5%;  }
+	.mapboxindex {top: 0; display: block; margin: 0px auto 20px}
+
+    #findopportunity .btn {width: auto; max-width:inherit}
+     #footer_links .container-4col >:first-child { justify-content: space-between}
+    #footer_links .container-4col >:first-child p {max-width: 65%}
+    #footer_links .socialmediaicons { margin: 0}
+    
+     .linktitle { margin-bottom: 20px}
+    .mapbg {display: block}  
+    .hubhostlogos {text-align: left; display: flex; align-items: center} 
+    .hubhostlogos img:nth-child(1) { margin-right: 15px}
+    .comingnext a:after {content: ''; display: block; } 
+.innerheader_learn {    background: url(../images/bg-innerheader-learn-dots.png) no-repeat 0% center, url(../images/bg-innerheader-learn.jpg) no-repeat 45% center;} 
+      .innerheader_learn2 {
+    background: url(../images/bg-innerheader-dark-dots.png) no-repeat 0  center, url(../images/bg-innerheader-learn2.jpg) no-repeat 65% center; }
+      
+    .innerheader_learn2 h1 {color: black}
+    .memberthumbs {width:100%!important; margin: -10px auto} 
+    .comingnext { margin: -15px auto}
+.comingnext,
+     .memberthumbs p {display: block;}
+    .memberthumbs p .linkblue {text-align: left; display: inline-block;  }
+     .comingnext p {max-width: 100%}
+    .innerheaderunderline p:nth-child(2) { margin-right: 10px}
+    .innerheaderunderline p { margin: 5px 0; padding: 0}
+    .innerheaderunderline p:nth-child(2),     .innerheaderunderline p:nth-child(3) {display: inline-block;    text-align: left}
+        .innerheader { height: 200px; background-size: cover;  align-items: flex-end}
+    .innerheader-projecttemplate {background-position: 45% center}
+    .innerheader  h1 { margin-bottom: 40px}
+    .helpquestion a {display: block} 
+    
+    
+    .indexheader {min-height: 256px}
+    .container-lr-bottomlinks ,  .container-lr-bottomlinks  a{display: block}
+    .networkpics {top: 10px; right: 10px}
+     .networkpics img     {margin-right: -10px; z-index: 4!important} 
+   .btn {font-size: 18px; margin: 10px 0}
+    .container-2col .btn { max-width: 48%; width: inherit} 
+     .formpage-content .btn { max-width:100%; width: 100%} 
+.buttonsarea .hidebtn { display: none}
+    .opportunities_list li:nth-child(2) {border-right: 0}
+    
+    .hubslist {flex-flow: row wrap}
+ .hubslist li {     flex: 1 0 40%;    }
+  
+ 
+ .bgsubscribe {  background-position: 400px 120px; display: block; margin-right: -20px}
+ .bgsubscribe div:first-child {  max-width: 100%  }
+    .subscribesocial p { max-width: 80%}
+    .bgsubscribe div {width: 70%!important; margin: 20px 0 20px}
+    .subscribesocial { max-width: 70%}
+      .bgwhite .bgsubscribe .subscribesocial .socialmediaicons { margin: -10px 0 0 -0px}
+    .subscribesocial .socialmediaicons { margin: -10px 0 0 -10px}
+    .bgfullwidth:before, .bgfullwidth:after { height: 0; display: none; opacity: 0}
+    .ecourse-desc {font-size: 20px; line-height: 24px}
+    .ecourse-desc b {font-size: 18px}
+    .storypictures {flex-flow: row nowrap}
+    .storypictures img {margin: 0;  margin-right: 2%; min-width: 20%!important;}
+     .storypictures img:last-child {margin-right: 0%}
+    
+    .bby { margin-top: 0}
+    .global_date {margin-top: 15px!important} 
+    .formpage-content .container-2even > * { margin-top: 0!important}
+    .calendarpictures { position: relative; min-width: 100%!important}
+.calendarpictures img {width: 46%; max-width: 200px}
+.calendarpictures >*:nth-child(1) {position: inherit; z-index: 4;  left: 0px; bottom: 0px; max-width: 200px; margin-right: 20px}
+    .commonwealthblock-fixed  { margin: 0;}
+    .commonwealthblock-fixed li { min-width: inherit; max-width: inherit; flex: 1 0 45%}
+    .commonwealthblock-fixed li:nth-child(2) {order: 0}
+    .commonwealthblock-fixed li:nth-child(1) {order: 1}
+    .ongoingprojects {display: block;}
+    .ongoingprojects h1, .ongoingprojects h2, .ongoingprojects h3, .ongoingprojects h4 { margin-bottom: 20px} 
+    .ongoingprojects >* {min-width: inherit}
+    .ongoingprojects .select-selected { margin-top: 15px}
+}
+@media screen and (max-width:760px) { 
+    #testimonials {display: none; opacity: 0}
+    #testimonials_bar .btn {margin: 0 auto; display: block; max-width: 100%}
+}
+@media screen and (max-width:680px) {
+    .partnersearchv2 {width: 100%}
+    .leftbarfilterv2 + label {width: 25%; min-width: 120px;
+    top: -10px; margin: 0 0 10px 0}
+    .leftbarfilterv2 + label:after {content: ''; clear: both}
+    .leftbarfilterv2:checked + label .fa-times {top: 70px}
+    .leftbarfilterv2:checked + label + .container-leftsidebar > div:first-child {top: 160px; }
+    .ongoingprojects {margin-top: -90px}
+    .messages-senderinformationbox{flex-flow: row wrap}
+    .messages-senderinformationbox-interractions {flex: 1 0 100%; justify-content: flex-end}
+
+    .meetcommunity {display: flex!important; flex-flow: row wrap; justify-content: space-between}
+    .meetcommunity >* {  flex: 1 0 40%; margin: 10px!important}
+    .meetcommunity p { margin: 5px 0; padding: 0}
+    .container-lr {display: block;}
+      .bdsidebar_buyerinfo {display: block;  margin-top: 20px}
+    .buysell_sideblock { flex: 1; width: 100%; border-radius: 5px; background-color: #fff}
+.buysell_sideblock:nth-child(1) { margin: 0 0 20px 0; padding: 20px}
+.buysell_sideblock:last-child {background-color: inherit;}
+   .profilessidebar .buysell_sideblock:last-child {background-color: #fff;}
+    
+    .memberofblock .memberthumbs img:nth-child(2) {margin-right: 0}
+    .sidebg {display: none; opacity: 0}
+    .formpage-content {max-width: 100%}
+     .tooltipQAbox {background: none}
+    .opportunities_list li:last-child { padding-left: 20px}
+    h1 a .icon-red_arrow, h1 a .icon-white_arrow, h2 a .icon-red_arrow, h2 a .icon-white_arrow, h3 a .icon-red_arrow, h3 a .icon-white_arrow { top: 1px; margin-left: 8px} 
+
+    #global_meetup * {text-align: center; }
+    
+        .innerheaderunderline {display: block}
+    .memberthumbs p {text-align: center}
+    .innerheaderunderline { margin: -20px auto} 
+        .container-2col .btn {max-width: 100%}
+#footer_links .container-4col > * {flex: 1 0 48%; justify-content: space-between; max-width: 48%}
+    #footer_links .container-4col >:first-child {display: block}
+    #footer_links .container-4col >:first-child p {display: none; opacity: 0}
+    .indexfeaturecard {border-bottom: 1px solid #88AACA;  }
+    .hubpartnerblock {  display: block; }
+.hubpartnerblock .item {   display: inline-block; max-width: 46%; margin: 1.5%}
+    #testimonials_bar .btn {width: 100%; max-width: 100%}
+ 
+    .memberthumbs { display: block}
+    .memberthumbs p .linkblue { margin: auto; text-align: center}
+.memberofblock {text-align: center!important; margin: 10px 0 }
+        .memberofblock .memberthumbs {padding: 0}
+    .memberofblock .memberthumbs img:nth-child(2) {left: 0;}
+    .memberthumbslinks { display: flex; justify-content: space-around}
+    .memberthumbslinks a {display: inline-block; margin: 0}
+ 
+    .bgcircles{    background: url(../images/blue-circle-full.png) no-repeat center 210px ; margin: -30px 0; padding: 30px 0}
+    
+    .innerheader { height: 140px; align-items: center}
+    .innerheader h1 { margin: 0px; padding: 0 30px}
+ 
+    .linkblue { margin-top: 5px}
+    .innerheaderunderline {display: block; padding: 10px 15px}
+    .hubhostlogos { margin: 0; text-align: center!important; display: block;}
+    .hubhostlogos img { margin: 0 auto!important;  display: block;}
+    .quickphotogallery {flex-flow: row wrap; margin-bottom: 20px  } 
+    .cardimglink { height: 282px; background-size: cover}
+        .memberthumbs {display: block; margin:  0; text-align: center; padding: 0 15px}
+    .memberthumbs img { display: inline-block}
+    .memberthumbs p { margin-left: 0}
+    .helpquestion { margin: 0!important}
+    .helpquestion a {font-size: 18px}
+    ul.cards {display: block}
+    ul.cards li {width: 100%; max-width:100%; margin: 0 0 20px 0!important}
+    .cardimglink { height: 240px}
+    .titlewithline {display: block; margin: 10px 0}
+    .titleline {display: block; margin: 20px 0}
+    .learnactivity-title h2 { margin-bottom: 20px}
+    .indexregfree { margin: -20px 0}
+	a.btn  {margin: 10px 0; width:100%; display: block; padding: 12px; position: relative; z-index: 5}
+    a.btn:hover { padding: 8px 0}
+    .reg_bar a.btn { margin-left: 0}
+ 
+	.indexfeaturecard .bigicon {display: none; opacity: 0}
+ 
+	.biglink .icon-red_arrow {top:0}
+    .biglink {font-size: 26px; font-weight: bold; letter-spacing: -0.01em}
+	#testimonials {display:none; opacity: 0}
+	#global_meetup .container-2col {text-align: center}
+ 
+    .indexregfree {display: block!important}
+    .indexregfree >*:first-child {max-width: 100% }
+    .indexregfree .btn {max-width: 100%}
+	.socialmedia .socialmediaicons {margin: 0; text-align: center}
+        .socialmedia { padding: 0 30px; margin: -20px 0}
+
+    .socialmediainfotext h3 { margin-bottom: 10px}
+	#findopportunity h3  {font-size: 36px; line-height: 42px}
+	#findopportunity .container-2col {display: block; }
+	.oppdate ,     .oppdate p {text-align: left!important}
+    .oppdate p {margin-top: 20px} 
+     #findopportunity { padding-top: 100px}
+	#findopportunity {    background-position: 15% 35%;		background-size: 220%!important; min-height:220px; padding-top: 80px; margin-bottom: 20px} 
+	#findopportunity .btn {width: 100%; }
+	.broughtbyarea {padding: 4px; font-size: 14px}
+	.bby img {max-width:75%} 
+	 
+	.mapcontainer {padding: 30px 20px 10px 20px; margin: 0 auto; display: block}
+	#mapinfo {display: block; width: 100%}
+	.mapcontainer a.btn {width:100%; padding: 14px; }
+	.mapcontainer a.btn:hover {  padding: 10px} 
+	#mapinfo div {width:100%; margin-bottom: 20px}
+	 .mapunder {margin: 30px -30px; width: 110%; position: inherit; bottom: 0;    left: 0;    right: 0}
+	 .mapbl {width:90%;   padding:  12px 30px; text-align: center; font-size: 14px; }
+	 .mapbr {width:10%; text-indent: -9999em; padding: 0}
+	.mapbr strong {display:none}
+	.mapcontainer a.btn {margin: 20px 0; width: 100%}
+
+	.mapcontainer h3 {order: 0}
+ 	.mapintotext {order: 1}
+ 	#mapinfo {order: 2}
+ 	.mapunder {order: 3}
+	.mapcontainer .btn {order: 4}
+	.mapcontainer .addonbtn  {order: 6}
+	
+	#footer_links {padding: 0}
+ 
+	.footerbuttons {order: 1; width: 100%; max-width: 100%;  text-align: center; margin-bottom: 15px; display: flex; justify-content: space-between}
+	.footerbuttons a { flex: 1;  padding: 5px 0 }
+ 	.footerlogo {order: 2; margin: 10px auto}
+     .learnbg , .buyandsellbg {background: none}
+    .bgdark {border-radius: 0}
+ 
+    .userbar { margin-top: -20px}
+    .userbar img {left: 15px}
+ 	.ll div {    width: 100%;        margin-right: 0%;}
+        
+   .mapbg {background-position: -70px -20px; background-repeat: no-repeat; background-image: url(../images/zambia.png)}
+    .linktitle {margin: -30px -20px 20px; padding: 30px 20px}
+    .linktitle .btn {display: inline-block; width: auto}
+
+    .contentblock { padding: 25px 20px}
+    .tab {font-size: 16px}
+	.tabswrapper { position: inherit;    text-align: right;    display: block;   top: -75px; right: -15px }
+    .tabscontainer {    overflow: hidden;    margin: -75px -20px -30px;        padding: 20px; margin-top: -75px}
+ 
+        #first-tab:checked ~ .tabswrapper #first-tab-title, #second-tab:checked ~ .tabswrapper #second-tab-title, #third-tab:checked ~ .tabswrapper #third-tab-title, #fourth-tab:checked ~ .tabswrapper #fourth-tab-title, #fifth-tab:checked ~ .tabswrapper #fifth-tab-title, #sixth-tab:checked ~ .tabswrapper #sixth-tab-title {
+    background: #fff;    color: #000;    font-size: 16px} 
+  
+    .opportunities_list {margin: -40px -20px -30px; display: block}
+	 .opportunities_list li { padding: 10px 20px; display: block; border-right: 0 none;}
+    .upcomingevents li {padding: 5px 20px; }
+    .upcomingevents { margin: 10px -20px 20px}
+.upcomingevents li:last-child {    margin-bottom: -15px;}
+  
+    .partners { margin: 0; overflow: hidden; display: block; padding: 0}
+    .userbar { margin: -30px -20px 10px -20px; padding-right: 10px}
+    .userbar:after {width:30%}
+    .userbar p { letter-spacing: -0.01em}
+
+    .buttonsarea .btn { margin: 5px 0}
+     .bgwhite .bgsubscribe {margin: -20px -30px -40px 0; padding: 0 0 20px 0}
+    .bgsubscribe {  background-position: 320px 160px;    }
+    .bgsubscribe div {width: 90%!important; text-align: left}
+    .textdesc { max-width: 100%}
+ 
+    .contentblock .dark_title_bar {margin:-40px -20px 20px -20px}
+    .title_bar-controllinks { display: block; margin-left: 15px;}
+    .title_bar-controllinks a { padding: 10px}
+    .bgdarker p {max-width:100%} 
+ 
+    .networkpics {display: none; opacity: 0}
+    .opportunities_list li { padding: 20px; margin: 0; list-style-type: none; border-top: 1px solid #D1D1D1; display: block}
+    .opportunities_list li:first-child { padding: 20px}
+    .opportunities_list li  a {font-size: 18px} 
+    .searchform_full input {font-size: 12px; }
+
+     .cardswrapper {display: block; margin: 20px 0; max-width:100%}
+    .cardswrapper > *{ margin: 0 0 20px 0}
+
+    .cardcontainer {flex: 1 0 100%; max-width: 100%; min-height: 228px;  }
+    .card-bottom_info { padding: 10px}
+    .card-desc { font-size: 18px; margin: 15px 0}
+    .card-desc b {font-size: 14px; margin-top: 0}
+     .bgwhite > .bgcircles { background-position: 400px 210px}
+     .bigiconhide {display: none; opacity: 0}
+    .worldmap .ico-housered {width: 25px; height: 25px; background-size: 24px}
+    .learnactivity-title form {max-width: 100%}
+    .listsection section .container-lr>*:nth-child(2) {text-align: left}
+    .container-lr >*:first-child {max-width: 100%; margin-bottom: 10px}
+    .listsection section .container-lr>*:nth-child(1) {max-width: 100%}
+    .sharethis { margin-top: -10px}
+    .sharethis_socialicons, .sharethis_socialicons a i {font-size: 32px}
+    .blogarticle { margin-bottom: 30px;}
+    .productgallerycontrolbtn-left {left: -25px} .productgallerycontrolbtn-right {right: -25px}
+.meetcommunity > * {max-width: 42%;  align-items: flex-start; margin: 1%}
+    .searchengine-container {padding-top: 10px; margin-top: -40px}
+    .searchengine-container  section { padding: 5px 15px}
+    .searchengine-container  section p {font-size: 16px}
+    .profilecontrols a:hover .atitle {display:none; opacity: 0} 
+    .rowcontainer {margin-bottom: 15px}
+    
+}
+
+   
+    @media screen and (max-width:540px) { 
+         .leftbarfilterv2 + label { width: 100%; float: none}
+        body#blog {margin-top: 84px}
+         body#blog #top_bar #mobilenavswitcher:checked + label + #top_menu {background-color: #DE404A; top: 84px}
+        body#blog #top_bar {height: 84px}
+        body#blog #top_bar #mobilenavswitcher + label {height: 84px; padding: 0px; margin-right: -15px; padding-right: 0px;  width: 84px;  display: flex; justify-content: center; align-items: center}
+        
+        
+       .btnshare .fas { margin-right: 10px; display: inline-block}
+        .productgallerythumbnails div {margin-bottom: 5px}
+.productgallerybigpreviewcontainer .fa-chevron-left {left: -24px}
+.productgallerybigpreviewcontainer .fa-chevron-right {right: -24px}
+.productgallerybigpreviewcontainer { margin: 0 30px; position: relative}
+        .productgallerybigpreviewcontainer .fa-chevron-left, .productgallerybigpreviewcontainer .fa-chevron-right {  top: 45%;}
+        .profileheader {display: block}
+        .profilecontrols {text-align: left}
+         .bslinktitle {flex-direction: column; justify-content: flex-start; align-items: flex-start}
+    .bslinktitle a {display: inline-flex; margin: 10px 0!important; width: auto; align-self: flex-start!important}
+    .btnshare {display: inline-flex; align-items: center}
+        .founderscontainer { padding: 20px}
+        .partnerlogoimgs span {max-width: 26%; box-sizing: border-box}
+        .countrycountbox ul { margin: 0}
+        .storypictures img {max-width: 45%}
+         .title_bar-controllinks { margin-top: 10px}
+        .countrycountbox ul li p { margin-right: auto}
+        .countryicons { flex: 0}
+        
+        .indexheader {background-position:  -100px 0 }
+        .mapcontainer { padding: 15px; margin: 0 auto}
+        .indexheader h1 {line-height: 36px; font-size: 26px}
+        h1, h2 {letter-spacing: -0.01em}
+        .indexheader h1, .innerheader h1 { padding: 10px}
+        .header_info_panel-left, .header_info_panel-right { padding: 20px 10px}
+        #header_info_panel h3 { margin-bottom: 10px}
+        #global_meetup p { margin-top: 10px!important}
+        .global_date b {display: block}
+        #findopportunity {background-size: 320%!important; background-position: 25% 30%}
+        body {font-size: 14px; letter-spacing: 0.015em}
+        .bigicontextblock h2 a {letter-spacing: -0.01em}
+        h1 a .icon-red_arrow, h1 a .icon-white_arrow, h2 a .icon-red_arrow, h2 a .icon-white_arrow, h3 a .icon-red_arrow, h3 a .icon-white_arrow { margin-left: 8px}
+               .innerheader h1 { margin: 0px; padding: 0 15px}
+        .hovermapbox-hubcontainer, .hovermapbox-evencontainer {display: block}
+        .hovermapbox-hubcontainer:first-child img {  max-width: 45%; margin-bottom: 10px}
+        .hovermapbox-evencontainer >:first-child { margin-bottom: 15px; border-bottom:1px solid #D8D8D8; padding-bottom: 15px;}
+        footer > .wrapper { padding: 20px 10px}
+        .goalitem {flex: 1 0 46.5%!important;  max-width: 46.5%!important; }
+        .input_filter {font-size: 13px}
+        .comingnext { padding: 10px}
+        .memberthumbs p .linkblue { display: block; letter-spacing: 0}
+        .bby {text-align: center; display: block}
+        .xsymb {font-size: 25px; margin: 0 5px}
+        .indexfeaturecard {padding: 0}
+        .container-4col  .indexfeaturecard:last-child { border: 0}
+        #global_meetup h3 {text-align: center; line-height: 50px}
+     .global_date {text-align: center}
+        .global_date b { margin-left: 0}
+            .container-3col article {display: block; padding: 0;}
+        .articleimg img {width: 100%}
+    .articleimg, .articledescription {max-width: 100%; display: block; margin: 0}
+         .linktitle, .linktitle h2 {display: block;   text-align: left;  }
+        .dark_title_bar {display: block; height: auto;}
+        	.tabswrapper { position: inherit;    text-align: center;    display: block;   top: -8px; right: 0;  }
+    .tabscontainer {    overflow: hidden;    margin: 0px -20px -20px;        padding: 20px;}
+        .tabcontainer .btn { margin-top: 20px; display: block}
+        #first-tab:checked ~ .tabswrapper #first-tab-title, #second-tab:checked ~ .tabswrapper #second-tab-title, #third-tab:checked ~ .tabswrapper #third-tab-title, #fourth-tab:checked ~ .tabswrapper #fourth-tab-title, #fifth-tab:checked ~ .tabswrapper #fifth-tab-title, #sixth-tab:checked ~ .tabswrapper #sixth-tab-title {    background: #fff;    color: #000; box-shadow: 0px -5px 5px #e1e1e1; font-size: 16px} 
+ 
+        .linktitle { padding: 20px}
+ 
+        .subscribesocial {    max-width: 100%;}
+        .bgsubscribe {  background-position: 200px  200px; }
+        .bgsubscribe h2 { font-size: 30px}
+ 
+        .hubpartnerblock .item {max-width: 100%; width: 100%}   
+       
+ .bgcircles { margin: -25px -10px; padding: 35px 10px;  background-position: center 210px}
+        .bgwhite > .bgcircles { background: none}
+        #btncalendar a { padding: 10px 15px}
+        .userbar img {max-width: 60px; left: 5px}
+        .userbar:after {max-width: 90px}
+         footer .btn { padding: 5px 0}
+        #global_meetup {background-size: 400%!important; background-position: 40% 70%}
+        #global_meetup h3 { font-size:46px}
+        .container-ll-bottomlinks a { margin: 5px 0}
+        #testimonials_bar .btn { margin: 0} 
+        body { margin-top: 60px} 
+        
+        .socialmedia {display: block; text-align: center; padding: 40px 15px; border-radius: 0; margin: -15px 0}
+        .socialmedia:after  {background-position: bottom right; bottom: 0; top: 0}
+        .socialmediaicons a {margin: 8px}
+ .maphomeicon i { font-size:22px; }
+
+    }
+
+@media screen and (max-width:500px) {
+        .logoslist {    flex-flow: row wrap;}
+    .logoslist li {
+    min-width: 31%;
+        margin: 1%;}
+    
+    
+    .listsection section .container-lr>*:nth-child(1) {display: block}
+    .listsection section .container-lr>*:nth-child(1) > img {max-width: inherit}
+     .cwbfixed section {max-width: 100%}
+    .productslist {margin: 10px -2%}
+    .productslist  li {min-width: inherit; margin: 2%}
+    .productimg {max-width: 155px; min-width: inherit}
+    .contentblock { padding: 20px}
+    .meetsellers > *:nth-child(2) {min-width: 60px}
+    .leftbarfilter + label .fa-chevron-down {        font-size: 16px;}
+    .pagination  { margin: 10px 0; justify-content: center}
+     .pagination a { margin: 0}
+    .selectinputsection {display: block}
+    .container-leftsidebar{display: block;}
+    .leftbarfilter + label { font-size: 18px}
+    .leftbarfilter:checked + label + .container-leftsidebar > div:first-child  {display: block;}
+    .searchform_full input {min-height: 50px; padding: 10px 20px 10px 50px; margin: 0}
+    .searchform_full button[type=submit] {min-width: 50px; min-height: 50px}
+    
+    .container-leftsidebar > *:nth-child(1) section {width: 100%}
+.container-leftsidebar > *:nth-child(1) section:nth-child(3) {order: 1}
+.container-leftsidebar > *:nth-child(1) section:nth-child(4) {order: 2}
+.container-leftsidebar > *:nth-child(1) section:nth-child(5) {order: 3}
+.container-leftsidebar > *:nth-child(1) section:nth-child(6) {order: 4}
+.container-leftsidebar > *:nth-child(1) section:nth-child(7) {order: 5 }
+
+.container-leftsidebar .custom-select {display: block; width: 100%; max-width: 100%}
+    
+    .listoflisting .managecompanydesc a {font-size: 18px}
+    .listoflistingcontrols {flex-basis: 100%; margin-top: 15px; text-align: right}
+
+ 
+    	.tabswrapper {  margin: 0 -10px;  }
+    .tab {font-size: 14px; }
+     .goalitem {flex: 1 0 100%!important;  max-width: 100%!important; }
+    .goalitem:nth-child(even) { background: rgba(255,255,255,0.5)}
+    .container-4col >  .indexfeaturecard:nth-child(1) { margin: 0!important}
+        a {font-size: 16px; line-height: 22px;  letter-spacing: 0.02em}
+        .btn { font-size: 18px; letter-spacing: 0; font-weight: normal}
+    #footer_links .container-4col > * {flex: 1 0 100%;  max-width: 100%}
+.mapbl:after {    right: -15%;    width: 16%;}
+    .socialmedia:after  {    background: url(../images/bg-socialmedia-300@2x.png) no-repeat right center; background-size: cover } 
+    }
+ 

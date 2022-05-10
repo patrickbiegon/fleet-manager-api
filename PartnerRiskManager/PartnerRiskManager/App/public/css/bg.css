@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* CSS Document */
+
+ 
+ 
+/* backgrounds */
+
+.bginnergrey { padding: 20px 0 50px 0}
+ .bgwhite, .bggrey,  .bgdark, .bgdarker, .bgdarkblue { position: relative; padding: 50px 0; }
+.bgwhite {background-color: #fff;  }
+.bgdark {background-color: #4F5D75; }
+.bggrey {background-color: #F2F2F2; }
+.bgdarker {background-color: #2D3142;  }
+.bgdarkblue {background-color: #414F68; }
+ .bgdark   *, .bgdarker   *, .bgdarkblue   *  {color: #fff; }  
+
+.greyblock { background-color: #F5F5F5}
+.darkblueblock { background-color: #2D3142}
+.blueblock { background-color: #414F68}
+
+.whiteblockbgcircles {background: url(../images/whiteblockbgcircles-fullhd.png) no-repeat right bottom; margin: -50px auto;  padding: 50px 0; }
+.blueblockbgcircles {background: url(../images/blueblockbgcircles-fullhd.png) no-repeat right bottom; margin: -70px auto;  padding: 70px 0; }
+.blueblockbgcircles > .container-2col .btn {margin: auto; flex: inherit;    max-width: inherit;    width: auto;}
+
+.bgcirclesstory {background: url(../images/storiesblockbgcircles-fullhd.png) no-repeat right bottom; margin: -50px auto; padding: 50px 0; max-width: 1140px; }
+
+.dotbg { background-image: url(../images/svg/bgdot.svg); min-height: 40px}
+.l2 { height: 75px}
+.dott { margin-top: -40px; margin-bottom: 20px}
+.dotb { margin-bottom: -40px; margin-top: 20px}
+/* ---------- */
+
+.contentblock .blueblockbgcircles { margin: -30px 0; padding: 30px 0}
+
+
+.innerheader-communitylanding {background: url(../images/bgheader-communitylanding.jpg) no-repeat left center; height: 45vw!important; max-height: 425px!important}
+.innerheader-aboutouroffering {background: url(../images/bg-innerheader_aboutouroffering.jpg) no-repeat center center;}
+.innerheader-abouttheinitiative {background: url(../images/bg-innerheader_abouttheinitiative.jpg) no-repeat center center;}
+.innerheader-calendar {background: url(../images/bg-innerheader_calendar.jpg) no-repeat center center;}
+.innerheader-sellandbuy {background: url(../images/bg-innerheader_sellandbuy.jpg) no-repeat center center;}
+.innerheader-helpcenter {background: url(../images/bg-innerheader_helpcenter.jpg) no-repeat center center;}
+.innerheader-hubs_landing {background: url(../images/bg-innerheader_hubs_landing.jpg) no-repeat center center;}
+.innerheader-hubs_template {background: url(../images/bg-innerheader_hubs_template.jpg) no-repeat center center;}
+.innerheader-learningcenter {background: url(../images/bg-innerheader_learningcenter.jpg) no-repeat center center; height: 45vw!important; max-height: 425px!important}
+.innerheader-messages {background: url(../images/bg-innerheader_messages.jpg) no-repeat center center;}
+.innerheader-opportunities_board {background: url(../images/bg-innerheader_opportunities_board.jpg) no-repeat center center;}
+.innerheader-partners_landing {background: url(../images/bg-innerheader_partners_landing.jpg) no-repeat center center;}
+.innerheader-partners_template {background: url(../images/bg-innerheader_partners_template.jpg) no-repeat center center;}
+.innerheader-projectsLanding_and_template {background: url(../images/bg-innerheader_projectsLanding_and_template.jpg) no-repeat center center;}
+.innerheader-projecttemplate {background: url(../images/bg-innerheader_projecttemplate.jpg) no-repeat center center;}
+
+ 
+@media screen and (max-width:1100px) { 
+.whiteblockbgcircles {background: url(../images/whiteblockbgcircles-1024.png) no-repeat right bottom; margin: -30px auto;  padding: 30px 0; }
+    .blueblockbgcircles {background: url(../images/blueblockbgcircles-1024.png) no-repeat right bottom; margin: -60px -30px;  padding: 60px 30px; }
+    .bgcirclesstory {background: url(../images/storiesblockbgcircles-1024.png) no-repeat right bottom; margin: -40px auto; padding: 40px 0;  }
+     .contentblock .blueblockbgcircles { margin: -30px; padding: 30px}
+ .bgwhite, .bggrey,  .bgdark, .bgdarker, .bgdarkblue { padding: 30px 0}
+    .dott { margin-top: -30px; margin-bottom: 10px}
+.dotb { margin-bottom: -30px; margin-top: 10px}
+    .innerheader-partners_template { background-position: 55% center!important;}
+    .innerheader-helpcenter {background-position: 75% center!important}
+    .innerheader-learningcenter  {background-position: 75% center!important; max-height: 350px!important}
+    .innerheader-communitylanding { background-position: left center!important}
+} 
+
+@media screen and (max-width:768px) { 
+.dott { margin-top: -10px; margin-bottom: 10px}
+.dotb { margin-bottom: -20px; margin-top: 10px}
+ .bgwhite, .bggrey,  .bgdark, .bgdarker, .bgdarkblue { padding: 20px 0}
+     .bgcirclesstory {background: url(../images/storiesblockbgcircles-768.png) no-repeat right bottom; margin: -20px auto; padding: 20px 0;  }
+    .whiteblockbgcircles {background: url(../images/whiteblockbgcircles-768.png) no-repeat right bottom; margin: -20px auto;  padding: 20px 0; }
+ .blueblockbgcircles {background: url(../images/blueblockbgcircles-768.png) no-repeat right bottom; margin:-40px -30px ;  padding: 40px 30px; }
+   .contentblock .blueblockbgcircles { margin: -20px; padding: 20px}
+    .innerheader-abouttheinitiative {background-position: 45% center!important}
+        .innerheader-learningcenter  {background-position: 75% center!important; max-height: 280px!important}
+} 
+@media screen and (max-width:540px) {
+    .dott { margin-top: -10px; margin-bottom: 0px}
+.dotb { margin-bottom: -15px; margin-top: 0px}
+     .bgcirclesstory {background: url(../images/storiesblockbgcircles-360.png) no-repeat right bottom; margin: -15px auto; padding: 15px 0;  }
+         .whiteblockbgcircles {background: url(../images/whiteblockbgcircles-360.png) no-repeat right bottom; margin: -15px auto;  padding: 15px 0; }
+     .blueblockbgcircles {background: url(../images/blueblockbgcircles-360.png) no-repeat center bottom; margin: -30px -15px ;  padding: 30px 15px; }
+ .bgwhite, .bggrey,  .bgdark, .bgdarker, .bgdarkblue {  padding: 15px 0}
+     .bgcircles-story {background: url(../images/blue-circle-full.png) no-repeat 200px bottom; margin: -10px auto;    padding: 10px 0;}
+        .innerheader-learningcenter  {background-position: 75% center!important; max-height: 220px!important}
+     
+} 

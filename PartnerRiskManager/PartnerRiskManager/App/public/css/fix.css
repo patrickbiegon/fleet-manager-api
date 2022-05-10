@@ -1,0 +1,422 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+ font-family: 'museo_sans500';
+    src: url('../customfont/MuseoSans_500-webfont.eot');
+    src: url('../customfont/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../customfont/MuseoSans_500-webfont.woff2') format('woff2'),
+         url('../customfont/MuseoSans_500-webfont.woff') format('woff'),
+         url('../customfont/MuseoSans_500-webfont.ttf') format('truetype'),
+         url('../customfont/MuseoSans_500-webfont.svg#museo_sans700') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+@font-face {
+    font-family: 'museo_sans700';
+    src: url('../customfont/MuseoSans_700-webfont.eot');
+    src: url('../customfont/MuseoSans_700-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../customfont/MuseoSans_700-webfont.woff2') format('woff2'),
+         url('../customfont/MuseoSans_700-webfont.woff') format('woff'),
+         url('../customfont/MuseoSans_700-webfont.ttf') format('truetype'),
+         url('../customfont/MuseoSans_700-webfont.svg#museo_sans700') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+body, td, div, input, textarea, table, tr, aside, p, button, label, select, html {font:normal 16px/28px  Verdana,Geneva,sans-serif; text-decoration:none; letter-spacing: 0.01em; color: #2D3142;   }
+h1, h2, h3, h4, h5, h6 {color: #2d3142; font-family: 'museo_sans500', sans-serif; font-weight: 500; margin: 0; padding: 0 }
+a { font-family: 'museo_sans700', sans-serif; font-weight: 700;  }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ font-family: 'museo_sans500', sans-serif; font-weight: 500; }
+
+
+
+/* index page map arez z-index fix  */
+.mapboxindex { max-width: 738px; max-height: 650px;  position: absolute; margin-left: auto; top: -40px; right: 0; z-index: 2!important;   } 
+
+
+
+/* dashboard fix */
+.networkpics img {
+    border-radius: 100px;
+    margin-right: -25px;
+    z-index: 5;
+    max-width: 75px;
+    width: 100%;
+    display: inline-block
+}
+.hubtag img {float: left; position: relative; top: 1px}
+.header-button {
+    transition: background-color .35s ease;
+    line-height: 36px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    font-size: 18px; }
+.header-button:hover {
+    background-color: #e51522;
+}
+a.hubtag .tag {padding: 0; border: 0 none; border-radius: 0}
+a.hubtag img {float: left; position: relative; top: 1px; margin-right: 10px}
+/* logo slider vertical align fix */
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items:center;
+    margin-left: auto;
+    margin-right: auto; }
+.slick-slide     img {        display: block; margin: 0 auto}
+
+
+
+/* INDEX PAGE FIX */
+a.login , a.register {  flex:1 0 100% border-radius: 12px;    display: flex; align-self: stretch; align-items: center; justify-content: center}
+
+
+
+/* TESTIMONIALS BLOCK FIX */
+#testimonials_bar { background: #2D3142}
+#testimonials_bar .btn {margin: auto}
+#testimonials_bar .container-2col { padding: 10px 0;  margin: 0 auto; max-width: 1100px}
+#testimonials {  padding: 0; margin: 0; list-style-type: none; position: relative; flex: 3; display: flex;}
+ 
+#testimonials li {display: block;  margin: 0 14px 0 0; width: 78px;  padding: 0; list-style-type: none;   }
+#testimonials li:last-child {margin: 0}
+#testimonials li img { position: relative; border-radius: 100px; z-index: 3; cursor: pointer; display: block; }
+#testimonials li:hover img {border: 3px solid #C0212B; margin: -3px; box-sizing: content-box}
+#testimonials li p:after {content:'';position:absolute; bottom: -12px; left: 166px;   width: 0px; 
+  height: 0px; 
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 34px solid #C0212B;}
+
+#testimonials li p { padding: 25px; position: absolute; bottom: 110%; z-index: 2; margin: 0;    width: 100%; max-width: 376px; text-align: left; display: none; opacity: 0; font-size: 14px; background-color: #fff; border-radius: 25px; }
+#testimonials li p span {position: relative; z-index: 2; }
+#testimonials li p:before {content:'';position:absolute;z-index: 0;top:-10px;left:-20px;width:115px;height:100px;background:url(../images/svg/quotes.svg) no-repeat center center}
+
+
+#testimonials li:hover p {opacity: 1; display: block;   }
+#testimonials li:nth-child(1) p {left:-150px;}
+#testimonials li:nth-child(2) p {left:-57px;}
+#testimonials li:nth-child(3) p {left:34px;}
+#testimonials li:nth-child(4) p {left:127px;}
+#testimonials li:nth-child(5) p {left:220px;}
+#testimonials li:nth-child(6) p {left:312px;}
+#testimonials li:nth-child(7) p {left:403px;}
+#testimonials li:nth-child(8) p {left:495px;}
+
+@media screen and (max-width:1400px) {
+    
+    #testimonials li:nth-child(1) p {left:1%;}
+    #testimonials li:nth-child(1) p:after { left: 2%;  }
+    
+      #testimonials li:nth-child(2) p {left:3%;}
+    #testimonials li:nth-child(2) p:after { left: 22.8%;  }
+    
+}
+
+@media screen and (max-width:1100px) {
+    
+    #testimonials_bar .container-2col {display: block; padding: 20px;text-align: center}
+    #testimonials {display: inline-flex;  margin: 0 auto}
+    #testimonials_bar .btn {margin: 25px auto 0; display: block; max-width: 320px}
+ 
+    #testimonials li:nth-child(7) p {left:44%;}
+    #testimonials li:nth-child(7) p:after { left: 66.3%;  }
+    
+      #testimonials li:nth-child(8) p {left:49%;}
+    #testimonials li:nth-child(8) p:after { left: 81.2%;  }
+}
+
+@media screen and (max-width:760px) { 
+    #testimonials {display: none; opacity: 0}
+    #testimonials_bar .btn {margin: 0 auto; display: block; max-width: 100%}
+}
+/* TESTIMONIALS BLOCK FIX */
+
+
+.articleimg { display: block; position: relative }
+.articleimg:after {    content: "";    display: block;    padding-bottom: 68%;}
+.articleimg  > a {display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0}
+
+.mapboxindex {
+    max-width: 738px;
+    max-height: 650px;
+    position: absolute;
+    margin-left: auto;
+    top: -40px;
+    right: 0;
+    z-index: 3!important; }
+.footerbuttons {width: 100%; max-width: 340px; text-align: center; display: flex; justify-content: space-between}
+.footerbuttons .btn {font-size: 14px; line-height: inherit; margin: 0 5px!important; padding: 3px 20px 6px 20px; max-height: 40px; border-radius:10px; min-width: inherit; max-width: 48%; width: auto; flex: 1; display: inline-flex; justify-content: center; align-items: center}
+.innerheader h1 {
+    color: #fff;
+    max-width: 1100px;
+    text-align: left;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto 10px;}
+.innerheader-learningcenter h1  {
+    display: block;
+    letter-spacing: .01em;
+    max-width: 1100px;
+     margin: 0 auto 6%; }
+
+/* login page */
+#app-root {
+       display: flex;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#formpage {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+.sidebg {
+    flex: 1 1;
+    align-self: stretch;
+    max-height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.sidebg > img {
+    max-width: 100%;
+    position: absolute;
+}
+
+/* register page: continue button + white container width */
+.formpage-content {
+    background-color: #fff;
+    padding: 50px 50px 80px;
+    box-sizing: border-box;
+    max-width: initial; 
+    width: 100%;
+    text-align: left;
+    margin-right: 0!important;
+}
+.button_block {    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 30px;
+    background-color: #C0212B;
+    text-align: center;
+    border-radius: 10px;
+    display: block;
+    padding: 16px 30px;
+    min-width: 180px;
+    box-sizing: border-box;}
+
+
+
+
+/* form css reset */
+/** * Remove the inner border and padding in Firefox. */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/** * Restore the focus styles unset by the previous rule. */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/** * Add the correct vertical alignment in Chrome, Firefox, and Opera. */
+
+progress {
+  vertical-align: baseline;
+}
+
+/** * Remove the default vertical scrollbar in IE 10+. */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/** * Correct the cursor style of increment and decrement buttons in Chrome. */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/** * Remove the inner padding in Chrome and Safari on macOS. */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive   ========================================================================== */
+
+/* * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/* * Add the correct display in all browsers. */
+
+summary {
+  display: list-item;
+}
+
+/* Misc   ========================================================================== */
+
+/** * Add the correct display in IE 10+. */
+
+template {
+  display: none;
+}
+
+/** * Add the correct display in IE 10. */
+
+[hidden] {
+  display: none;
+}
+
+/* form styling */
+input, button, optgroup,select,textarea
+{margin: 0; padding: 0; border: 0 none; background-color: inherit}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+
+
+
+
+label {font-size: 16px; text-align: left; font-family: 'museo_sans700', sans-serif;  display: block; margin-bottom: 5px; }
+
+input,
+ textarea,select { display: inline-block; padding: 10px 15px; background-color: #ffffff; text-align: left; border: 1px solid #D1D1D1; border-radius: 10px; width: 100%; margin-bottom: 15px; box-sizing: border-box; font-size: 14px; color: #87919E }
+input[type=checkbox],input[type=radio] {width: auto}
+
+input:focus,   textarea:focus, select:focus
+{border-color: #adc5e5; outline: 0; background-color: #f9f9f9}
+
+input[type=color] {padding: 0; border-radius: 5px; width: 100%; max-width: 100px}
+
+input[type=submit],input[type=file],
+input[type=button],input[type=reset],
+button  {font-family: 'museo_sans700', sans-serif; color: #fff; text-decoration: none; font-size: 18px; line-height: 30px; background-color: #C0212B; text-align: center!important; border-radius: 10px; display: inline-block; width: auto; padding: 14px 24px; min-width: 180px;  box-sizing: border-box; cursor: pointer; margin-bottom: 10px;}
+input[type=submit]:hover ,
+input[type=button]:hover ,
+input[type=reset]:hover ,
+button:hover {  background-color: #8f181f; border: 4px solid #88AACA; padding: 10px 20px;   }
+
+.twobigradiobuttons label {
+    font-size: 24px;
+    font-family: 'museo_sans500', sans-serif;
+    line-height: 24px;
+}
+.customcheckbox p , .customradio p {padding: 0; margin: 0}
+.smalltext {font-size: 12px;}
+.customcheckbox b.smalltext, .customradio b.smalltext { display: block; line-height: 14px}
+
+.customcheckbox, .customradio {display: flex; align-items: center;  flex-flow: row nowrap;  }
+.customcheckbox, .customradio >* {flex: auto}
+.customradiorow > span  {margin-right: 15px}
+.customcheckbox + label, .customradio + label {margin-bottom: 0}
+.customradio input[type="radio"]{display: none; opacity: 0}
+.customradio input[type="radio"] + span { background: #ffffff; border: 2px solid #ffffff; outline: 2px solid  #C0212B; border-radius: 100px; width: 30px; height: 30px; display: inline-block; }
+.customradio input[type="radio"]:checked + span { background: #C0212B; border: 3px solid #ffffff; outline: 2px solid  #C0212B; width: 28px; height: 28px;   }
+
+.customcheckbox input[type="checkbox"]{display: none; opacity: 0}
+.customcheckbox input[type="checkbox"] + .fa-check { background-color: #fff; color: #fff; font-size: 20px;   min-width: 30px; min-height: 30px; max-width: 30px; max-height: 30px; line-height: 28px!important; border: 2px solid #C0212B; text-align: center}
+.customcheckbox input[type="checkbox"]:checked + .fa-check { color: #54765A}
+
+.customradio  input[type="radio"] + span { margin-right: 15px}
+.customradio label { margin-right: 15px; display: flex; align-items: center;}
+.customradio label   input + span { cursor: pointer}
+.customcheckbox   .fa-check { margin-right: 15px}
+.customcheckbox label {margin: 0; line-height: 20px; display: flex; align-items: center; }
+.customcheckbox label   input + .fa-check { cursor: pointer}
+.customradiorow {flex: 1 0 100%; align-items: center; display: flex; margin-bottom: 15px}
+.customradiorow > * {display: flex; align-items: center;}
+
+.select-selected {  padding: 10px 15px; background-color: #ffffff; text-align: left; border: 1px solid #D1D1D1; border-radius: 10px; width: 100%; margin-bottom: 15px; box-sizing: border-box; font-size: 14px; color: #87919E;  }
+/*the container must be positioned relative:*/
+.custom-select {  position: relative;  }
+.custom-select .fa-chevron-down { position: absolute;    font-size: 20px;    color: #C0212B;    top: 25%;    right: 20px;}
+/*hide original SELECT element:*/
+.custom-select select {  display: none; z-index: 155;position: relative; }
+.custom-select select  .fa-chevron-down {display: block; opacity: 1}
+
+/*style the items (options), including the selected item:*/
+.select-items div, .select-selected {   padding: 10px 15px;   cursor: pointer;  user-select: none; width: 100%;}
+
+/*style items (options):*/
+.select-items {  position: absolute;  background-color: #fff;   top: 100%; margin-top: -4px;   left: 0;  right: 0;  z-index: 99; border: 1px solid #D1D1D1;  }
+
+/*hide the items when the select box is closed:*/
+.select-hide {  display: none;}
+
+.select-items div:hover, .same-as-selected {  background-color: #f9f9f9}
+

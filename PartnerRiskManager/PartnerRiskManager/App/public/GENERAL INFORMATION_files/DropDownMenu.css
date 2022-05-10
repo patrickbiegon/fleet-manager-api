@@ -1,0 +1,89 @@
+﻿.Menu_DropDownButton {
+    display: inline-block;
+    *display: inline; 
+    *zoom: 1;
+    *z-index:200; /* required for IE7 */
+}
+
+.Menu_DropDownButton.open {
+    z-index: 210;
+    *vertical-align: top;
+}
+
+.Menu_DropDownButton.open .Menu_TopMenu {
+    background-image: none;
+    position: relative;
+    z-index: 210;
+    cursor: pointer;
+    *display: block;
+}
+
+.Menu_DropDownArrow {
+    position: relative;
+    top: -2px;
+    border-style: solid dashed dashed;
+    border-color: transparent;
+    border-top-color: #666;
+    display: -moz-inline-box;
+    display: inline-block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    width: 0;
+    border-width: 3px 3px 0;
+    padding-top: 1px;
+}
+
+.Menu_DropDownPanel {
+    position: absolute;
+    z-index: 200;
+    display: none;
+    list-style: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    margin: -1px 0 0 -1px;
+    -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    
+}
+
+.Menu_SubItemsPlaceholder {
+    
+}
+
+.Menu_DropDownPanel a, 
+.Menu_DropDownPanel a:link,
+.Menu_DropDownPanel a:visited {
+    display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-size: 13px;
+    text-decoration: none;
+    line-height: 2em;
+    color: #333333;
+    white-space: nowrap;
+    margin: 0;
+    background: none;
+    text-shadow: none;
+    border-width: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    min-width: 0;
+    text-align: left;
+    *width: 140px;
+    min-width: 140px;
+    height: 26px;
+}
+
+.Menu_DropDownPanel a:hover,
+.Menu_DropDownPanel a:focus {
+    text-decoration: none;
+}
+
+/* ExcludeAllFromPickersOutsideBlock */

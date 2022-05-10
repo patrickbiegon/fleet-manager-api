@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+
+ /* icons, buttons */
+.btn {color: #fff; text-decoration: none; font-size: 18px; line-height: 30px; background-color: #C0212B; text-align: center!important; border-radius: 10px; display: inline-block; padding: 16px 30px; min-width: 180px;  box-sizing: border-box;  }
+.btn img { position: relative; top: 5px; margin-right: 10px; margin-left: -5px}
+.btn:hover {  border: 4px solid #88AACA; padding: 12px 26px;    color: #fff; text-decoration: none}
+.btn-small { padding: 8px 25px!important; border-radius: 12px; min-width: 150px}
+.btn-small:hover { padding: 4px 21px!important}
+.btn .fas { margin-right: 10px}
+.btnoutline { display: inline-flex; padding: 2px 8px; background-color: #fff; border: 1px solid #C0212B; border-radius: 10px; align-items: center}
+
+a.btnoutline i , a.btnoutline:hover .fas{ margin-right: 5px}
+
+.bigicon {width:100%; max-width: 184px; min-height: 184px;  display: block;   margin-right: 5%; flex:initial;  background-position: bottom center; background-repeat: no-repeat; background-size: contain}
+
+.bigicon-learn {background-image: url(../images/svg/bigicon-learn.svg)}
+.bigicon-sellandbuy {background-image: url(../images/svg/bigicon-sellandbuy.svg)}
+.bigicon-network {background-image: url(../images/svg/bigicon-network.svg)}
+.bigicon-grow {background-image: url(../images/svg/bigicon-grow.svg)}
+.bigicon-events {background-image: url(../images/svg/bigicon-events.svg)}
+.bigicon-help {background-image: url(../images/svg/bigicon-help.svg)}
+.bigicon-learn2 {background-image: url(../images/svg/bigicon-learn2.svg)}
+.bigicon-self_assessment {background-image: url(../images/svg/bigicon-self_assessment.svg)}
+.bigicon-webinars {background-image: url(../images/svg/bigicon-webinars.svg)}
+.bigicon-coach {background-image: url(../images/svg/bigicon-coach.svg)}
+.bigicon-head_hunting {background-image: url(../images/svg/bigicon-head_hunting.svg)}
+.bigicon-policy_maker {background-image: url(../images/svg/bigicon-policy_maker.svg)}
+.bigicon-stories {background-image: url(../images/svg/bigicon-stories.svg)}
+.bigicon-hubs {background-image: url(../images/svg/bigicon-hubs.svg)}
+.bigicon-projects {background-image: url(../images/svg/bigicon-projects.svg)}
+.bigicon-sell {background-image: url(../images/svg/bigicon-sell.svg)}
+.bigicon-buy {background-image: url(../images/svg/bigicon-buy.svg)}
+
+.iconimg { display: block}
+.icoleft { margin-right: 10px;}
+.iconright {margin-left: 10px;}
+.icoright {margin-left: 10px;}
+
+
+.mapex {display: inline-block; width: 100%; height:  100px;  background-image: url(../images/svg/mapex.svg); background-repeat: no-repeat; background-position: center center;}
+
+ 
+.biglink {font-size: 34px; line-height: 40px; display: flex; align-items: center; font-family: 'museo_sans500', sans-serif; font-weight: 500;}
+.biglink i  {top: 2px; margin-left: 10px; font-size: 28px}
+.biglink:hover {text-decoration: none}
+.biglink:hover i  {margin-left: 14px; }
+.biglinkar {color:#2D3142; font-size: 24px; display: block;    margin-bottom: 0; font-family: 'museo_sans500', sans-serif; font-weight: 500;}
+
+.biglinkar > i {display:none; margin-left: 8px; font-size: 20px; color: #C0212B} 
+ .biglinkar:hover > i { margin-left: 10px;color: #88AACA} 
+
+ 
+
+.ico-google {display: inline-block; width: 38px; height: 38px; background-image: url(../images/svg/Google__G__Logo.svg); background-repeat: no-repeat; background-position: center center; display: inline-block}
+.ico-itclogo {display: inline-block; width: 38px; height: 38px; background-image: url(../images/svg/itcicon.svg); background-repeat: no-repeat; background-position: center center; display: inline-block}
+
+.ico-preloader {display: inline-block; width: 40px; height: 40px; background-image: url(../images/svg/preloader.svg); background-repeat: no-repeat; background-position: center center; display: inline-block}
+
+.ico-bigcheckmark {display: inline-block; width: 40px; height: 40px; background-image: url(../images/svg/bigcheckmark.svg); background-repeat: no-repeat; background-position: center center; display: inline-block}
+
+.ico-discussiongroup {display: inline-block;  width: 50px; height: 50px;  background-image: url(../images/svg/ico-discussiongroup.svg); background-repeat: no-repeat; background-position: center center; display: inline-block}

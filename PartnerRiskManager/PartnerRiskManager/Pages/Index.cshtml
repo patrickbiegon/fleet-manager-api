@@ -1,0 +1,17 @@
+﻿@page "/upload"
+@model PartnerRiskManager.Pages.IndexModel
+@{
+}
+
+<div>
+    <form method="post" action="/upload/partnerList" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <button type="submit">Import Partners</button>
+    </form>
+</div>
+<div>
+    <form method="post" action="/upload/userList" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <button type="submit">Import Users</button>
+    </form>
+</div>

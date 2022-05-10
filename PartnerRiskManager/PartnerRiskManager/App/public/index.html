@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description"
+          content="Web site created using create-react-app" />
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <title>ITC - Partnership Assesssment Form</title>
+    <link rel="icon" href="images/icons/196x196.png">
+    <link href="GENERAL INFORMATION_files/ServiceStudioPreview.css" type="text/css" rel="stylesheet">
+<link href="GENERAL INFORMATION_files/Feedback_AjaxWait.css" type="text/css" rel="stylesheet">
+<link href="GENERAL INFORMATION_files/jQueryUIInternal.css" type="text/css" rel="stylesheet">
+<link href="GENERAL INFORMATION_files/Feedback_Message.css" type="text/css" rel="stylesheet">
+<link href="GENERAL INFORMATION_files/Icon.css" type="text/css" rel="stylesheet">
+<link href="GENERAL INFORMATION_files/ApplicationTitle.css" type="text/css" rel="stylesheet">
+<link href="GENERAL INFORMATION_files/DropDownMenu.css" type="text/css" rel="stylesheet">
+<link href="GENERAL INFORMATION_files/Form.css" type="text/css" rel="stylesheet">
+    <link href="GENERAL INFORMATION_files/Theme.ImplementingPartnerGranteeAssessmentForm.css" type="text/css" rel="stylesheet">
+    <link href="GENERAL INFORMATION_files/Theme.ImplementingPartnerGranteeAssessmentForm.extra.css" type="text/css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <!--<link rel="stylesheet" href="libs/css/font-awesome.min.css">
+    <link href="libs/css/bootstrap.min.normal.css" rel="stylesheet">
+    <link href="style/app.css" rel="stylesheet">
+    <link href="libs/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <link href="libs/css/bootstrap-combobox.css" rel="stylesheet">-->
+
+
+    <style type="text/css">
+        ul.headerLinkList {
+            list-style-type: none;
+            white-space: nowrap;
+            margin: 0;
+        }
+
+        li.headerLinkItem {
+            line-height: 30px;
+            display: inline-block;
+        }
+
+        a.headerLink {
+            color: #fff;
+            display: inline-block;
+            padding: 0px 8px;
+            border-right: 1px solid transparent;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+            a.headerLink:visited, a.headerLink:active {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            a.headerLink:hover {
+                color: #fff;
+                text-decoration: none;
+                background-color: rgb(0, 57, 107);
+            }
+
+        .app-title {
+            padding: 3px;
+            width: 100%;
+            height: 30px;
+            color: #fff;
+            background-color: rgb(0, 44, 83)
+        }
+
+            .app-title .user-info, .app-title .app-name, .app-title .app-info {
+                width: 33%;
+                display: inline-block;
+            }
+
+            .app-title .user-info {
+                padding-left: 15px
+            }
+
+            .app-title .app-name {
+                font-size: 1.3em;
+                text-align: center;
+            }
+
+            .app-title .app-info {
+                text-align: right;
+            }
+    </style>
+</head>
+<body id="kt_body" class="bg-body">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div style="width: 100%; height: 30px; background-color: rgb(0, 43, 84);">
+        <a href="https://insight.itc-cci.net/">
+            <img id="itc-logo" src="images/logo%20intranet-homeblue-f.jpg" alt="ITC Logo" height="65" width="394" style="position: absolute; z-index: 10; left: 5px;" />
+        </a>
+        <ul class="headerLinkList" style="padding-left: 410px;">
+            <li class="headerLinkItem"><a class="headerLink" target="_blank" href="http://www.intracen.org/"><span>ITC Website</span></a></li>
+            <li class="headerLinkItem"><a class="headerLink" target="_blank" href="https://contacts.itc-cci.net/"><span>People Directory</span></a></li>
+            <li class="headerLinkItem"><a class="headerLink" target="_blank" href="https://npp.itc-cci.net/"><span>Projects</span></a></li>
+            <li class="headerLinkItem"><a class="headerLink" target="_blank" href="https://umoja.un.org/"><span>UMOJA</span></a></li>
+            <li class="headerLinkItem"><a class="headerLink" target="_blank" href="https://insight.itc-cci.net/Pages/UN-Family.aspx"><span>UN Family</span></a></li>
+            <li class="headerLinkItem"><a class="headerLink" target="_blank" href="https://search.itc-cci.net"><span>Search</span></a></li>
+        </ul>
+    </div>
+    <div style="width: 100%; height: 35px; background-color: rgb(48, 129, 200);">
+    </div>
+    <div class="app-header">
+   
+        <div class="app-title">
+            <div class="user-info">BIEGON, Patrick</div>
+        
+            <div class="app-name">ITC - Partner Assessment Tool</div>
+            <div class="app-info">1 Online Now</div>
+        </div>
+    </div>
+    <div id="root"></div>
+    <footer class="itc-footer" style="width: 100%; color: white; background-color: #002c53; padding: 3px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="business-owner-info" class="col-md-4">Business Owner : <a style="color: #fff" href="https://insight.itc-cci.net/dps/Pages/default.aspx">DPS/OD/Legal</a></div>
+                <div class="col-md-4 text-center">© International Trade Centre 2016 - 2022</div>
+                <div class="col-md-4 text-right">Support : <a id="support" class="copyright" style="color: #fff" href="http://its-servicedesk.itc-cci.net/Tickets/New" target="_blank">DPS/IT&amp;S</a></div>
+            </div>
+        </div>
+    </footer>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <!--begin::Global Javascript Bundle(used by all pages)-->
+    <script src="../src/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="../src/assets/js/scripts.bundle.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--<script src="/libs/jquery.min.js"></script>
+    <script src="/libs/js/bootstrap-combobox.js"></script>
+    <script src="/libs/numeral.min.js"></script>
+    <script src="libs/moment.js"></script>-->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--<script src="/libs/js/bootstrap.min.js"></script>
+    <script src="/libs/js/bootstrap-datepicker.min.js"></script>
+
+
+    <script src="/libs/tinymce/tinymce.min.js"></script>
+    <script src="/libs/vis.min.js"></script>
+    <script src="/libs/dropzone.js"></script>-->
+    <!--end::Global Javascript Bundle-->
+
+</body>
+</html>

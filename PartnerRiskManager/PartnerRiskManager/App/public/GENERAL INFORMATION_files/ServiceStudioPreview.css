@@ -1,0 +1,448 @@
+﻿/* Menu Preview */
+
+.header .Application_Menu,
+.header .Menu_TopMenus,
+.header .Menu_DropDownButton,
+.header .Menu_TopMenu,
+.header .Menu_TopMenu > div,
+.header .Menu_TopMenu > div > a {
+   
+} 
+
+
+
+.header .Menu_DropDownPanel {
+   
+   
+   
+   
+   
+   
+   
+}
+
+.header .Menu_TopMenu > div > a:hover,
+.header .Menu_TopMenu.Menu_TopMenuActive > div > a,
+.header .Menu_DropDownButton.open .Menu_TopMenu > div > a {
+   
+}
+
+.header .Menu_DropDownButton {
+   
+}
+
+.Menu_TopMenus:empty,
+.navigation .Menu_TopMenus:empty {
+        
+    
+        
+} 
+
+.Menu_TopMenus:empty:after {    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+/* SS Responsive behaviour */
+
+.Application_Menu {
+    
+}
+
+.tablet .header-top,
+.phone .header-top {
+    
+    
+}
+
+.phone .header-right {
+    
+}
+
+.phone .header-center {
+    
+}
+
+.phone .balloon,
+.phone .columns,
+.Menu_TopMenus:empty:after {
+    
+}
+
+/*CONTENT LAYOUT*/
+
+.content-middle {   
+    
+}
+
+.header-center {
+    
+}
+
+
+/* CONTENT ServiceStudioPreview */
+
+.is--hidden {
+    
+}
+
+.accordion,
+.modal,
+.balloon,
+.breadcrumbs,
+.center-align:empty,
+.sidebar-container {
+    
+}
+
+.accordion-item-title:empty,
+.alert-message:empty,
+.modal-title:empty:empty
+.animated-label-text:empty,
+.animated-label-input:empty,
+.dropdown-header > div:empty,
+.input-with-icon .input-with-icon-input:empty,
+.toggle-button-label:empty,
+.breadcrumbs-item .title:empty,
+.sidebar-header:empty,
+.wizard-item-label:empty,
+.columns-item:empty,
+.balloon-title:empty,
+.tooltip-widget:empty,
+.timeline-item-date:empty {
+    
+}
+
+.modal-footer:empty,
+.panel-title:empty,
+.panel-footer:empty,
+.breadcrumbs:empty,
+.center-align:empty,
+.timeline-item-container:empty{
+    
+}
+
+.accordion-item-content:empty,
+.balloon-content:empty,
+.blank-slate-content:empty,
+.card:empty,
+.card-background-content:empty,
+.card-background-image:empty,
+.modal-content:empty,
+.panel-content:empty,
+.upload-widget:empty,
+.counter .center-align:empty,
+.flip-content .flip-content-front:empty,
+.flip-content .flip-content-back:empty  {
+    
+}
+
+.accordion:empty,
+.dropdown-container .dropdown-content-list:empty,
+.search-balloon-answers .balloon-content > div,
+.sidebar-content:empty,
+.tabs-content:empty,
+.tabs-content-item:empty,
+.columns:empty,
+.wizard:empty,
+.fieldset-content:empty {
+    
+}
+
+.alert-message:empty,
+.modal-wrapper,
+.animated-label-input,
+.dropdown,
+.dropdown .dropdown-header > div,
+.columns-item,
+.columns-item:empty,
+.sidebar-container,
+.separator.vertical, {
+    
+}
+
+.card-background-content:empty,
+.blank-slate-content:empty {
+    
+}
+
+.bottom-left .blank-slate-content,
+.bottom-right .blank-slate-content,
+.top-left .blank-slate-content,
+.top-right .blank-slate-content,
+.left .blank-slate-content,
+.right .blank-slate-content,
+.bottom-left .card-background-content,
+.bottom-right .card-background-content,
+.top-left .card-background-content,
+.top-right .card-background-content,
+.left .card-background-content,
+.right .card-background-content {
+    
+}
+
+.toggle-button-label:empty {
+    
+}
+
+.wizard-item-label:empty {
+    
+}
+
+.balloon {
+    
+}
+
+.balloon-container {
+    
+}
+
+.card:empty {
+    
+}
+
+.card-background-color {
+    
+}
+
+.card-background {
+    
+}
+
+
+.card-background-image:empty {
+    
+    
+    
+}
+
+.chat .chat-message-content {
+    
+}
+
+.balloon {
+    
+    
+}
+
+.section-header .title {
+    
+}
+
+.section-actions:empty {
+    
+    
+}
+
+.section-content:empty {
+    
+}
+
+.tooltip-widget {
+    
+}
+
+.tooltip-widget:empty {
+    
+}
+
+.progress-container.flex-direction-row .progress-title {
+    
+}
+
+
+
+/* CONTROLS ServiceStudioPreview */
+.input-with-icon .input-with-icon-input:empty {
+    
+}
+
+.input-with-icon.flex-direction-row-reverse .input-with-icon-input {
+    
+}
+
+.input-with-icon.flex-direction-row-reverse .input-with-icon-input:empty {
+    
+}
+
+
+
+.search .search-actions {
+    
+}
+
+.search-balloon .balloon {
+    
+}
+
+/* DATA ServiceStudioPreview */
+
+/* DATA ServiceStudioPreview */
+
+.user-avatar  {
+    
+}
+
+.badge-icon .badge span {
+    
+}
+
+.badge-icon .badge:before {
+    
+}
+
+/* NAVIGATION ServiceStudioPreview */
+
+.breadcrumbs-item .icon:empty {
+    
+}
+
+.breadcrumbs-item .icon.ph {
+    
+}
+
+
+.tabs-header:empty{
+    
+    
+}
+
+.tabs.flex-direction-column {
+    
+    
+    
+    
+}
+
+.tabs.flex-direction-column .tabs-header {
+    
+}
+
+.timeline:empty {
+    
+    
+}
+
+.timeline-item-right,
+.timeline-item-date:empty,
+.timeline-item-container:empty {
+    
+}
+
+
+.wizard:empty {
+    
+    
+}
+
+.wizard-vertical .wizard-item {
+    
+}
+
+.wizard-item:first-child .wizard-item-icon-wraper:before {
+   
+}
+
+.wizard .wizard-item {
+   
+}
+
+.wizard-item-icon:empty {
+    
+    
+}
+
+
+
+/* Responsive */
+/* Load On Visible */
+.load-on-visible-content:empty {
+    
+}
+
+/* UTILITIES Structure */
+.columns .columns-item {
+    
+    
+    
+    }
+
+.columns .columns-item:empty {
+        
+}
+
+.columns .columns-item > div > .card {
+   
+}
+
+/* UTILITIES ServiceStudioPreview */
+
+.flip-content .flip-content-front,
+.flip-content .flip-content-back {
+    
+    
+    
+}
+
+.separator.vertical {
+    
+}
+
+/* LAYOUTS Layout Login */
+
+
+
+
+.layout-login .OUTSYSTEMS_INTERNAL_BLOCK_INSTANCE {
+    
+}
+
+.layout-login-simple .OUTSYSTEMS_INTERNAL_BLOCK_INSTANCE {
+    
+}
+
+.layout-login .columns {
+    
+}
+
+.layout-login .columns .columns-item > .OUTSYSTEMS_INTERNAL_BLOCK_INSTANCE {
+    
+    
+    
+    
+    
+}
+
+.layout-login .layout-login-background {
+    
+}
+
+.layout-login .OUTSYSTEMS_INTERNAL_BLOCK_INSTANCE > .columns {
+    
+    
+}
+
+.layout-login .OUTSYSTEMS_INTERNAL_BLOCK_INSTANCE > .columns .columns-item {
+    
+    
+}
+
+.layout-login .OUTSYSTEMS_INTERNAL_BLOCK_INSTANCE > .columns .columns-item > img {
+    
+    
+    
+        
+}
+
+/* Character Count */
+.character-count-text  {
+       
+}
+
+/* ExcludeAllFromPickersOutsideBlock */

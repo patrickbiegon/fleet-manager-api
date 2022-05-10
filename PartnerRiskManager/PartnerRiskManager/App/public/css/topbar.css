@@ -1,0 +1,328 @@
+@charset "utf-8";
+/* CSS Document */
+
+ /* top bar:logo and user panel */
+.logo {order:0}
+#top_user_panel {order:2}
+#top_bar > .wrapper hr {order:3}
+ul#top_menu {order:4}
+.searchform {order:4}
+.langselect {order:1}
+
+#top_bar { background-color: #2d3142;  z-index: 100; top: 0; width: 100%;  }
+#top_bar, #top_bar a {color:#fff; text-decoration: none; position: relative}
+#top_bar .wrapper { padding: 20px 0  15px; display: flex; flex-flow:  row wrap; align-items: center; max-width:1100px; text-align: left; margin: 0 auto}
+
+#top_bar > .wrapper hr { height: 1px; background: #414f68; padding: 0; border: 0 none; display: block; flex-basis: 100%; margin: 10px auto; }
+#top_bar > .wrapper > * {flex:inherit}
+
+.logo {margin-right: auto; }
+.fa-chevron-down { font-size: 12px; margin-left: 8px}
+#top_user_panel {  border: 3px solid #c0212b; border-radius: 15px; display: flex; justify-content: space-between;align-items: center; align-content: center; color: #fff; padding: 0px 8px; height: 52px; box-sizing: border-box; width:100%; max-width: 350px}
+
+
+    
+#top_user_panel-left, #top_user_panel-right {flex:1 0 50%; display: flex; align-self: stretch; align-items: center}
+#top_user_panel-left {    border-radius: 12px; margin-left: -10px; padding-left: 10px}
+#top_user_panel-right {  border-radius: 12px; margin-right: -10px; font-size: 22px}
+#top_user_panel-right a i{   font-size: 20px}
+ #top_user_panel-right a:hover i {  color: #88AACA}
+#top_user_panel-left:hover { background-color: #c0212b} 
+#top_user_panel-left:hover + #top_user_panel-right   .top_user_panel-buttons  { background: none }
+#top_user_panel-left:hover + #top_user_panel-right   .top_user_panel-buttons a .top_user_panel-notification {border-color: #2D3142}
+#top_user_panel-left:hover + label + input +  #top_user_panel-right   .top_user_panel-buttons  { background: none } 
+#top_user_panel-left:hover + label + input +  #top_user_panel-right   .top_user_panel-buttons a .top_user_panel-notification {border-color: #2D3142}
+
+
+input#top_user_panelswitcher   {display:none; opacity: 0; height: 0; width: 0; padding: 0; margin: 0; border: 0 none }
+ 
+.topbar_userpic {display: flex;   align-items: center}
+ .username { margin-left: 10px; margin-right: 20px; font-size: 16px}
+.topbar_userpic img {border-radius: 100px;  max-width: 40px}
+ .topbar_userpic .top_user_panel-notification {display:none; opacity: 0}
+
+ 
+.top_user_panel-buttons { background-color: #c0212b;  display: flex; border-radius: 8px; padding: 0 10px; align-self: stretch}
+.top_user_panel-buttons a {   width: 28px; height: 28px; margin: 0 5px; display: inline-block; text-align: center; align-self: center}
+.top_user_panel-buttons a b {display: none}
+
+
+.top_user_panel-notification { display: block; margin: 2px; background: white;   border-radius: 100px; height: 12px; width: 12px; position: absolute; z-index: 1; bottom: -2px; right: -4px; border:2px solid #c0212b; }
+.top_user_panel-buttons a .notification-false {display: none; opacity: 0}
+ .top_user_panel-buttons a .notification-true {display: block; opacity: 1}
+.notification-false +.fal + .fas {display: none; opacity: 0}
+.notification-true + .fal {display: none; opacity: 0} 
+.notification-true + .fal + .fas {display: inline-block; opacity: 1}
+
+ 
+a.login .fa-user-circle { font-size: 30px; margin: 0 20px 0 -20px}
+a.login , a.register {  flex:1 0 50%;   margin: 0 -8px; border-radius: 12px;    display: flex; align-self: stretch; align-items: center; justify-content: center}
+a.login:hover { background-color: #C0212B }
+/*
+
+a.login:hover + a.register {background-color:inherit;  }
+a.register:hover {background-color:inherit;   text-decoration: underline!important; }
+ */
+a.register { background-color: #C0212B}
+
+#loginmobiledropdown {display: none; opacity: 0}
+#loginmobiledropdown  + label {display: none; opacity: 0}
+#top_menu li#top_user_panel {display: none; opacity: 0}
+
+#top_menu li.top_user_panel-buttons {display: none; opacity: 0}
+ 
+
+/* nav bar: menu, search, lang */
+#mobilenavswitcher , #mobilenavswitcher + label {display:none; opacity: 0 }
+
+ul#top_menu li, ul#top_menu li p, ul#top_menu li a { color: #fff; font-weight: normal;  }
+ul#top_menu { margin: 0; padding: 0; list-style-type: none;  }
+ul#top_menu li { margin: 0; padding: 0; list-style-type: none; align-items: center; display: inline-block; margin-right: 20px; position: relative; z-index: 5}
+ul#top_menu li a { text-decoration: none; font-size: 16px   }
+ul#top_menu li a:hover {text-decoration: underline; color: #d1d1d1}
+ul#top_menu li a img { position: relative; top: -2px; margin-left: 8px}
+
+ul#top_menu li ul  {margin: 0;   list-style-type: none;  padding: 28px 0 0;  min-width: 340px;    position: absolute;  top :16px; z-index: 3; box-sizing: border-box; display: none; opacity: 0;}
+ul#top_menu li ul li {margin: 0; padding: 0; list-style-type: none; display: inline-block; color: #fff; padding: 20px; width: 100%;box-sizing: border-box}
+
+ul#top_menu li ul li.firstdropdownblock { width: 30%; min-width: 225px }
+ul#top_menu li ul li.seconddropdownblock { width: 40%; min-width: 300px }  
+
+
+ul#top_menu li ul li h4 { color: #fff; margin-bottom: 20px; padding: 0} 
+.dropdownlinks-block { display: block}
+.dropdownlinks-block a { display: block; padding: 10px 20px; margin: 0 -20px}
+.dropdownlinks-block a:hover { background: #2D3142; text-decoration: none; color: #fff}
+.dropdownlinks-list { display: block}
+.dropdownlinks-list a {display: block; color: #fff; text-decoration: underline!important; padding: 10px 0}
+.dropdownbg { background-image: url(../images/blue-circle-full.png); background-repeat: no-repeat; background-position: center 290px; padding-bottom: 100px!important}
+ul#top_menu li ul li a.red { background: #C0212B; display: flex; justify-content: space-between; align-items: center}
+ul#top_menu li ul li a.red i.fal {font-size: 20px}
+ul#top_menu li ul li a.red i.fal {position: relative}
+ul#top_menu li ul li a.red:hover i.fal {right: -5px}
+ul#top_menu li ul li a.red:hover {text-decoration: none}
+ul#top_menu li ul li a.red:hover img { position: relative; left: 3px}
+ 
+ul#top_menu li:hover ul { display: flex; opacity: 1}
+
+
+
+.searchform { padding: 0; margin: 0; border: 0 none; position: relative; z-index: 5; display: flex; margin-left: auto}
+.btn-search { border: 0 none; padding: 0; margin: 0; width: 60px; height: 60px; display: block; background: url(../images/ico-searchbig.png) no-repeat center center; text-indent: -9999em; line-height: 0; font-size:0; cursor: pointer}
+#seachinput {display:none}
+#seachinput + label i {display:inline-block;  cursor:pointer;  width: 24px; height: 24px; position: relative; top: 4px;  margin-bottom: 0;  position: relative;  color: #fff; font-size: 22px}
+
+ #seachinput + label  + .searchformcontainer {display: none; opacity: 0; width: 280px; position: absolute; left: -250px; top: 45px;  padding:10px 15px; margin: 0;  border: 0 none; background-color: #2d3142;}
+ 
+.searchform button { position: relative; padding: 0; margin: 0; text-indent: -9999em; background-color: #C0212B; min-width: 40px; min-height: 40px; border: 0 none; border-radius: 10px; cursor: pointer}
+
+
+.searchform button[type=submit]:after {
+    content: "";    border-left: 2px solid white;    border-bottom: 2px solid white;    width: 10px;    height: 10px;    position: absolute;    right: 16px;    bottom: 15px;    transform: rotate(-135deg); }
+    
+.searchform button[type=submit]:hover:after { right: 15px}
+#seachinput:checked + label + .searchformcontainer {display: flex; opacity: 1; justify-content: center}
+
+#seachinput + label + .searchformcontainer > input {background: white; font-size: 14px;  max-width: 230px; border: 0 none; border-radius: 10px; padding: 4px 10px; line-height: 20px; height: 40px; margin-bottom: 0; width: 100%; margin-right: 5px}
+
+#seachinput + label + .searchformcontainer > input:focus {border: 0 none; outline: none}
+
+
+.langselect { margin-right: 30px; color: #fff; position: relative;   display: inline-block;  font-family: 'museo_sans700', sans-serif} 
+ 
+.mainlang { display: inline-block; color: #fff;  position: relative; z-index: 20; cursor: pointer} 
+.langselect ul { margin: 0; padding: 0; padding-top: 40px; list-style: none; display: none; opacity: 0; position: absolute; right: -25px; top: 15px; z-index: 10; background: #2d3142; width: 120px;  }
+.langselect ul li { margin: 0; padding: 4px 15px; list-style: none; font-size: 14px; text-align: center; }
+.langselect ul li , .langselect ul li  a {  display: block;    margin: 0;  font-size: 14px;  }
+.langselect ul li:hover {background: #a5262e;}
+
+.langselect:hover ul {display:block; opacity: 1}
+
+
+
+
+
+@media screen and (max-width:1100px) {
+
+   #top_bar .wrapper { padding: 20px 30px 14px}
+  ul#top_menu li.navcommunity ul { left: -170px} 
+}
+
+@media screen and (max-width:960px) {
+ ul#top_menu li.navcommunity ul { left: -270px} 
+    
+
+ 
+}
+ 
+
+@media screen and (max-width:860px) { 
+
+#loginmobiledropdown {display: none; opacity: 0}
+#loginmobiledropdown  + label {display: none; opacity: 0}
+    #loginmobiledropdown  + label {display: flex; opacity: 1; width: 84px; height: 84px; cursor: pointer; order: 5; align-items: center; justify-content: center; }
+    #loginmobiledropdown  + label  .fa-user-circle { font-size: 48px; color: white}
+    #loginmobiledropdown  + label + #top_user_panel {display: none; opacity: 0}
+    #loginmobiledropdown  + label:hover, #loginmobiledropdown:checked  + label {background: #414F68}
+    #loginmobiledropdown:checked  + label + #top_user_panel {display: block; opacity: 1; background: #414F68; position: absolute; top: 84px; right: 114px; width: 260px; padding: 20px ; height: auto;    }
+    #top_user_panel a {display: block; padding: 10px 20px; text-align: right; border-radius: 0; margin: 0 -20px}
+     #top_user_panel  .fa-user-circle {display: none; opacity: 0}
+#top_user_panel-right a:hover i {color: #C0212B}
+    
+   #top_bar {height: 84px; padding: 0; position: fixed}
+	#top_bar .wrapper {  height: 100%; padding: 0 30px}
+	.logo {order:1; top: 3px}
+#top_user_panel {order:3}
+#top_bar > .wrapper hr {  display: none}
+    
+  #top_user_panel {display: flex; padding: 0; border-radius: 0; margin: 0; border: 0 none; flex-basis: auto;  height: 84px; width: 84px; justify-content: center; align-items: center}
+    .username {display: none}
+    #top_user_panel-right { display: none; opacity: 0}
+    #top_user_panel-left { padding: 0; margin: auto; display: block; flex: 0}
+	
+	.topbar_userpic {  position: relative; z-index: 15;display: flex!important  }
+    .topbar_userpic img {  border: 4px solid #fff; max-width: 50px}
+    
+    #top_user_panel-right  { display: none;  background: #414F68; position: absolute; margin: 0; width:auto; top: 84px; right: 114px; z-index: 50; border-radius: 0; padding: 10px 0}
+ 
+	#top_user_panelswitcher {position: relative;z-index: 0; opacity: 1}
+	 #top_user_panelswitcher:hover, #top_user_panelswitcher:checked {display:block; width: 0px; height: 0px; opacity: 1; position: absolute; background: none;}
+    
+	#top_user_panelswitcher:hover:before, #top_user_panelswitcher:checked:before { position: absolute; z-index: 1; content: ''; width: 84px; height: 84px; background: #414F68; display: block; opacity: 1; top: -42px; left: -42px}
+	
+    #top_user_panelswitcher:checked + #top_user_panel-right {display: block; opacity: 1} 
+    
+	.topbar_userpic .top_user_panel-notification {display:block; opacity: 1; position: absolute; border: 4px solid #2D3142; width: 20px; height: 20px; bottom: 4px; right: 12px; top: inherit; background: #fff}
+	.topbar_userpic:hover .top_user_panel-notification {border-color: #414F68}
+ 
+    .top_user_panel-buttons {display: flex; flex-flow: column nowrap ; border-radius: 0; background-color: inherit; padding: 0; width: 260px}
+.top_user_panel-buttons a { display: block; text-indent: inherit; height: auto; width: 100%; padding: 6px 20px  ; margin: 0; text-align: right;  font-weight: 500; font-size: 16px; position: relative}
+    
+	.top_user_panel-buttons a b {display: inline-block; position: relative; top: -3px;   font-weight: 500 } 
+    .top_user_panel-buttons a i { width: 30px; text-align: center; margin-left: 10px}
+.top_user_panel-buttons a .top_user_panel-notification {width: 14px; height: 14px;  background: #C0212B; bottom: 7px; right: 16px; border-color: #414F68}
+.top_user_panel-buttons a .notification-false {display: none; opacity: 0}
+ .top_user_panel-buttons a .notification-true {display: block; opacity: 1}
+    
+.notification-false +.fal + .fas {display: none; opacity: 0}
+.notification-true + .fal {display: none; opacity: 0} 
+.notification-true + .fal + .fas {display: inline-block; opacity: 1}
+     
+	.top_user_panel-buttons a:nth-child(1) {order:3; }
+	.top_user_panel-buttons a:nth-child(2) {order:2; border-bottom: 1px solid #4F5D75; margin-bottom: 10px; padding-bottom: 10px  }
+	.top_user_panel-buttons a:nth-child(3) {order:1}
+	.top_user_panel-buttons a:nth-child(4) {order:4}
+	 
+	#top_user_panelswitcher {display: block; opacity: 1; height: 0; width: 0; border: 0 none; padding: 0; margin: 0	} 
+   #top_bar  label { margin: 0}
+	 label#top_user_panelsw {display:block; opacity: 1; width: 84px; height: 84px; cursor: pointer;  position: absolute; right: 114px; top: 0; z-index: 25; margin: 0!important}
+    #top_user_panel-left:hover {background-color: transparent}
+
+  
+  #mobilenavswitcher {display:none;  }
+#mobilenavswitcher + label {  display:block ; opacity: 1; order: 6; padding-right: 30px; margin-right: -30px; cursor:pointer;    width: 114px; height: 84px;text-align: center}
+ #mobilenavswitcher + label   .fa-bars {font-size: 54px; color: #fff;text-align: center; line-height: 84px}
+ #mobilenavswitcher + label  .fa-times {display: none; font-size: 60px; color: #fff;text-align: center; line-height: 84px}
+#mobilenavswitcher + label:hover {background-color: #414F68}
+#mobilenavswitcher:checked  + label {  background-color: #414F68; }
+     #mobilenavswitcher:checked + label   .fa-bars {display: none}
+ #mobilenavswitcher:checked + label  .fa-times { display: block}
+    
+    #mobilenavswitcher  + label + #top_menu {display:none}
+    	#mobilenavswitcher:checked  + label + #top_menu {display:block; position: absolute;  top: 84px; right: 0; z-index: 50;   }
+	 
+	ul#top_menu { background: #414F68; padding: 10px 20px; }
+	ul#top_menu li { display: block; text-align: right; margin: 10px 0;  width: 160px;  padding-right: 20px}
+	ul#top_menu li a { position: relative; display: block}
+	ul#top_menu li ul {    top: -48px;    left: -280px;		padding-right: 45%;}
+	ul#top_menu li ul li {width: 260px}
+    ul#top_menu li .fa-chevron-down {    float: left;    transform: rotate(90deg);    position: relative;    top: 7px}
+    ul#top_menu li.navcommunity ul {top: -162px; left: -470px; max-width: 550px }
+    ul#top_menu li.navcommunity ul li {text-align: left}
+    ul#top_menu li.navcommunity ul li:first-child {background-color: #414F68!important}
+    ul#top_menu li.navcommunity ul li:nth-child(2) {background-color: #2D3142!important}
+    ul#top_menu li.navcommunity ul li:last-child {display: none}
+    
+	ul#top_menu li ul li a.red {display: block}
+	 
+.searchform {order:2; }
+.langselect { display: none}
+
+	.btn-search { border: 0 none; padding: 0; margin: 0; width: 40px; height: 40px; }
+    
+	#seachinput + label {   width: 84px; height: 84px; z-index: 2; background-size: auto; margin: 0 }
+	 #seachinput:hover + label, #seachinput:checked + label {  background-color: #414F68; width: 84px; height: 84px; 	}
+    #seachinput + label i {    display: inline-block;    cursor: pointer;    width: 84px;    height: 84px;    position: relative;
+     margin-bottom: 0;    position: relative;    color: #fff;    font-size: 44px;    line-height: 80px;        text-align: center;}
+        
+	#seachinput:checked + label + .searchformcontainer { position: absolute; left: -196px;  top: 84px; z-index: 10; background-color: #414F68; padding: 25px 19px }
+ 
+    #seachinput + label + input:before {background-color: #414F68;} 
+}
+
+@media screen and (max-width:680px) {
+    #top_user_panel{display: none; opacity: 0}
+    #top_menu li#top_user_panel {display: block; opacity: 1}
+    #loginmobiledropdown + label {display: none; opacity: 0}
+    li#top_user_panel {height: auto; text-align: center; padding: 20px 0 ;max-width: 100%; margin-bottom: 20px!important; padding-bottom: 20px!important; border-bottom: 1px solid rgba(255,255,255,0.2) }
+    li#top_user_panel a { margin: 5px 0; text-align: center; display: flex!important; padding: 10px 0!important }
+    #top_user_panel .fa-user-circle {display: inline-block; opacity: 1}
+	.searchform {display:none}
+    
+	#mobilenavswitcher + label {width:114px; height: 84px; margin-right: -30px; background-position: 32px center }
+    
+	#mobilenavswitcher:checked  + label + #top_menu {  top: 84px;  padding: 0; width: 100%; background: #4F5D75; box-shadow: 0px 10px 10px rgb(0,0,0,0.3); border-bottom: 1px solid #000  }
+	#mobilenavswitcher:checked  + label + #top_menu li {width:auto; padding: 0; margin: 10px; text-align: center}
+    #mobilenavswitcher:checked  + label + #top_menu li a { display: block; padding: 5px 0}
+	#mobilenavswitcher:checked  + label + ul#top_menu li .arrow_down { border-left: 1px solid white;    border-bottom: 1px solid white;    width: 6px; height: 6px;    position:relative;   top: -3px;  transform: rotate(-45deg); display: inline-block;     margin-left: 28px;    margin-right: -27px; }
+    #mobilenavswitcher:checked + label + ul#top_menu li:hover .arrow_down {transform: rotate(135deg); top: 2px; left:-20px} 
+    #mobilenavswitcher:checked + label + #top_menu li.top_user_panel-buttons { display: block; opacity: 1; background: #414F68; border-radius: 0; margin: 0; margin-bottom: 15px; padding: 10px 20px; display: flex; flex-flow:row wrap}
+    #mobilenavswitcher:checked + label + #top_menu li.top_user_panel-buttons a { text-align: left; border: 0 none; display: flex; flex: 1 0 49%;   padding: 10px 0; height: 100%; align-items: center; align-content: center}
+    #mobilenavswitcher:checked + label + #top_menu li.top_user_panel-buttons a  span {top: -3px}
+    .top_user_panel-buttons a b { top: 0}
+    .top_user_panel-buttons a:hover {text-decoration: none}
+    .top_user_panel-buttons a b span {display: none; opacity: 0; top: 4px}
+ 
+    
+    ul#top_menu li ul li a:hover { background: none    }
+    #mobilenavswitcher:checked + label + #top_menu li.top_user_panel-buttons a b {order:2 }
+    #mobilenavswitcher:checked + label + #top_menu li.top_user_panel-buttons a span {order: 1;  }
+    #mobilenavswitcher:checked + label + #top_menu li.top_user_panel-buttons a:nth-child(1) {order: 2}
+    #mobilenavswitcher:checked + label + #top_menu li.top_user_panel-buttons a:nth-child(2) {order: 3}
+    #mobilenavswitcher:checked + label + #top_menu li.top_user_panel-buttons a:nth-child(3) {order: 1}
+    #mobilenavswitcher:checked + label + #top_menu li.top_user_panel-buttons a:nth-child(4) {order: 4}
+    
+    ul#top_menu li ul {top: 0; left: 0; right: 0;  text-align: center; position: inherit; padding: 0}
+    ul#top_menu li:hover ul { display: block; opacity: 1; }
+     #mobilenavswitcher:checked + label + ul#top_menu li ul li { background: none; text-align: center; width:100%!important; padding: 0; margin: 0}
+    #mobilenavswitcher:checked + label + ul#top_menu li ul li { margin: 5px 0; padding: 0} 
+    
+    ul#top_menu li ul li a {color: #88AACA; width:100%; margin: 10px 0; padding: 10px 0; display: block}
+    ul#top_menu li ul li a.red { background: none}
+    ul#top_menu li ul li a.red:hover {text-decoration: none}
+      .top_user_panel-buttons a i {    margin-right: 10px;    font-size: 18px; position: relative; top: -2px}
+        .top_user_panel-buttons a:hover i {text-decoration: none!important; color: #C0212B}
+        ul#top_menu li a:hover { text-decoration: none}
+        .top_user_panel-notification {top: 22px!important; left: 26px}
+        ul#top_menu li ul li a.red i.fal { margin-left: 10px; position: relative; top: 2px}
+      
+        .dropdownlinks-list a {text-decoration: none!important}
+ul#top_menu li .fa-chevron-down {    float: none;    transform: rotate(0deg);    position: relative;    top: 0px;    }
+ul#top_menu li.navcommunity ul {    top: 0px;    left: 0px;    max-width: 100%;    position: inherit} 
+        ul#top_menu li.navcommunity ul li:nth-child(1), ul#top_menu li.navcommunity ul li:nth-child(2), ul#top_menu li.navcommunity ul li:nth-child(3) { display: block; background: none!important}
+        .dropdownbg  { padding: 0!important}
+        ul#top_menu li ul li h4 { margin: 10px 0 0 0}
+        ul#top_menu li ul li p { margin: 5px 0 15px; padding: 0}
+	}
+
+  
+    
+    @media screen and (max-width:540px) { 
+        #mobilenavswitcher:checked + label + #top_menu { top: 60px}
+      	#top_bar {height: 60px}
+	#top_bar .wrapper { padding: 0 10px}
+      #mobilenavswitcher + label {height: 60px; width: 114px; margin-right: -40px; background-position: center center}
+         #mobilenavswitcher + label   .fa-bars {font-size: 48px; color: #fff;text-align: center; line-height: 60px}
+ #mobilenavswitcher + label  .fa-times {display: none; font-size: 54px; color: #fff;text-align: center; line-height: 60px}
+       
+}

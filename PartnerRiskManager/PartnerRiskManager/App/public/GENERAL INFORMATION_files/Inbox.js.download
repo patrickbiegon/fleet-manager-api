@@ -1,0 +1,1177 @@
+﻿// EPATaskbox {{{
+
+// Constructor of the EPATaskbox. This is also the namespace object used for
+// all EPATaskbox declarations
+var EPATaskbox = window.EPATaskbox = function(inboxContainer, userId, numActivities, hasUnseenActivities, viewOptions, /* optional */ $) {
+    EPATaskbox.FieldDeclarations.call(this);
+    EPATaskbox.MethodDeclarations.call(this);
+
+    // Object constructor
+    this.$ = this.GetReal$($);
+    if(typeof(EPATaskbox_ViewOptions) !== "undefined") {
+        viewOptions = EPATaskbox_ViewOptions;
+    }
+    
+    if (this.ShouldCreateInbox(userId)) {
+        this.Initialize(userId, numActivities, hasUnseenActivities, viewOptions);
+        this.InitializeView(this.$(inboxContainer), viewOptions);
+    }
+};
+
+// Field declarations. This is for reference only, since they will eventually be
+// initialized in the constructor / initialization code.
+// Don't include initializations here, unless the field is constant, since the
+// object is not constructed yet, and no methods exist yet.
+EPATaskbox.FieldDeclarations = function() {
+    // The $ function to use. We assume this is a jquery-like object (with the
+    // same interface anyway).
+    this.$ = null;
+
+    // The persistence object, used to store state across page navigations.
+    this.persistence = null;
+
+    // The object which is used to resolve server URLs.
+    this.url = null;
+
+    // The object responsible for updating the view (HTML).
+    this.view = null;
+
+    // The object which will handle the inbox events.
+    this.events = null;
+
+    // The object which polls the inbox state.
+    this.poller = null;
+};
+
+// The method declarations of the EPATaskbox class.
+EPATaskbox.MethodDeclarations = function() {
+    // Finds the most suitable $ function.
+    this.GetReal$ = function($) {
+        return $ || window.outsystems.internal.$ || window.$;
+    };
+    
+    this.can_has_iframe = function(hwnd) {
+        // figure out if EPA is defined in an outer window
+        if (hwnd == null) {
+            return this.can_has_iframe(window);
+        } else if (hwnd.parent && hwnd.parent != hwnd) {
+            hwnd = parent;
+            if (typeof(hwnd.EPATaskbox) != 'undefined') {
+                return false;
+            }
+            return this.can_has_iframe(hwnd);
+        }
+        return true;
+    };
+
+    this.ShouldCreateInbox = function(userId) {
+        if (userId == 0)
+            return false;
+
+        try {
+            // enclose in try catch because we can hit cross-domain exceptions
+            // while looking for the parent. In that case, we SHOULD create Inbox
+            return this.can_has_iframe();
+        }catch(ex){ }
+        
+        return true;
+    };
+
+    this.Initialize = function(userId, numActivities, hasUnseenActivities, viewOptions) {
+        _state = {
+            userId : userId,
+            numActivities : numActivities,
+            hasUnseenActivities : hasUnseenActivities
+        };
+
+        this.persistence = new EPATaskbox.Persistence("EPATaskbox." + userId, viewOptions.cookieTimeout);
+        this.url = new EPATaskbox.Url(viewOptions.applicationServer, viewOptions.developmentMode, userId);
+        this.events = new EPATaskbox.Events(this, this.$);
+        this.BindEvents();
+    };
+
+    this.InitializeView = function(inboxContainer, viewOptions) {
+        this.view = new EPATaskbox.View(this, inboxContainer, viewOptions, this.$);
+        this.view.StartView();
+
+        this.poller = new EPATaskbox.StatePoller(this, viewOptions.pollInterval, viewOptions.maxPollInterval);
+        this.poller.StartPolling();
+    };
+
+    // State methods {{{ 
+
+    // The state of the widget. This includes the number of activities, and if
+    // the user has any unseen activities in the inbox.
+    var _state = null;
+
+    this.GetNumberOfActivities = function() {
+        return _state.numActivities;
+    };
+
+    this.HasUnseenActitivies = function() {
+        return _state.hasUnseenActivities;
+    };
+
+    this.SetState = function(numActivities, hasUnseenActivities) {
+        _state.numActivities = numActivities;
+        _state.hasUnseenActivities = hasUnseenActivities;
+    };
+    // }}}
+
+    // Application events {{{
+    this.BindEvents = function() {
+        this.events.bind(
+            this.events.Event_Names.FrameNavigated,
+            this.utils.closure(this, this.OnFrameNavigated)
+        );
+
+        this.events.bind(
+            this.events.Event_Names.ActivityOpened,
+            this.utils.closure(this, this.OnActivityOpened)
+        );
+
+        this.events.bind(
+            this.events.Event_Names.ErrorOnActivityOpen,
+            this.utils.closure(this, this.OnGenericError)
+        );
+        this.events.bind(
+            this.events.Event_Names.ErrorOnActivityClose,
+            this.utils.closure(this, this.OnGenericError)
+        );
+    };
+
+    this.OnFrameNavigated = function(evt, framePage) {
+        this.view.SetFrameCurrentPage(framePage);
+    };
+
+    this.OnActivityOpened = function(evt, activity) {
+        this.view.NavigateToOpenedActivity(activity.id, activity.url);
+    };
+
+    this.OnGenericError = function(evt, activity) {
+        this.view.notification.ShowErrorMessage(activity.failureMessage);
+    };
+    // }}}
+
+    // Utils methods {{{
+    this.utils = {};
+
+    // Creates a closure, by attaching the function to thisObj
+    var _closureCache = [];
+    this.utils.closure = function(thisObj, fn) {
+        var closures = _closureCache[thisObj];
+        if (!closures) {
+            closures = _closureCache[thisObj] = [];
+        }
+
+        var cached = closures[fn];
+        if (!cached) {
+            cached = closures[fn] = function() {
+                return fn.apply(thisObj, arguments);
+            };
+        }
+
+        return cached;
+    };
+    
+    this.utils.unloadClosures = function(thisObj) {
+        delete _closureCache[thisObj];
+    };
+
+    var _debugging = false;
+    this.utils.enableDebug = function() {
+        _debugging = true;
+    };
+
+    this.utils.debug = function(obj) {
+        if (_debugging) {
+            if (window.console) {
+                // Print to firebug console
+                window.console.log(obj);
+            }
+        }
+    };
+    // }}}
+};
+
+// }}}
+
+
+// EPATaskbox.View {{{
+
+EPATaskbox.View = function(inbox, inboxContainer, viewOptions, $) {
+    EPATaskbox.View.FieldDeclarations.call(this);
+    EPATaskbox.View.MethodDeclarations.call(this);
+
+    this.$ = $;
+    this.Initialize(inbox, inboxContainer, viewOptions);
+};
+
+EPATaskbox.View.FieldDeclarations = function() {
+    this.constants = {
+        NumActivities_Max_Display : 99,
+        NumActivities_Overflow_Text : "99+",
+        AppearEffect_Time : 200,
+        GlowEffect_InTime : 1000,
+        GlowEffect_OutTime : 2000
+    };
+
+    this.Taskbox_View_States = {
+        Hidden      : 0,
+        Iconified   : 1,
+        Expanded    : 2,
+        FrameOpened : 3
+    };
+
+    this.Frame_Pages = {
+        ActivityList : 0,
+        ActivityGuidance : 1
+    };
+
+    this.Frame_Entry_Points = [
+        "ListActivities",
+        "ActivityGuidance"
+    ];
+
+    // The $ function to use. We assume this is a jquery-like object (with the
+    // same interface anyway).
+    this.$ = null;
+
+    // The inbox object
+    this.inbox = null;
+
+    // The view options object
+    this.viewOptions = null;
+
+    // The INotification object
+    this.notification = null;
+
+    // The container (wrapped <div>) of the whole widget. Controls the
+    // positioning in the page.
+    this.widgetContainer = null;
+
+    this.iconified = {
+        // The container (wrapped <div>) for the iconified state
+        container : null,
+        // The inbox icon (wrapped <img>) in the normal state
+        normalImg : null,
+        // The inbox icon (wrapped <img>) in the glowing state
+        glowingImg : null,
+        // The container (wrapped <div>) of the text where the number of activities
+        // will be presented.
+        numActivitiesContainer : null
+    };
+
+    this.expanded = {
+        // The container (wrapped <div>) for the expanded state
+        container : null,
+        // The expanded icon (wrapped <img>) in the normal state
+        normalImg : null,
+        // The expanded icon (wrapped <img>) in the glowing state
+        glowingImg : null
+    };
+
+    this.opened = {
+        // The container (wrapped <div>) for the opened state
+        container : null,
+        // The frame content container (wrapped <div>) which contains the iframe
+        frame : null,
+        // The content iframe (wrapped <iframe>)
+        iframe : null
+    };
+
+    // All the icons (wraped <img>s) in the glowing state
+    this.allGlowingElements = null;
+
+    // Determines if the icon should continue to be animated with the glow effect
+    this.isStillGlowing = false;
+};
+
+EPATaskbox.View.MethodDeclarations = function() {
+    this.Initialize = function(inbox, inboxContainer, viewOptions) {
+        this.inbox = inbox;
+        this.viewOptions = {
+            allowGlow : viewOptions.allowGlow
+        };
+        this.widgetContainer = inboxContainer;
+
+        this.iconified.container = this.$(".EPATaskbox_IconifiedContainer", this.widgetContainer);
+        this.iconified.normalImg = this.$(".EPATaskbox_Icon_EPATaskbox_NotGlowing", this.iconified.container);
+        this.iconified.glowingImg = this.$(".EPATaskbox_Icon_EPATaskbox_Glowing", this.iconified.container);
+        this.iconified.numActivitiesContainer = this.$(".EPATaskbox_ActivityCount", this.iconified.container);
+
+        this.expanded.container = this.$(".EPATaskbox_ExpandedContainer", this.widgetContainer);
+        this.expanded.normalImg = this.$(".EPATaskbox_ExpandedIcon_EPATaskbox_NotGlowing", this.expanded.container);
+        this.expanded.glowingImg = this.$(".EPATaskbox_ExpandedIcon_EPATaskbox_Glowing", this.expanded.container);
+
+        this.opened.container = this.$(".EPATaskbox_OpenedContainer", this.widgetContainer);
+        this.opened.frame = this.$(".EPATaskbox_FrameContainer", this.widgetContainer);
+
+        this.allGlowingElements = this.$([].concat(
+            this.iconified.glowingImg.get(),
+            this.expanded.glowingImg.get()
+        ));
+
+        this.SetupEventListeners();
+        this.SetupNotification();
+    };
+
+    this.SetupEventListeners = function() {
+        // Animation effects
+        this.iconified.container.bind("mouseenter", this.inbox.utils.closure(this, this.OnIconifiedMouseEnter));
+        this.expanded.container.bind("mouseleave", this.inbox.utils.closure(this, this.OnExpandedMouseLeave));
+        this.expanded.container.bind("click", this.inbox.utils.closure(this, this.OnExpandedMouseClick));
+
+        // Application events
+        this.inbox.events.bind(
+            this.inbox.events.Event_Names.FrameClosed,
+            this.inbox.utils.closure(this, this.OnCloseFrameMouseClick)
+        );
+    };
+
+    this.SetupNotification = function() {
+        var feedbackWidget = this.GetApplicationFeedbackMessageWidget();
+        if (feedbackWidget) {
+            this.notification = new EPATaskbox.View.FeedbackMessageNotification(feedbackWidget);
+        } else {
+            this.notification = new EPATaskbox.View.SimpleNotification();
+        }
+    };
+
+    this.GetApplicationFeedbackMessageWidget = function() {
+        if (window.RichWidgets_Feedback_Message_notifyWidget) {
+            return window.RichWidgets_Feedback_Message_notifyWidget;
+        } else {
+            return null;
+        }
+    };
+
+    // Starts the view with the initial state of the widget
+    this.StartView = function() {
+        if (this.inbox.GetNumberOfActivities() == 0) {
+            // Force the inbox into the hidden state
+            this.SetTaskboxViewState(this.Taskbox_View_States.Hidden);
+        }
+
+        switch (this.GetTaskboxViewState()) {
+        case this.Taskbox_View_States.Hidden: 
+            this.widgetContainer.hide();
+            break;
+        case this.Taskbox_View_States.FrameOpened:
+            this.opened.container.show();
+            this.InitializeOpenedWindow();
+            this.widgetContainer.show();
+            break;
+        case this.Taskbox_View_States.Iconified:
+        case this.Taskbox_View_States.Expanded:
+        default:
+            this.SetTaskboxViewState(this.Taskbox_View_States.Iconified);
+            this.iconified.container.show();
+            this.widgetContainer.show();
+            break;
+        }
+
+        this.Refresh();
+    };
+
+    this.Refresh = function() {
+        this.RefreshIcon();
+
+        var activities = this.inbox.GetNumberOfActivities();
+        if (activities > 0 && this.GetTaskboxViewState() == this.Taskbox_View_States.Hidden) {
+            this.SetTaskboxViewState(this.Taskbox_View_States.Iconified);
+            this.iconified.container.show();
+            this.StartEffectAppear();
+        } else if (activities == 0 && this.GetTaskboxViewState() == this.Taskbox_View_States.Iconified) {
+            this.SetTaskboxViewState(this.Taskbox_View_States.Hidden);
+            this.StartEffectDisappear();
+        }
+    };
+
+    this.RefreshIcon = function() {
+        var activities = this.inbox.GetNumberOfActivities();
+        var activitiesText = (activities <= this.constants.NumActivities_Max_Display? activities : this.constants.NumActivities_Overflow_Text);
+        this.iconified.numActivitiesContainer.text(activitiesText);
+
+        if (this.viewOptions.allowGlow) {
+            if (this.inbox.HasUnseenActitivies()) {
+                this.StartGlow();
+            } else {
+                this.StopGlow();
+            }
+        }
+    };
+
+    // Navigation methods {{{
+    this.NavigateToActivityList = function() {
+        if (this.GetFrameCurrentPage() != this.Frame_Pages.ActivityList) {
+            var frameUrl = this.inbox.url.EntryPoint(
+                this.Frame_Entry_Points[this.Frame_Pages.ActivityList],
+                {}
+            );
+            this.RedirectFrame(frameUrl);
+        }
+    };
+
+    this.NavigateToOpenedActivity = function(activityId, activityUrl) {
+        this.SetFrameCurrentPage(this.Frame_Pages.ActivityGuidance);
+        this.SetFrameLastActivityId(activityId);
+
+        if (activityUrl && activityUrl != "") {
+            // The guidance will be displayed when the application is redirected
+            this.RedirectApplication(activityUrl);
+        } else {
+            // Display the guidance right now
+            var frameUrl = this.inbox.url.EntryPoint(
+                this.Frame_Entry_Points[this.Frame_Pages.ActivityGuidance],
+                {
+                    ActivityId : activityId
+                }
+            );
+            this.RedirectFrame(frameUrl);
+        }
+    };
+
+    this.RedirectApplication = function(newUrl) {
+        window.location = newUrl;
+    };
+
+    this.RedirectFrame = function(newUrl) {
+        if (this.opened.iframe && this.opened.iframe.contentWindow) {
+            this.opened.iframe.contentWindow.location = newUrl;
+        }
+    };
+    // }}}
+
+    // Persistent view methods {{{
+
+    // The state of the view.
+    var _state = {
+        /* The inbox state (one of Taskbox_View_States values) */
+        inbox : null,
+        frame : {
+            /* The current page (one of Frame_Pages values) */
+            currentPage : null,
+            /* Id of the last activity viewed in the guidance page */
+            lastActivityId : null,
+            /* The filter text used to filter the activity list */
+            activityFilter : null
+        }
+    };
+
+    this.GetTaskboxViewState = function() {
+        this.EnsureViewStateLoaded();
+        return _state.inbox;
+    };
+    this.SetTaskboxViewState = function(inboxState) {
+        this.inbox.persistence.Set(this.inbox.persistence.Keys.InboxViewState, inboxState);
+        _state.inbox = inboxState;
+    };
+
+    this.GetFrameCurrentPage = function() {
+        this.EnsureViewStateLoaded();
+        return _state.frame.currentPage;
+    };
+    this.SetFrameCurrentPage = function(currentPage) {
+        this.inbox.persistence.Set(this.inbox.persistence.Keys.FrameCurrentPage, currentPage);
+        _state.frame.currentPage = currentPage;
+    };
+
+    this.GetFrameLastActivityId = function() {
+        this.EnsureViewStateLoaded();
+        return _state.frame.lastActivityId;
+    };
+    this.SetFrameLastActivityId = function(activityId) {
+        this.inbox.persistence.Set(this.inbox.persistence.Keys.FrameLastActivity, activityId);
+        _state.frame.lastActivityId = activityId;
+    };
+
+    this.GetFrameActivityFilter = function() {
+        this.EnsureViewStateLoaded();
+        return _state.frame.activityFilter;
+    };
+    this.SetFrameActivityFilter = function(filter) {
+        this.inbox.persistence.Set(this.inbox.persistence.Keys.FrameActivityFilter, filter);
+        _state.frame.activityFilter = filter;
+    };
+
+    this.EnsureViewStateLoaded = function() {
+        var persistence = this.inbox.persistence;
+        if (_state.inbox == null) {
+            _state.inbox = persistence.Get(persistence.Keys.InboxViewState, this.Taskbox_View_States.Iconified);
+        }
+        if (_state.frame.currentPage == null) {
+            _state.frame.currentPage = persistence.Get(persistence.Keys.FrameCurrentPage, this.Frame_Pages.ActivityList);
+        }
+        if (_state.frame.lastActivityId == null) {
+            _state.frame.lastActivityId = persistence.Get(persistence.Keys.FrameLastActivity);
+        }
+        if (_state.frame.activityFilter == null) {
+            _state.frame.activityFilter = persistence.Get(persistence.Keys.FrameActivityFilter);
+        }
+    };
+    // }}}
+
+    // Event handlers {{{
+    this.OnIconifiedMouseEnter = function(evt) {
+        if (this.GetTaskboxViewState() == this.Taskbox_View_States.Iconified) {
+            this.SetTaskboxViewState(this.Taskbox_View_States.Expanded);
+            this.StartEffectExpand();
+        }
+    };
+
+    this.OnExpandedMouseLeave = function(evt) {
+        if (this.GetTaskboxViewState() == this.Taskbox_View_States.Expanded) {
+            this.SetTaskboxViewState(this.Taskbox_View_States.Iconified);
+            this.StartEffectCollapse();
+        }
+    };
+
+    this.OnExpandedMouseClick = function(evt) {
+        if (this.GetTaskboxViewState() == this.Taskbox_View_States.Expanded) {
+            this.InitializeOpenedWindow();
+            this.SetTaskboxViewState(this.Taskbox_View_States.FrameOpened);
+            this.StartEffectOpen();
+            this.inbox.events.trigger(this.inbox.events.Event_Names.FrameOpened);
+        }
+    };
+
+    this.OnCloseFrameMouseClick = function(evt) {
+        if (this.GetTaskboxViewState() == this.Taskbox_View_States.FrameOpened) {
+            this.SetTaskboxViewState(this.Taskbox_View_States.Iconified);
+            this.StartEffectClose();
+            this.inbox.poller.Poll();
+        }
+    };
+    // }}}
+
+    // State transition effects {{{
+    this.StartEffectAppear = function() {
+        this.widgetContainer.fadeIn(this.constants.AppearEffect_Time);
+    };
+
+    this.StartEffectDisappear = function() {
+        this.widgetContainer.fadeOut(this.constants.AppearEffect_Time);
+    };
+
+    this.StartEffectExpand = function() {
+        this.iconified.container.fadeOut(this.constants.AppearEffect_Time);
+        this.expanded.container.fadeIn(this.constants.AppearEffect_Time);
+    };
+
+    this.StartEffectCollapse = function() {
+        this.expanded.container.fadeOut(this.constants.AppearEffect_Time);
+        this.iconified.container.fadeIn(this.constants.AppearEffect_Time);
+    };
+
+    this.StartEffectOpen = function() {
+        this.expanded.container.hide();
+        this.opened.container.show();
+    };
+
+    this.StartEffectClose = function() {
+        this.opened.container.hide();
+        this.iconified.container.show();
+    };
+    // }}}
+
+    // Glowing {{{
+    this.StartGlow = function() {
+        if (!this.isStillGlowing) {
+            this.isStillGlowing = true;
+            this.allGlowingElements.css({ opacity : 1 });
+            this.GlowCycle();
+        }
+    };
+
+    this.GlowCycle = function() {
+        if (this.isStillGlowing) {
+            var restart = this.inbox.utils.closure(this, this.GlowCycle);
+            this.allGlowingElements.
+                fadeIn(this.constants.GlowEffect_InTime).
+                fadeOut(this.constants.GlowEffect_OutTime, restart);
+        } else {
+            this.allGlowingElements.hide();
+        }
+    };
+
+    this.StopGlow = function() {
+        this.isStillGlowing = false;
+    };
+    // }}}
+
+    // Opened window logic {{{
+    this.InitializeOpenedWindow = function() {
+        if (!this.opened.iframe) {
+            this.opened.iframe = this.CreateIframe(this.opened.frame.get(0), this.GetInitialFrameUrl());
+        }
+    };
+
+    this.GetInitialFrameUrl = function() {
+        switch (this.GetFrameCurrentPage()) {
+        case this.Frame_Pages.ActivityGuidance:
+            return this.inbox.url.EntryPoint(
+                this.Frame_Entry_Points[this.Frame_Pages.ActivityGuidance],
+                {
+                    ActivityId : this.GetFrameLastActivityId()
+                }
+            );
+        case this.Frame_Pages.ActivityList:
+        default:
+            return this.inbox.url.EntryPoint(
+                this.Frame_Entry_Points[this.Frame_Pages.ActivityList],
+                {}
+            );
+        }
+    };
+
+    this.CreateIframe = function(parent, url) {
+        var iframe = parent.ownerDocument.createElement("iframe");
+        iframe.setAttribute("src", url);
+        iframe.setAttribute("frameBorder", 0);
+
+        // Store the object reference to the inbox
+        iframe.inbox = this.inbox;
+
+        parent.appendChild(iframe);
+        return iframe;
+    };
+    // }}}
+};
+
+// EPATaskbox.View.INotification {{{
+EPATaskbox.View.INotification = function() {
+    EPATaskbox.View.INotification.FieldDeclarations.call(this);
+    EPATaskbox.View.INotification.MethodDeclarations.call(this);
+};
+EPATaskbox.View.INotification.FieldDeclarations = function() {
+};
+EPATaskbox.View.INotification.MethodDeclarations = function() {
+    this.ShowErrorMessage = function(errorMessage) {};
+    this.ShowSuccessMessage = function(successMessage) {};
+};
+// }}}
+
+// EPATaskbox.View.FeedbackMessageNotification {{{
+// This is an implementation of the EPATaskbox.View.INotification which shows
+// the messages in the feedback message of the application.
+// The application must use the feedback message web block.
+EPATaskbox.View.FeedbackMessageNotification = function(feedbackWidget) {
+    // Call base constructor
+    EPATaskbox.View.INotification.call(this);
+    EPATaskbox.View.FeedbackMessageNotification.FieldDeclarations.call(this);
+    EPATaskbox.View.FeedbackMessageNotification.MethodDeclarations.call(this);
+
+    this.Initialize(feedbackWidget);
+};
+
+EPATaskbox.View.FeedbackMessageNotification.FieldDeclarations = function() {
+    this.Message_Types = {
+        Info : 0,
+        Success: 1,
+        Warning: 2,
+        Error: 3
+    };
+
+    // The feedback widget, which listens for notifies
+    this.feedbackWidget = null;
+};
+EPATaskbox.View.FeedbackMessageNotification.MethodDeclarations = function() {
+    this.Initialize = function(feedbackWidget) {
+        this.feedbackWidget = feedbackWidget;
+    };
+
+    this.ShowFeedback = function(messageType, messageText) {
+        OsNotifyWidget(this.feedbackWidget, messageType + " " + messageText);
+    };
+
+    this.ShowErrorMessage = function(errorMessage) {
+        this.ShowFeedback(this.Message_Types.Error, errorMessage);
+    };
+
+    this.ShowSuccessMessage = function(successMessage) {
+        this.ShowFeedback(this.Message_Types.Success, successMessage);
+    };
+};
+// }}}
+
+// EPATaskbox.View.SimpleNotification {{{
+// This is provided to be a simple notification method, to be a fallback in case
+// a better method cannot be chosen.
+EPATaskbox.View.SimpleNotification = function() {
+    // Call base constructor
+    EPATaskbox.View.INotification.call(this);
+    EPATaskbox.View.SimpleNotification.FieldDeclarations.call(this);
+    EPATaskbox.View.SimpleNotification.MethodDeclarations.call(this);
+};
+
+EPATaskbox.View.SimpleNotification.FieldDeclarations = function() {
+};
+
+EPATaskbox.View.SimpleNotification.MethodDeclarations = function() {
+    this.ShowErrorMessage = function(errorMessage) {
+        alert(errorMessage);
+    };
+
+    this.ShowSuccessMessage = function(successMessage) {
+    };
+};
+// }}}
+
+// }}}
+
+
+// EPATaskbox.Events {{{
+
+EPATaskbox.Events = function(inbox, $) {
+    EPATaskbox.Events.FieldDeclarations.call(this);
+    EPATaskbox.Events.MethodDeclarations.call(this);
+
+    this.$ = $;
+    this.Initialize(inbox);
+};
+
+EPATaskbox.Events.FieldDeclarations = function() {
+    this.Event_Names = {
+        FrameOpened    : "FrameOpened",
+        FrameClosed    : "FrameClosed",
+        FrameNavigated : "FrameNavigated",
+
+        ActivityOpened : "ActivityOpened",
+        ActivityClosed : "ActivityClosed",
+        ErrorOnActivityOpen  : "ErrorOnActivityOpen",
+        ErrorOnActivityClose : "ErrorOnActivityClose"
+    };
+
+    // The $ function to use to bind and trigger the events.
+    this.$ = null;
+
+    // The wrapped object which will react to events.
+    this.eventObj = null;
+
+    // The inbox object
+    this.inbox = null;
+};
+
+EPATaskbox.Events.MethodDeclarations = function() {
+    this.Initialize = function(inbox) {
+        this.inbox = inbox;
+        this.eventObj = this.$(this);
+    };
+
+    // Events API {{{
+    this.bind = function(eventName, fn) {
+        this.eventObj.bind(eventName, fn);
+    };
+
+    this.unbind = function(eventName, fn) {
+        this.eventObj.unbind(eventName, fn);
+    };
+
+    this.trigger = function(eventName, data) {
+        this.inbox.utils.debug("trigger(" + eventName + ")");
+        this.eventObj.trigger(eventName, data);
+    };
+    // }}}
+};
+
+// }}}
+
+
+// EPATaskbox.StatePoller {{{
+
+EPATaskbox.StatePoller = function(inbox, pollTimeInSeconds, maxPollTimeInSeconds) {
+    EPATaskbox.StatePoller.FieldDeclarations.call(this);
+    EPATaskbox.StatePoller.MethodDeclarations.call(this);
+
+    this.Initialize(inbox, pollTimeInSeconds, maxPollTimeInSeconds);
+};
+
+EPATaskbox.StatePoller.FieldDeclarations = function() {
+    this.constants = {
+        Default_Poll_Time_Seconds : 5,
+        Default_Max_Poll_Time_Seconds : 1800,
+        Polling_EntryPoint : "API_GetActivityCount"
+    };
+
+    // The inbox object
+    this.inbox = null;
+
+    // The time (in milliseconds) of the polling interval
+    this.pollingTime = null;
+
+    // The maximum time (in milliseconds) of the polling interval
+    this.maxPollingTime = null;
+
+    // The timer Id, so we can stop the polling if we want to
+    this.pollingTimerId = null;
+    
+    // The timer backoff factor (if >1 initial refreshes will be more frequent than after a period of inactivity)
+    this.pollingBackoff = 1.2;
+};
+
+EPATaskbox.StatePoller.MethodDeclarations = function() {
+    this.Initialize = function(inbox, pollTimeInSeconds, maxPollTimeInSeconds) {
+        this.inbox = inbox;
+        this.pollingTime = (pollTimeInSeconds || this.constants.Default_Poll_Time_Seconds) * 1000;
+        this.maxPollingTime = (maxPollTimeInSeconds || this.constants.Default_Max_Poll_Time_Seconds) * 1000;
+    };
+
+    var poll_closure;
+    this.StartPolling = function() {
+        poll_closure = this.inbox.utils.closure(this, this.Poll);
+        
+        this.pollingTimerId = setTimeout(poll_closure, this.pollingTime);
+    };
+    
+    this.Poll = function() {
+        this.FetchState();
+        this.pollingTime = Math.min(this.pollingTime * this.pollingBackoff, this.maxPollingTime);
+        this.pollingTimerId = setTimeout(poll_closure, this.pollingTime);
+    }
+
+    this.StopPolling = function() {
+        clearTimeout(this.pollingTimerId);
+    };
+
+    this.FetchState = function() {
+        var url = this.inbox.url.EntryPoint(this.constants.Polling_EntryPoint);
+        var onComplete = this.inbox.utils.closure(this, this.OnAjaxPollComplete);
+
+        this.inbox.$.getJSON(url, {}, onComplete);
+    };
+
+    this.OnAjaxPollComplete = function(json) {
+        this.inbox.SetState(json.Activities, json.HasUnseen);
+        this.inbox.view.Refresh();
+    };
+};
+
+// }}}
+
+
+// EPATaskbox.Url {{{
+
+EPATaskbox.Url = function(applicationServer, useUserId, userId) {
+    EPATaskbox.Url.FieldDeclarations.call(this);
+    EPATaskbox.Url.MethodDeclarations.call(this);
+
+    this.Initialize(applicationServer, useUserId, userId);
+};
+
+EPATaskbox.Url.FieldDeclarations = function() {
+    this.userId = 0;
+
+    this.serverPageExtension = null;
+
+    this.constants = {
+        Server_Url : "",
+        EPA_Taskbox_Application_Path : "EPA_Taskbox",
+        DotNet_Server_Page_Extension : "aspx",
+        Java_Server_Page_Extension : "jsf"
+    };
+};
+
+EPATaskbox.Url.MethodDeclarations = function() {
+    this.Initialize = function(applicationServer, useUserId, userId) {
+        if (useUserId) {
+            this.userId = userId;
+        }
+        if (applicationServer == "J2EE") {
+            this.serverPageExtension = this.constants.Java_Server_Page_Extension;
+        } else {
+            this.serverPageExtension = this.constants.DotNet_Server_Page_Extension;
+        }
+    };
+
+    this.EntryPoint = function(entry, /* optional */ queryParameters) {
+        return this.constants.Server_Url + "/" +
+            this.constants.EPA_Taskbox_Application_Path + "/" +
+            entry + "." + this.serverPageExtension +
+            this.BuildQueryString(queryParameters);
+    };
+
+    this.BuildQueryString = function(queryParameters) {
+        var queryString = "?";
+        if (this.userId != 0) {
+            queryString += "UserId=" + this.userId;
+        }
+
+        if (queryParameters && typeof(queryParameters) == "object") {
+            for (var key in queryParameters) {
+                var val = queryParameters[key];
+                if (typeof(val) == "boolean") {
+                    val = (val? "True" : "False");
+                }
+                if (typeof(val) == "string" || typeof(val) == "number") {
+                    queryString += (queryString == "?"? "" : "&") + encodeURIComponent(key) + "=" + encodeURIComponent(val);
+                }
+            }
+        }
+
+        return (queryString == "?"? "" : queryString);
+    };
+};
+
+// }}}
+
+
+// EPATaskbox.Persistence {{{
+// This class stores persistent state in a compact cookie.
+// The cookie will have the same name as the namespace, and the stored values
+// will be joined in the cookie value, which will be a comma separated string.
+EPATaskbox.Persistence = function(namespace, expireTimeHours) {
+    EPATaskbox.Persistence.FieldDeclarations.call(this);
+    EPATaskbox.Persistence.MethodDeclarations.call(this);
+
+    this.Initialize(namespace, expireTimeHours);
+};
+
+EPATaskbox.Persistence.FieldDeclarations = function() {
+    this.constants = {
+        Default_Expire_Time_Hours : 8
+    };
+
+    // The keys for the data that will be stored persistently
+    this.Keys = {
+        InboxViewState      : 0,
+        FrameActivityFilter : 1,
+        FrameCurrentPage    : 2,
+        FrameLastActivity   : 3
+    };
+
+    this.Decoders = {
+        Text     : function(v) { return v; },
+        Integer  : parseInt
+    };
+    // The decoder functions for each key
+    this.Key_Decoders = [
+        this.Decoders.Integer,
+        this.Decoders.Text,
+        this.Decoders.Integer,
+        this.Decoders.Integer
+    ];
+
+    // The array of values that will be stored persistently
+    this.values = null;
+
+    // The namespace where to store the keys and values
+    this.namespace = null;
+
+    // The expiration time (in seconds)
+    this.expireTime = null;
+};
+
+EPATaskbox.Persistence.MethodDeclarations = function() {
+    this.Initialize = function(namespace, expireTimeHours) {
+        this.namespace = namespace;
+        this.expireTime = (expireTimeHours || this.constants.Default_Expire_Time_Hours) * 60 * 60;
+    };
+
+    this.Set = function(key, value) {
+        this.EnsureLoaded();
+        this.values[key] = value;
+        this.Save();
+    };
+
+    this.Get = function(key, /* optional */ defaultValue) {
+        this.EnsureLoaded();
+      var value = this.values[key];
+        if (!value && defaultValue) {
+            // Store the defaultValue, for the following Get to return the same
+            this.Set(key, defaultValue);
+            return defaultValue;
+        }
+        return value;
+    };
+
+    this.EnsureLoaded = function() {
+        if (this.values == null) {
+            this.Load();
+        }
+    };
+
+    // Load and Save {{{
+    this.Load = function() {
+        var cookie = this.CookieRetrieve(this.namespace);
+        cookie = cookie && cookie != ""? cookie.split("|") : [];
+        this.values = [];
+
+        for (var i = 0; i < this.Key_Decoders.length; i++) {
+            if (i < cookie.length) {
+                this.values[i] = this.Key_Decoders[i](decodeURIComponent(cookie[i]));
+            } else {
+                this.values[i] = null;
+            }
+        }
+    };
+
+    this.Save = function() {
+        var cookie = "";
+        for (var i = 0; i < this.values.length; i++) {
+            cookie += (i == 0? "" : "|") + (this.values[i] != null? encodeURIComponent(this.values[i]) : "");
+        }
+
+        this.CookieStore(this.namespace, cookie, this.expireTime);
+    };
+    // }}}
+
+    // Cookie storage {{{
+    this.CookieStore = function(name, value, expiresInSeconds) {
+        var expires = new Date()
+        expires.setTime(expires.getTime() + expiresInSeconds * 1000);
+        var path = "/";
+
+        document.cookie = name + "=" + value + "; expires=" + expires.toUTCString() + "; path=" + path;
+    };
+
+    this.CookieRetrieve = function(name) {
+        if (document.cookie && document.cookie != "") {
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = this.TrimLeft(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        return cookie.substring(name.length + 1);
+                }
+            }
+        }
+
+        return null;
+    };
+
+    this.CookieDelete = function(name) {
+        this.CookieStore(name, null, -1);
+    };
+
+    this.TrimLeft = function(str) {
+        return str.replace(/^\s+/, "");
+    };
+    // }}}
+};
+// }}}
+
+
+// EPATaskbox.Effects {{{
+// EPATaskbox.Effects.Base {{{
+EPATaskbox.Effects = {};
+
+EPATaskbox.Effects.Base = function($) {
+    EPATaskbox.Effects.Base.FieldDeclarations.call(this);
+    EPATaskbox.Effects.Base.MethodDeclarations.call(this);
+
+    this.Initialize($);
+};
+
+EPATaskbox.Effects.Base.FieldDeclarations = function() {
+    // The jquery object
+    this.$ = null;
+};
+
+EPATaskbox.Effects.Base.MethodDeclarations = function() {
+    this.Initialize = function($) {
+        this.$ = $;
+    };
+
+    // Applies the effect. Must be overriden in implementations.
+    this.Apply = function(element) {
+    };
+};
+// }}}
+
+// EPATaskbox.Effects.DropShadow {{{
+EPATaskbox.Effects.DropShadow = function($, top, left, blurRadius, blurResolution, opacity, color) {
+    EPATaskbox.Effects.Base.call(this, $);
+    EPATaskbox.Effects.DropShadow.FieldDeclarations.call(this);
+    EPATaskbox.Effects.DropShadow.MethodDeclarations.call(this);
+
+    this.Initialize(top, left, blurRadius, blurResolution, opacity, color);
+};
+
+EPATaskbox.Effects.DropShadow.FieldDeclarations = function() {
+    this.top = null;
+    this.left = null;
+    this.blurRadius = null;
+    this.blurResolution = null;
+    this.opacity = null;
+    this.color = null;
+
+    // The object which contains all the shadow objects
+    this.shadows = null;
+};
+
+EPATaskbox.Effects.DropShadow.MethodDeclarations = function() {
+    this.Initialize = function(top, left, blurRadius, blurResolution, opacity, color) {
+        this.top = top || 0;
+        this.left = left || 0;
+        this.blurRadius = Math.max(blurRadius || 2, 1);
+        this.blurResolution = Math.max(blurResolution || 1, 1);
+        this.opacity = Math.max(opacity || 1, 0);
+        this.color = color || "black";
+    };
+
+    this.Apply = function(element) {
+        var text = element.text();
+        if (text && text != "") {
+            /* Empty text - nothing to cast shadows */
+            this.ApplyText(element, text);
+        }
+    };
+
+    this.ApplyText = function(element, text) {
+        var clones = [];
+        clones[0] = this.$(element.get(0).ownerDocument.createElement("span"));
+        clones[0].text(text);
+        clones[0].css({
+            position: "absolute",
+            width: element.width(),
+            height: element.height(),
+            color: this.color,
+            opacity: this.opacity / this.blurRadius
+        });
+
+        for (var r = 0; r < this.blurRadius; r+=this.blurResolution) {
+            clones[0+8*r] = clones[0].clone();
+            clones[1+8*r] = clones[0].clone();
+            clones[2+8*r] = clones[0].clone();
+            clones[3+8*r] = clones[0].clone();
+            clones[4+8*r] = clones[0].clone();
+            clones[5+8*r] = clones[0].clone();
+            clones[6+8*r] = clones[0].clone();
+            clones[7+8*r] = clones[0].clone();
+
+            clones[0+8*r].css({ top: -r, left : -r });
+            clones[1+8*r].css({ top: -r, left :  0 });
+            clones[2+8*r].css({ top: -r, left : +r });
+            clones[3+8*r].css({ top:  0, left : -r });
+            /*                { top:  0, left :  0 } */
+            clones[4+8*r].css({ top:  0, left : +r });
+            clones[5+8*r].css({ top: +r, left : -r });
+            clones[6+8*r].css({ top: +r, left :  0 });
+            clones[7+8*r].css({ top: +r, left : +r });
+        }
+
+        var absoluteContainer = this.$(element.get(0).ownerDocument.createElement("div"));
+        absoluteContainer.css({
+            position: "absolute",
+            zIndex: -1
+        });
+
+        var relativeContainer = this.$(absoluteContainer.get(0).ownerDocument.createElement("div"));
+        absoluteContainer.append(relativeContainer);
+        relativeContainer.css({
+            position: "relative",
+            top: this.top,
+            left: this.left
+        });
+
+        for (var i = 0; i < clones.length; i++) {
+            relativeContainer.append(clones[i]);
+        }
+
+        this.shadows = absoluteContainer;
+        element.before(absoluteContainer);
+    };
+};
+// }}}
+// }}}
